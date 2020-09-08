@@ -183,7 +183,7 @@ for_window [title="Open File"] resize set 800 450
 for_window [Class="Matplotlib"] floating enable
 
 # start compton
-exec --no-startup-id compton --config=/home/quizznor/.config/picom/picom.conf
+exec --no-startup-id compton --config=/home/quizznor/.config/picom/picom.ini
 
 # start polybar
 exec_always /home/quizznor/.config/scripts/polybar-launch.sh
