@@ -149,18 +149,6 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
         bindsym Up resize shrink height 10 px or 10 ppt
@@ -174,8 +162,28 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command i3status
-}
+
+
+# dump all stuff I need here, rearrange later
+
+# get rid of i3 default window borders
+for_window [class="^.*"] border pixel 0
+
+# set custom background image
+exec --no-startup-id feh --bg-fill /home/quizznor/downloads/background.png
+
+# assign certain programs to certain workspaces
+assign [Class=firefox] $ws2
+assign [Class=Atom] $ws3
+
+# resize "Open File" windows
+for_window [title="Open File"] resize set 800 450
+
+# enable floating for Python plots
+for_window [Class="Matplotlib"] floating enable
+
+# start compton
+exec --no-startup-id compton --config=/home/quizznor/.config/picom/picom.conf
+
+# start polybar
+exec_always /home/quizznor/.config/scripts/polybar-launch.sh
