@@ -15,6 +15,7 @@ do
   while [ "$(pidof $VAR)" == "" ]
   do
     $VAR &
+    sleep 0.1
   done
-  sleep 0.1
+  sleep 1
 done
