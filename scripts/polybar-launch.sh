@@ -14,7 +14,7 @@ for VAR in "${TRAYVARS[@]}"
 do
   while [ "$(pidof $VAR)" == "" ]
   do
-    $VAR &
+    $VAR > /dev/null &
     sleep 0.1
   done
   sleep 1
