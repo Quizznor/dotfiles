@@ -154,7 +154,7 @@ bindsym $mod+r mode "resize"
 for_window [class="^.*"] border pixel 0
 
 # set custom background image
-exec --no-startup-id feh --bg-fill /home/quizznor/downloads/background.png
+exec --no-startup-id feh --bg-fill /home/quizznor/Documents/background.png
 
 # assign certain programs to certain workspaces
 assign [Class=firefox] $ws2

@@ -4,7 +4,7 @@
     scrollbar: true;
 
     /* Gruvbox light colors */
-    gruvbox-light-bg0:          #fbf1c7;
+    gruvbox-light-bg0:          #fbf1c8;
     gruvbox-light-bg0-soft:     #f2e5bc;
     gruvbox-light-bg2:          #d5c4a1;
     gruvbox-light-fg0:          #282828;
@@ -47,8 +47,13 @@
 
 window {
     background-color: @background;
-    border:           2;
-    padding:          2;
+    border:           3;
+    padding:          0;
+    anchor:           north;
+    location:         west;
+    x-offset:         85px;
+    y-offset:         210px;
+    width:            12.0%;
 }
 
 mainbox {
@@ -142,7 +147,7 @@ inputbar {
     spacing:    0;
     text-color: @normal-foreground;
     padding:    2px;
-    children:   [ prompt, textbox-prompt-sep, entry, case-indicator ];
+    children:   [ prompt];
 }
 
 case-indicator,
