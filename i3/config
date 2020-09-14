@@ -173,5 +173,7 @@ exec --no-startup-id compton --config=/home/quizznor/.config/picom/picom.ini
 exec_always /home/quizznor/.config/scripts/polybar-launch.sh
 
 # change screen brightness
-# bindcode 232 exec bash 
-# bindcode 233 exec bash
+bindcode 232 exec bash /home/quizznor/.config/scripts/set-brightness.sh -
+bindcode 233 exec bash /home/quizznor/.config/scripts/set-brightness.sh +
+
+# change volume settings

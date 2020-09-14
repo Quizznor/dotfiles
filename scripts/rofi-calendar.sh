@@ -20,7 +20,7 @@ cal --color=always $month $year \
         -markup-rows \
         -no-fullscreen \
         -font "Monospace 13" \
-        -theme Poly-Calender \
+        -theme Paper \
         -hide-scrollbar \
         -bw 2 \
         -lines 6 \
