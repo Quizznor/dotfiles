@@ -44,5 +44,5 @@ ICON=""
 else ICON=""
 fi
 
-dunstify --urgency=low --replace 14875 " $ICON $VOL "
+dunstify --urgency=low --replace 14875 "$ICON $VOL"
 aplay ~/storage/sounds/sound_notification.wav --nonblock
