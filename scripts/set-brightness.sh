@@ -11,4 +11,4 @@ esac
 
 BRIGHTNESS=$(brightnessctl | awk 'NR==2{gsub(/[\(\)]/,""); print $4}')
 
-dunstify "$BRIGHTNESS"
+dunstify --urgency=low --replace 348756287 " $BRIGHTNESS"

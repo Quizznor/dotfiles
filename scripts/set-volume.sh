@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # requires:
 #   dunst      'sudo pacman -S dunst'
@@ -18,10 +18,10 @@ case $1 in
     amixer --quiet sset Master toggle
     amixer --quiet sset Speaker on
     ;;
-"increase")
+"+")
     amixer --quiet sset Master 2+
     ;;
-"decrease")
+"-")
     amixer --quiet sset Master 2-
     ;;
 *)
@@ -44,5 +44,5 @@ ICON=""
 else ICON=""
 fi
 
-dunstify --urgency=low --replace 1 " $ICON $VOL "
+dunstify --urgency=low --replace 14875 " $ICON $VOL "
 aplay ~/storage/sounds/sound_notification.wav --nonblock

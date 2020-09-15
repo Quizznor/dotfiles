@@ -169,8 +169,9 @@ for_window [Class="Matplotlib"] floating enable
 # start compton
 exec --no-startup-id compton --config=/home/quizznor/.config/picom/picom.ini
 
-# start polybar
+# (re)start polybar & dunst
 exec_always /home/quizznor/.config/scripts/polybar-launch.sh
+exec_always /home/quizznor/.config/scripts/dunst-restart.sh
 
 # change screen brightness
 bindcode 232 exec bash /home/quizznor/.config/scripts/set-brightness.sh -
@@ -179,8 +180,10 @@ bindcode 233 exec bash /home/quizznor/.config/scripts/set-brightness.sh +
 # enable smart borders
 smart_borders on
 
-# change volume settings
-## TODO
+# change volume settings (using alsa)
+bindsym XF86AudioRaiseVolume exec bash /home/quizznor/.config/scripts/set-volume.sh +
+bindsym XF86AudioLowerVolume exec bash /home/quizznor/.config/scripts/set-volume.sh -
+bindsym XF86AudioMute exec bash /home/quizznor/.config/scripts/set-volume.sh toggle
 
 # colors
 ## TODO
