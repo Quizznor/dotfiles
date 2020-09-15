@@ -151,7 +151,7 @@ bindsym $mod+r mode "resize"
 # dump all stuff I need here, rearrange later
 
 # get rid of i3 default window borders
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 3
 
 # set custom background image
 exec --no-startup-id feh --bg-fill /home/quizznor/Documents/background.png
@@ -176,4 +176,14 @@ exec_always /home/quizznor/.config/scripts/polybar-launch.sh
 bindcode 232 exec bash /home/quizznor/.config/scripts/set-brightness.sh -
 bindcode 233 exec bash /home/quizznor/.config/scripts/set-brightness.sh +
 
+# enable smart borders
+smart_borders on
+
 # change volume settings
+## TODO
+
+# colors
+## TODO
+
+# Open powermenu
+# bindcode 133 exec bash /home/quizznor/lconfig/scripts/rofi-powermenu.sh open

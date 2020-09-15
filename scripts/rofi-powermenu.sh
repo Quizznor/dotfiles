@@ -1,27 +1,19 @@
 #!/usr/bin/env bash
 
 OPTIONS=("  Power off" "\n  Standby" "\n  Restart" "\n  Logout")
+SELECTED=$(echo -en "${OPTIONS[@]}" | rofi -dmenu -theme powermenu -p " System Option" -l 4)
 
-case $1 in
-  "")
-  echo ""
+case $SELECTED in
+  *""*)
+  systemctl poweroff
   ;;
-  "open")
-  SELECTED=$(echo -en "${OPTIONS[@]}" | rofi -dmenu -theme powermenu -p " System Option" -l 4)
-
-  case $SELECTED in
-    *""*)
-    systemctl poweroff
-    ;;
-    *""*)
-    systemctl suspend
-    ;;
-    *""*)
-    systemctl reboot
-    ;;
-    *""*)
-    i3-msg exit
-    ;;
-  esac
+  *""*)
+  systemctl suspend
+  ;;
+  *""*)
+  systemctl reboot
+  ;;
+  *""*)
+  i3-msg exit
   ;;
 esac
