@@ -102,7 +102,7 @@ set $ws9 "9"
 set $ws10 "10"
 
 # switch to workspace
-bindsym $mod+1 workspace number $ws1
+bindsym $mod+1 exec bash /home/quizznor/.config/scripts/mv-home.sh
 bindsym $mod+2 exec bash /home/quizznor/.config/scripts/mv-firefox.sh
 bindsym $mod+3 exec bash /home/quizznor/.config/scripts/mv-coding.sh
 bindsym $mod+4 workspace number $ws4
@@ -153,7 +153,8 @@ bindsym $mod+r mode "resize"
 # get rid of i3 default window borders
 for_window [class="^.*"] border pixel 3
 
-# set custom background image
+# set custom background image & start home screen
+exec bash /home/quizznor/.config/scripts/mv-home.sh
 exec --no-startup-id feh --bg-fill /home/quizznor/Documents/background.png
 
 # assign certain programs to certain workspaces
@@ -169,11 +170,12 @@ for_window [Class="Matplotlib"] floating enable
 # start compton
 exec --no-startup-id compton --config=/home/quizznor/.config/picom/picom.ini
 
-# (re)start polybar & dunst
+# (re)start polybar, dunst and compton
 exec_always /home/quizznor/.config/scripts/polybar-launch.sh
+exec always /home/quizznor/.config/scripts/picom-restart.sh
 exec_always /home/quizznor/.config/scripts/dunst-restart.sh
 
-# change screen brightness
+# change screen brightness (using brightnessctl)
 bindcode 232 exec bash /home/quizznor/.config/scripts/set-brightness.sh -
 bindcode 233 exec bash /home/quizznor/.config/scripts/set-brightness.sh +
 
@@ -185,8 +187,20 @@ bindsym XF86AudioRaiseVolume exec bash /home/quizznor/.config/scripts/set-volume
 bindsym XF86AudioLowerVolume exec bash /home/quizznor/.config/scripts/set-volume.sh -
 bindsym XF86AudioMute exec bash /home/quizznor/.config/scripts/set-volume.sh toggle
 
-# colors
-## TODO
+# colors (we only really need client.focused.border)
+# class                 border  bground text    indicator child_border
+client.focused          #457a08 #457a08 #FFFFFF #FFFFFF   #457a08
+client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
+client.unfocused        #333333 #222222 #888888 #292D2E   #222222
+client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
+
+client.background       #FFFFFF
 
 # Open powermenu
 # bindcode 133 exec bash /home/quizznor/lconfig/scripts/rofi-powermenu.sh open
+
+# gaps
+workspace 1 gaps top 10
+workspace 1 gaps inner 10
+workspace 1 gaps horizontal 20
