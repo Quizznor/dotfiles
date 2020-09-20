@@ -3,11 +3,12 @@
 # Called by i3 config reload, restarts all polybars with the fitting config
 
 killall -q polybar cbatticon nm-applet volumeicon
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 polybar --config=/home/quizznor/.config/polybar/config.ini main & disown
 
 # also repopulate sys-tray with important status icons
 # Simply add the application of your choice in TRAYVARS.
-# The script can handle additional starting parameters.
+# The script can handle additional starting parameters as shown.
 
 TRAYVARS=("cbatticon -n" "nm-applet" "volumeicon")
 

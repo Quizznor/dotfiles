@@ -40,8 +40,8 @@ window {
     anchor:           north;
     location:         west;
     x-offset:         680px;
-    y-offset:         180px;
-    width:            15.8%;
+    y-offset:         250px;
+    width:            25.8%;
 }
 
 mainbox {
@@ -64,7 +64,7 @@ listview {
     border:       2px 0px 0px ;
     border-color: @bordercolor;
     spacing:      2px ;
-    scrollbar:    false;
+    scrollbar:    true;
     padding:      2px 0px 0px ;
 }
 element {
@@ -108,9 +108,10 @@ element.alternate.active {
     text-color:       @alternate-active-foreground;
 }
 scrollbar {
-    width:        4px ;
+    width:        2px ;
     border:       0;
-    handle-width: 8px ;
+    handle-width: 3px ;
+    handle-color: @bordercolor;
     padding:      0;
 }
 mode-switcher {
