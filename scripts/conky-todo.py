@@ -6,7 +6,7 @@ groups = ["[URGENT]","[MEDIUM]","[RELAX ]"]
 colors = ["red", "yellow", "green"]
 tasks_left = len(tasks_open)
 
-print("\n\t  TODO LIST: %i OPEN, %i COMPLETED"%(tasks_left,tasks_done))
+print("\n\tTODO LIST: %i OPEN, %i COMPLETED"%(tasks_left,tasks_done))
 print("-"*44+"\n")
 
 for i,group in enumerate(groups):

@@ -154,12 +154,14 @@ bindsym $mod+r mode "resize"
 for_window [class="^.*"] border pixel 3
 
 # set custom background image & start home screen
-exec bash /home/quizznor/.config/scripts/mv-home.sh
+#exec bash /home/quizznor/.config/scripts/mv-home.sh
+exec bash /home/quizznor/.config/scripts/startup.sh
 exec --no-startup-id feh --bg-fill /home/quizznor/Documents/background.png
 
 # assign certain programs to certain workspaces
 assign [Class=firefox] $ws2
 assign [Class=Atom] $ws3
+assign [Class=Electron5] $ws3
 
 # resize "Open File" windows
 for_window [title="Open File"] resize set 800 450
