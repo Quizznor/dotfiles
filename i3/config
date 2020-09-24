@@ -150,12 +150,8 @@ bindsym $mod+r mode "resize"
 
 # dump all stuff I need here, rearrange later
 
-# get rid of i3 default window borders
-for_window [class="^.*"] border pixel 3
-
 # set custom background image & start home screen
-#exec bash /home/quizznor/.config/scripts/mv-home.sh
-exec bash /home/quizznor/.config/scripts/startup.sh
+exec bash /home/quizznor/.config/scripts/mv-home.sh
 exec --no-startup-id feh --bg-fill /home/quizznor/Documents/background.png
 
 # assign certain programs to certain workspaces
@@ -181,21 +177,26 @@ exec_always /home/quizznor/.config/scripts/dunst-restart.sh
 bindcode 232 exec bash /home/quizznor/.config/scripts/set-brightness.sh -
 bindcode 233 exec bash /home/quizznor/.config/scripts/set-brightness.sh +
 
-# enable smart borders
-smart_borders on
-
 # change volume settings (using alsa)
 bindsym XF86AudioRaiseVolume exec bash /home/quizznor/.config/scripts/set-volume.sh +
 bindsym XF86AudioLowerVolume exec bash /home/quizznor/.config/scripts/set-volume.sh -
 bindsym XF86AudioMute exec bash /home/quizznor/.config/scripts/set-volume.sh toggle
 
-# colors (we only really need client.focused.border)
+# colors
+
 client.focused          #457a08 #457a08 #FFFFFF #FFFFFF #457a08
+client.placeholder      #00000000 #00000000 #00000000 #00000000
+client.background       #00000000 #00000000 #00000000 #00000000
 
 # Open powermenu
 # bindcode 133 exec bash /home/quizznor/lconfig/scripts/rofi-powermenu.sh open
 
-# gaps
+# gaps & borders
+
+smart_borders on
 workspace 1 gaps top 10
 workspace 1 gaps inner 10
 workspace 1 gaps horizontal 20
+
+# get rid of i3 default window borders
+for_window [class="^.*"] border pixel 3
