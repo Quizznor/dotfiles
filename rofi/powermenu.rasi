@@ -40,7 +40,7 @@ window {
     anchor:           north;
     location:         west;
     x-offset:         80px;
-    y-offset:         230px;
+    y-offset:         200px;
     width:            11.5%;
 }
 

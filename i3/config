@@ -189,7 +189,7 @@ client.placeholder      #00000000 #00000000 #00000000 #00000000
 client.background       #00000000 #00000000 #00000000 #00000000
 
 # Open powermenu
-# bindcode 133 exec bash /home/quizznor/lconfig/scripts/rofi-powermenu.sh open
+# bindsym $mod+x exec bash /home/quizznor/.config/scripts/set-volume.sh +
 
 # gaps & borders
 
