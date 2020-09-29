@@ -19,25 +19,14 @@ case $1 in
     amixer --quiet sset Speaker on
     ;;
 "+")
-    amixer --quiet sset Master 2+
+    pactl set-sink-volume 0 +1%
     ;;
 "-")
-    amixer --quiet sset Master 2-
-    ;;
-*)
-    echo
-    echo  "usage: i3-volume.sh <option>"
-    echo "available options are:"
-    echo
-    echo "  toggle      - mute/unmute Master Channel"
-    echo "  increase    - increase global volume"
-    echo "  decrease    - decrease global volume"
-    echo
-    exit 1
+    pactl set-sink-volume 0 -1%
     ;;
 esac
 
-VOL=$(amixer sget Master | awk '/%/ {gsub(/[\[\]]/,""); print $4}')
+VOL=$(amixer sget Master | awk 'NR==6{gsub(/[\[\]]/,""); print $5}')
 STAT=$(amixer sget Master | awk '/off/')
 if [ "$STAT" == "" ]; then
 ICON=""
@@ -45,4 +34,4 @@ else ICON=""
 fi
 
 dunstify --urgency=low --replace 14875 "$ICON $VOL"
-aplay ~/storage/sounds/sound_notification.wav --nonblock
+# aplay ~/downloads/got-it-done.mp3 --nonblock
