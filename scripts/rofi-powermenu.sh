@@ -17,5 +17,6 @@ case $SELECTED in
   i3-msg exit
   ;;
   *""*)
-  $HOME/.config/scripts/lockscreen.sh --nofork -- scrot -z -o -d 1
+  xautolock -locknow
+  ;;
 esac

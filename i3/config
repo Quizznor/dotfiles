@@ -153,6 +153,7 @@ bindsym $mod+r mode "resize"
 # set custom background image & start home screen
 exec bash /home/quizznor/.config/scripts/mv-home.sh
 exec --no-startup-id feh --bg-fill /home/quizznor/Documents/background.png
+exec --no-startup-id xautolock -corners +00- -cornerdelay 0 -cornerredelay 4 -time 2 -locker "$HOME/.config/scripts/lockscreen.sh --nofork -- scrot -z -o -d 1"
 
 # assign certain programs to certain workspaces
 assign [Class=firefox] $ws2
