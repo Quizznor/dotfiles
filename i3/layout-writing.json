@@ -9,11 +9,13 @@
        "x": 0,
        "y": 0
     },
-    "name": "quizznor@notebook:~/.config/i3",
-    "percent": 0.64,
+    "name": "quizznor@beep-boop:~",
+    "percent": 0.75,
     "swallows": [
        {
        "class": "^kitty$"
+       // "instance": "^kitty$",
+       // "title": "^quizznor\\@beep\\-boop\\:\\~$"
        }
     ],
     "type": "con"
@@ -30,10 +32,12 @@
        "y": 0
     },
     "name": "conky (beep-boop)",
-    "percent": 0.36,
+    "percent": 0.25,
     "swallows": [
        {
        "class": "^Conky$"
+       // "instance": "^Conky$",
+       // "title": "^conky\\ \\(beep\\-boop\\)$"
        }
     ],
     "type": "con"

@@ -105,7 +105,7 @@ set $ws10 "10"
 bindsym $mod+1 exec bash /home/quizznor/.config/scripts/mv-home.sh
 bindsym $mod+2 exec bash /home/quizznor/.config/scripts/mv-firefox.sh
 bindsym $mod+3 exec bash /home/quizznor/.config/scripts/mv-coding.sh
-bindsym $mod+4 workspace number $ws4
+bindsym $mod+4 exec bash /home/quizznor/.config/scripts/mv-writing.sh
 bindsym $mod+5 workspace number $ws5
 bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
@@ -195,9 +195,15 @@ client.background       #00000000 #00000000 #00000000 #00000000
 # gaps & borders
 
 smart_borders on
-workspace 1 gaps top 10
-workspace 1 gaps inner 10
-workspace 1 gaps horizontal 20
+workspace $ws1 gaps top 10
+workspace $ws1 gaps inner 10
+workspace $ws1 gaps horizontal 20
+
+workspace $ws4 gaps outer 2
+workspace $ws4 gaps inner 5
+
+workspace $ws6 gaps outer 2
+workspace $ws6 gaps inner 5
 
 # get rid of i3 default window borders
 for_window [class="^.*"] border pixel 3
