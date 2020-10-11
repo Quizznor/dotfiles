@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# Append scripts path to $PATH
+# System variables & append scripts path to $PATH
 export PATH="$HOME/.config/scripts:$PATH"
 
 # Ricing
@@ -19,6 +19,8 @@ alias config='/usr/bin/git --git-dir=/home/quizznor/.config/.git --work-tree=/ho
 alias cc='cd $HOME/.config'
 alias ss='cd $HOME/.config/scripts'
 alias todo='todo.sh'
+alias job='job.sh'
 
-# Keyboard layout
+# Keyboard layout & xev functionality
+#function keymode { xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'; }
 setxkbmap de

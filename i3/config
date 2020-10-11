@@ -207,3 +207,6 @@ workspace $ws6 gaps inner 5
 
 # get rid of i3 default window borders
 for_window [class="^.*"] border pixel 3
+
+# execute powermenu
+bindsym $mod+F1 exec bash /home/quizznor/.config/scripts/rofi-powermenu.sh
