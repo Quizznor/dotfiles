@@ -21,6 +21,9 @@ alias ss='cd $HOME/.config/scripts'
 alias todo='todo.sh'
 alias job='job.sh'
 
+# utilities
+alias xev='keymode.sh'
+
 # Keyboard layout & xev functionality
 #function keymode { xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'; }
 setxkbmap de

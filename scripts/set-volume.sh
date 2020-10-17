@@ -19,10 +19,12 @@ case $1 in
     amixer --quiet sset Speaker on
     ;;
 "+")
-    pactl set-sink-volume 0 +1%
+    pactl set-sink-volume 0 +1% # Notebook Speakers
+    pactl set-sink-volume 1 +1% # Bluetooth Headset (in general)
     ;;
 "-")
     pactl set-sink-volume 0 -1%
+    pactl set-sink-volume 1 -1%
     ;;
 esac
 

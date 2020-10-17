@@ -163,6 +163,8 @@ assign [Class=Electron5] $ws3
 # resize "Open File" windows
 for_window [title="Open File"] resize set 800 450
 
+for_window [title="Event Tester"] floating enable
+
 # enable floating for Python plots
 for_window [Class="Matplotlib"] floating enable
 
