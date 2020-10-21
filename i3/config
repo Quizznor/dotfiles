@@ -158,12 +158,17 @@ exec --no-startup-id xautolock -corners +00- -cornerdelay 0 -cornerredelay 4 -ti
 # assign certain programs to certain workspaces
 assign [Class=firefox] $ws2
 assign [Class=Atom] $ws3
-assign [Class=Electron5] $ws3
+assign [title="Open File"] $ws3
 
 # resize "Open File" windows
 for_window [title="Open File"] resize set 800 450
 
+# resize xev window
 for_window [title="Event Tester"] floating enable
+
+#resize and adjust the window to change audiosinks
+for_window [title="floatterm"] floating enable
+for_window [title="floatterm"] resize set 1000 500
 
 # enable floating for Python plots
 for_window [Class="Matplotlib"] floating enable
@@ -184,6 +189,9 @@ bindcode 233 exec bash /home/quizznor/.config/scripts/set-brightness.sh +
 bindsym XF86AudioRaiseVolume exec bash /home/quizznor/.config/scripts/set-volume.sh +
 bindsym XF86AudioLowerVolume exec bash /home/quizznor/.config/scripts/set-volume.sh -
 bindsym XF86AudioMute exec bash /home/quizznor/.config/scripts/set-volume.sh toggle
+
+# change pacmd audio sinks
+bindsym F1 exec bash /home/quizznor/.config/scripts/rofi-audiosink.sh
 
 # colors
 

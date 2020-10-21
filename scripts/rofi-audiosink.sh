@@ -1,22 +1,28 @@
 #!/usr/bin/env bash
 
-OPTIONS=$(pacmd list-sinks | awk -F"=" '/device.description/{gsub(/"/,"");print $2}')
 PROMPT=(" " "\n  \n  ")
-#PROMPT=(" BLAH" "\n sodg" "\nspdofj")
+ADDR="28:9A:4B:19:A1:CF"
+SINKNAME="bluez_sink.28_9A_4B_19_A1_CF.a2dp_sink"
 
-SELECTED=$(echo -en "${PROMPT[@]}" | rofi -dmenu -theme audiosinks -p "Please choose an audiosink" -l 5)
+SELECTED=$(echo -en "${PROMPT[@]}" | rofi -dmenu -theme audiosinks -p "Change audiosink" -l 5)
 
 case $SELECTED in
   *""*)
-  echo "Chose internal speakers"
+  pacmd set-default-sink 0
+  bluetoothctl power off
   ;;
   *""*)
-  echo "Chose bluetooth headset"
+  echo -e "power on\nagent on\nconnect $ADDR" | bluetoothctl
+
+  # still for some reason this only works on the second try?
+  while [ -z "$(pacmd list-sinks | awk '/bluez/{print}')" ]
+  do
+    sleep 1
+  done
+
+  pacmd set-default-sink $SINKNAME
   ;;
   *""*)
-  echo "Chose to list available sinks"
-
-
-  i3-msg "exec kitty --config=$HOME/.config/kitty/kitty.ini; floating enable"
+  kitty --config=$HOME/.config/kitty/kitty.ini --title="floatterm" --hold pacmd list-sinks
   ;;
 esac
