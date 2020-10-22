@@ -13,18 +13,21 @@
 #       "increase" - increases volume
 #       "decrease" - decreases volume
 
+SPKERNAME="alsa_output.pci-0000_00_1f.3.analog-stereo" # Speaker sink name
+HDPHNNAME="bluez_sink.98_52_3D_27_D1_02.a2dp_sink"   # Headphone sink name
+
 case $1 in
 "toggle")
     amixer --quiet sset Master toggle
     amixer --quiet sset Speaker on
     ;;
 "+")
-    pactl set-sink-volume 0 +1% # Notebook Speakers
-    pactl set-sink-volume 1 +1% # Bluetooth Headset (in general)
+    pactl set-sink-volume $SPKERNAME +1%
+    pactl set-sink-volume $HDPHNNAME +1%
     ;;
 "-")
-    pactl set-sink-volume 0 -1%
-    pactl set-sink-volume 1 -1%
+    pactl set-sink-volume $SPKERNAME -1%
+    pactl set-sink-volume $HDPHNNAME -1%
     ;;
 esac
 
