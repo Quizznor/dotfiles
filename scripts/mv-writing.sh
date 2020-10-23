@@ -13,6 +13,5 @@ i3-msg workspace 4 > /dev/null
 if [ "$STATUS" == "" ]
 then
   i3-msg "workspace 4; append_layout $HOME/.config/i3/layout-writing.json"
-  kitty --config=$HOME/.config/kitty/kitty.ini $CMD &
-  conky --config=$HOME/.config/conky/shortcuts.ini &
+  kitty --config=$HOME/.config/kitty/kitty-vim.ini $CMD &
 fi

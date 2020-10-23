@@ -9,207 +9,165 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+### Modifier ###
+  set $mod Mod4
+  floating_modifier $mod
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-# font pango:monospace 8
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
+### System Font ###
 font pango:DejaVu Sans Mono 8
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
+### Important keybinds (mostly default i3 stuff) ###
 
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+  # Utility
+  bindsym $mod+Return exec kitty
+  bindsym Ctrl+q kill
+  bindsym $mod+h split h
+  bindsym $mod+v split v
+  bindsym $mod+f fullscreen toggle
+  bindsym $mod+Shift+space floating toggle
+  bindsym $mod+space focus mode_toggle
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+  # Fiddling with i3 config
+  bindsym $mod+Shift+c reload
+  bindsym $mod+Shift+r restart
 
-# start a terminal
-bindsym $mod+Return exec kitty
+  # moving focus:
+  bindsym $mod+Left focus left
+  bindsym $mod+Down focus down
+  bindsym $mod+Up focus up
+  bindsym $mod+Right focus right
 
-# kill focused window
-bindsym Ctrl+q kill
+  # moving containers:
+  bindsym $mod+Shift+Left move left
+  bindsym $mod+Shift+Down move down
+  bindsym $mod+Shift+Up move up
+  bindsym $mod+Shift+Right move right
 
-# start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+  # change container layout
+  bindsym $mod+s layout stacking
+  bindsym $mod+w layout tabbed
+  bindsym $mod+e layout toggle split
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+### Workspaces ###
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+  # overall settings
+  smart_borders on
 
-# split in horizontal orientation
-bindsym $mod+h split h
+  for_window [class="^.*"] border pixel 3
+  for_window [title="Event Tester"] floating enable
+  for_window [title="floatterm"] floating enable
+  for_window [title="floatterm"] resize set 1000 500
 
-# split in vertical orientation
-bindsym $mod+v split v
+  client.focused          #457a08 #457a08 #FFFFFF #FFFFFF #457a08
+  client.placeholder      #00000000 #00000000 #00000000 #00000000
+  client.background       #00000000 #00000000 #00000000 #00000000
 
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+  # WS1: HOME
+  set $ws1 "1"
+  bindsym $mod+1 exec bash /home/quizznor/.config/scripts/mv-home.sh
+  bindsym $mod+Shift+1 move container to workspace number $ws1
+  workspace $ws1 gaps top 10
+  workspace $ws1 gaps inner 10
+  workspace $ws1 gaps horizontal 20
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+  # WS2: FIREFOX
+  set $ws2 "2"
+  bindsym $mod+2 exec bash /home/quizznor/.config/scripts/mv-firefox.sh
+  bindsym $mod+Shift+2 move container to workspace number $ws2
+  assign [Class=firefox] $ws2
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+  # WS3: CODING
+  set $ws3 "3"
+  bindsym $mod+3 exec bash /home/quizznor/.config/scripts/mv-coding.sh
+  bindsym $mod+Shift+3 move container to workspace number $ws3
+  assign [Class=Atom] $ws3
+  assign [title="Open File"] $ws3
+  for_window [Class="Matplotlib"] floating enable
+  for_window [title="Open File"] resize set 800 450
 
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+  # WS4: WRITING
+  set $ws4 "4"
+  bindsym $mod+4 exec bash /home/quizznor/.config/scripts/mv-writing.sh
+  bindsym $mod+Shift+4 move container to workspace number $ws4
+  workspace $ws4 gaps outer 2
+  workspace $ws4 gaps inner 5
 
-# focus the parent container
-bindsym $mod+a focus parent
+  #WS5: MUSIC
+  set $ws5 "5"
+  bindsym $mod+5 exec bash /home/quizznor/.config/scripts/mv-music.sh
+  bindsym $mod+Shift+5 move container to workspace number $ws5
 
-# focus the child container
-#bindsym $mod+d focus child
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
-
-# switch to workspace
-bindsym $mod+1 exec bash /home/quizznor/.config/scripts/mv-home.sh
-bindsym $mod+2 exec bash /home/quizznor/.config/scripts/mv-firefox.sh
-bindsym $mod+3 exec bash /home/quizznor/.config/scripts/mv-coding.sh
-bindsym $mod+4 exec bash /home/quizznor/.config/scripts/mv-writing.sh
-bindsym $mod+5 exec bash /home/quizznor/.config/scripts/mv-reading.sh
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+7 workspace number $ws7
-bindsym $mod+8 workspace number $ws8
-bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
-
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number $ws1
-bindsym $mod+Shift+2 move container to workspace number $ws2
-bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
-bindsym $mod+Shift+7 move container to workspace number $ws7
-bindsym $mod+Shift+8 move container to workspace number $ws8
-bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut.' -B 'Yes, exit i3' 'i3-msg exit'"
-
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        bindsym Left resize shrink width 1 px or 1 ppt
-        bindsym Down resize grow height 1 px or 1 ppt
-        bindsym Up resize shrink height 1 px or 1 ppt
-        bindsym Right resize grow width 1 px or 1 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
+  # TODO
 
 
-# dump all stuff I need here, rearrange later
+  # WS6-10: REST
 
-# set custom background image & start home screen
-exec bash /home/quizznor/.config/scripts/mv-home.sh
-exec --no-startup-id feh --bg-fill /home/quizznor/Documents/background.png
-exec --no-startup-id xautolock -corners +00- -cornerdelay 0 -cornerredelay 4 -time 2 -locker "$HOME/.config/scripts/lockscreen.sh --nofork -- scrot -z -o -d 1"
+  set $ws6 "6"
+  set $ws7 "7"
+  set $ws8 "8"
+  set $ws9 "9"
+  set $ws10 "10"
 
-# assign certain programs to certain workspaces
-assign [Class=firefox] $ws2
-assign [Class=Atom] $ws3
-assign [title="Open File"] $ws3
+  # switch to workspace
+  bindsym $mod+6 workspace number $ws6
+  bindsym $mod+7 workspace number $ws7
+  bindsym $mod+8 workspace number $ws8
+  bindsym $mod+9 workspace number $ws9
+  bindsym $mod+0 workspace number $ws10
 
-# resize "Open File" windows
-for_window [title="Open File"] resize set 800 450
+  # move focused container to workspace
+  bindsym $mod+Shift+6 move container to workspace number $ws6
+  bindsym $mod+Shift+7 move container to workspace number $ws7
+  bindsym $mod+Shift+8 move container to workspace number $ws8
+  bindsym $mod+Shift+9 move container to workspace number $ws9
+  bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# resize xev window
-for_window [title="Event Tester"] floating enable
+### System (re)start ###
 
-#resize and adjust the window to change audiosinks
-for_window [title="floatterm"] floating enable
-for_window [title="floatterm"] resize set 1000 500
+  # initialize home screen
+  exec bash /home/quizznor/.config/scripts/mv-home.sh
 
-# enable floating for Python plots
-for_window [Class="Matplotlib"] floating enable
+  # set background image
+  exec --no-startup-id feh --bg-fill /home/quizznor/Documents/background.png
 
-# start compton
-exec --no-startup-id compton --config=/home/quizznor/.config/picom/picom.ini
+  # launch xautolock (screensaver)
+  exec --no-startup-id xautolock -corners +00- -cornerdelay 0 -cornerredelay 4 -time 2 -locker "$HOME/.config/scripts/lockscreen.sh --nofork -- scrot -z -o -d 1"
 
-# (re)start polybar, dunst and compton
-exec_always /home/quizznor/.config/scripts/polybar-launch.sh
-exec always /home/quizznor/.config/scripts/picom-restart.sh
-exec_always /home/quizznor/.config/scripts/dunst-restart.sh
+  # (re)start polybar, dunst and compton
+  exec_always /home/quizznor/.config/scripts/polybar-launch.sh
+  exec always /home/quizznor/.config/scripts/picom-restart.sh
+  exec_always /home/quizznor/.config/scripts/dunst-restart.sh
 
-# change screen brightness (using brightnessctl)
-bindcode 232 exec bash /home/quizznor/.config/scripts/set-brightness.sh -
-bindcode 233 exec bash /home/quizznor/.config/scripts/set-brightness.sh +
+### Utility keys ###
 
-# change volume settings (using alsa)
-bindsym XF86AudioRaiseVolume exec bash /home/quizznor/.config/scripts/set-volume.sh +
-bindsym XF86AudioLowerVolume exec bash /home/quizznor/.config/scripts/set-volume.sh -
-bindsym XF86AudioMute exec bash /home/quizznor/.config/scripts/set-volume.sh toggle
+  # change volume settings (using alsa & pacmd)
+  bindsym XF86AudioRaiseVolume exec bash /home/quizznor/.config/scripts/set-volume.sh +
+  bindsym XF86AudioLowerVolume exec bash /home/quizznor/.config/scripts/set-volume.sh -
+  bindsym XF86AudioMute exec bash /home/quizznor/.config/scripts/set-volume.sh toggle
 
-# change pacmd audio sinks
-bindsym F1 exec bash /home/quizznor/.config/scripts/rofi-audiosink.sh
+  # change screen brightness (using brightnessctl)
+  bindcode 232 exec bash /home/quizznor/.config/scripts/set-brightness.sh -
+  bindcode 233 exec bash /home/quizznor/.config/scripts/set-brightness.sh +
 
-# colors
+  # change pacmd audio sinks
+  bindsym F1 exec bash /home/quizznor/.config/scripts/rofi-audiosink.sh
 
-client.focused          #457a08 #457a08 #FFFFFF #FFFFFF #457a08
-client.placeholder      #00000000 #00000000 #00000000 #00000000
-client.background       #00000000 #00000000 #00000000 #00000000
+  # execute powermenu
+  bindsym $mod+F1 exec bash /home/quizznor/.config/scripts/rofi-powermenu.sh
 
-# Open powermenu
-# bindsym $mod+x exec bash /home/quizznor/.config/scripts/set-volume.sh +
+### System modes ###
 
-# gaps & borders
+  # resize window (you can also use the mouse for that)
+  mode "resize" {
+          bindsym Left resize shrink width 1 px or 1 ppt
+          bindsym Down resize grow height 1 px or 1 ppt
+          bindsym Up resize shrink height 1 px or 1 ppt
+          bindsym Right resize grow width 1 px or 1 ppt
 
-smart_borders on
-workspace $ws1 gaps top 10
-workspace $ws1 gaps inner 10
-workspace $ws1 gaps horizontal 20
+          # back to normal: Enter or Escape or $mod+r
+          bindsym Return mode "default"
+          bindsym Escape mode "default"
+          bindsym $mod+r mode "default"
+  }
 
-workspace $ws4 gaps outer 2
-workspace $ws4 gaps inner 5
-
-workspace $ws6 gaps outer 2
-workspace $ws6 gaps inner 5
-
-# get rid of i3 default window borders
-for_window [class="^.*"] border pixel 3
-
-# execute powermenu
-bindsym $mod+F1 exec bash /home/quizznor/.config/scripts/rofi-powermenu.sh
+  bindsym $mod+r mode "resize"

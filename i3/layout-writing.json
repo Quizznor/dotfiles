@@ -20,25 +20,3 @@
     ],
     "type": "con"
 }
-
-{
-    "border": "pixel",
-    "current_border_width": 3,
-    "floating": "auto_off",
-    "geometry": {
-       "height": 5,
-       "width": 5,
-       "x": 0,
-       "y": 0
-    },
-    "name": "conky (beep-boop)",
-    "percent": 0.25,
-    "swallows": [
-       {
-       "class": "^Conky$"
-       // "instance": "^Conky$",
-       // "title": "^conky\\ \\(beep\\-boop\\)$"
-       }
-    ],
-    "type": "con"
-}
