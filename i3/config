@@ -133,6 +133,9 @@ font pango:DejaVu Sans Mono 8
   # launch xautolock (screensaver)
   exec --no-startup-id xautolock -corners +00- -cornerdelay 0 -cornerredelay 4 -time 2 -locker "$HOME/.config/scripts/lockscreen.sh --nofork -- scrot -z -o -d 1"
 
+  # start compton
+  exec --no-startup-id compton --config ~/.config/picom/picom.ini
+
   # (re)start polybar, dunst and compton
   exec_always /home/quizznor/.config/scripts/polybar-launch.sh
   exec always /home/quizznor/.config/scripts/picom-restart.sh
