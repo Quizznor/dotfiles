@@ -15,7 +15,7 @@
 
 " vim-latex to build and view the tex file (mm for full build with biber, nn for quick build)
 map mm :! /home/quizznor/.config/scripts/vim-latex.sh %:p:h %:t full<CR><CR>
-map nn :! /home/quizznor/.config/scripts/vim-latex.sh %:p:h %:t<CR>
+map nn :! /home/quizznor/.config/scripts/vim-latex.sh %:p:h %:t<CR><CR>
 
 " get rid of build files as soon as the tex file is closed
 autocmd VimLeave *.tex !rm -rf *.aux *.log *.bbl *.blg
