@@ -18,10 +18,6 @@ else
   ROOT_PDF=$(echo "$ROOT_DIR/$ROOT_TEX" | sed 's/tex$/pdf/')
 fi
 
-(cd $ROOT_DIR && echo "root dir is $(pwd)")
-echo "and root file is $ROOT_TEX"
-echo "and pdf file is then $ROOT_PDF"
-
 # build LaTeX root file...
 (cd $ROOT_DIR && pdflatex $ROOT_TEX )      # Always build the document at least once
 if [[ ! -z "$3" ]]                         # If desired, build with biber, etc.

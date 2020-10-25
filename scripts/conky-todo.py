@@ -13,4 +13,4 @@ for i,group in enumerate(groups):
     for j,line in enumerate(tasks_open):
         if group in line:
             print(" ${color %s}"%(colors[i])+str(j+1).zfill(2)+" "+line.rstrip(),"$color")
-    print("\n")
+    print()
