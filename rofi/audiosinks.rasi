@@ -44,7 +44,7 @@ window {
     x-offset:         0px;
     y-offset:         280px;
     width:            34.5%;
-    height:           22%;
+    height:           21%;
 }
 
 mainbox {
@@ -63,7 +63,7 @@ listview {
     border-color: @bordercolor;
     spacing:      20px ;
     scrollbar:    false;
-    padding:      5px 20px 0px 20px;
+    padding:      0px 20px 0px 20px;
 }
 
 element {
@@ -82,7 +82,7 @@ element.selected {
 }
 
 prompt {
-    padding:          10px 0px 0px 20px;
+    padding:          10px 0px -40px 20px;
     font:             "Pango Monospace 12";
     text-color:       @foreground;
 }

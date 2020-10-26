@@ -11,9 +11,9 @@ case $1 in
   URGENCY="[URGENT]"
   ;;
   "r")
-  TASK=$(sed -n $2p $HOME/Documents/todo.txt)
-  sed -i $2d $HOME/Documents/todo.txt
-  echo $TASK >> $HOME/Documents/todone.txt
+  TASK=$(sed -n $2p $HOME/documents/todo.txt)
+  sed -i $2d $HOME/documents/todo.txt
+  echo $TASK >> $HOME/documents/todone.txt
   exit
   ;;
   *)
@@ -21,4 +21,4 @@ case $1 in
   exit
 esac
 
-echo "$URGENCY ${@:2}" >> $HOME/Documents/todo.txt
+echo "$URGENCY ${@:2}" >> $HOME/documents/todo.txt

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
-tasks_done = len(open("/home/quizznor/Documents/todone.txt").readlines())
-tasks_open = open("/home/quizznor/Documents/todo.txt").readlines()
+tasks_done = len(open("/home/quizznor/documents/todone.txt").readlines())
+tasks_open = open("/home/quizznor/documents/todo.txt").readlines()
 groups = ["[URGENT]","[MEDIUM]","[RELAX ]"]
 colors = ["red", "yellow", "green"]
 tasks_left = len(tasks_open)

@@ -11,4 +11,4 @@ then
   i3-msg "workspace 1" > /dev/null
 fi
 
-mv-writing.sh "$HOME/Documents/$1"
+mv-writing.sh "$HOME/documents/$1"

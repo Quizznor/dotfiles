@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PROMPT=(" " "\n  \n  ")
+PROMPT=("  \n  \n  ")
 ADDR="98:52:3D:27:D1:02"
 SINKNAME="bluez_sink.98_52_3D_27_D1_02.a2dp_sink"
 

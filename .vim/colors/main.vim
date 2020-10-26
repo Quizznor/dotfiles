@@ -29,6 +29,7 @@ hi texMathZoneC     ctermfg=24              " Apparently theres a math mode c as
 hi texMathZoneCS    ctermfg=24              " When do all the different math modes stop?
 hi texOnlyMath      ctermfg=24              " And even more math mode
 hi texSpecialChar   ctermfg=22 cterm=bold   " Add custom appearance for special chars
+hi texLigature      ctermfg=21 cterm=bold   " Make -- look like a comment
 
 " Special definitions for short(?) tex files
 hi initexComment            ctermfg=21              " Root file specifier

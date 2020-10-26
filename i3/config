@@ -128,7 +128,7 @@ font pango:DejaVu Sans Mono 8
   exec bash /home/quizznor/.config/scripts/mv-home.sh
 
   # set background image
-  exec --no-startup-id feh --bg-fill /home/quizznor/Documents/background.png
+  exec --no-startup-id feh --bg-fill /home/quizznor/documents/background.png
 
   # launch xautolock (screensaver)
   exec --no-startup-id xautolock -corners +00- -cornerdelay 0 -cornerredelay 4 -time 2 -locker "$HOME/.config/scripts/lockscreen.sh --nofork -- scrot -z -o -d 1"
