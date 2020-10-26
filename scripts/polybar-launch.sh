@@ -10,7 +10,7 @@ polybar --config=/home/quizznor/.config/polybar/config.ini main & disown
 # Simply add the application of your choice in TRAYVARS.
 # The script can handle additional starting parameters as shown.
 
-TRAYVARS=("cbatticon -n" "nm-applet" "volumeicon")
+TRAYVARS=("cbatticon -n" "nm-applet")
 
 for VAR in "${TRAYVARS[@]}"
 do

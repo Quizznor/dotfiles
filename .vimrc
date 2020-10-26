@@ -18,23 +18,22 @@
 """""""""""""""""""""""""""""
 " more helpful settings here
 
-" vim-latex to build and view the tex file (mm for full build with biber, nn for quick build)
+" see vim-latex for details (mm for full build, nn for quick build)
 map mm :! /home/quizznor/.config/scripts/vim-latex.sh %:p full<CR><CR>
 map nn :! /home/quizznor/.config/scripts/vim-latex.sh %:p<CR><CR>
 
-" get rid of build files as soon as the tex file is closed
+" close pdf as soon as we leave a .tex
 autocmd VimLeave *.tex !killall zathura
 
 " automatically change fontsize when writing stuff
-autocmd VimEnter *.tex :silent !xdotool key ctrl+i && exit
-autocmd VimLeave *.tex !xdotool key ctrl+o
+autocmd VimEnter *.tex :silent !xdotool key ctrl+9
+autocmd VimLeave *.tex :silent !xdotool key ctrl+0
 
-" autojump to next occurence of (...)
-map <Space><Space> : /(...)<CR>n
+" autojump to next occurence of --
+map <Space><Space> : /--<CR>ggnxxi
 
-" todo: latex snippets, autojump command
-
-
+" Ultisnips
+" YouCompleteMe
 
 
 
