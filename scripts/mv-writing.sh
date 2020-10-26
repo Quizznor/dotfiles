@@ -12,6 +12,6 @@ i3-msg workspace 4 > /dev/null
 
 if [ "$STATUS" == "" ]
 then
-  i3-msg "workspace 4; append_layout $HOME/.config/i3/layout-writing.json"
-  kitty --config=$HOME/.config/kitty/kitty-vim.ini $CMD &
+  i3-msg "workspace 4; append_layout $HOME/.config/i3/layout-writing.json" > /dev/null
+  kitty --config=$HOME/.config/kitty/kitty-vim.ini $CMD > /dev/null & disown
 fi

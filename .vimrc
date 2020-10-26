@@ -3,6 +3,9 @@
   " set the line numbering
   set number relativenumber
 
+  " match indention to previous line
+  set autoindent
+
   " support utf-8 encoding
   set fileencoding=utf-8
   set encoding=utf-8
@@ -28,6 +31,17 @@ autocmd VimEnter *.tex :silent !xdotool key ctrl+i && exit
 autocmd VimLeave *.tex !xdotool key ctrl+o
 
 " todo: latex snippets, autojump command
+
+
+
+
+
+
+
+
+
+
+
 
 
 " shows syntaxic group of the word under the cursor

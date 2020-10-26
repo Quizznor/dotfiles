@@ -24,8 +24,11 @@ alias todo='todo.sh'
 alias job='job.sh'
 
 # utilities
+alias scrpt='autoscript.sh'
+alias wrt='write.sh'
 alias xev='keymode.sh'
-alias latex-install='tllocalmgr'
+alias ltx='tllocalmgr'
+
 
 # Keyboard layout & xev functionality
 #function keymode { xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'; }
