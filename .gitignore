@@ -8,6 +8,7 @@ procps/
 volumeicon/
 discord/
 pulse/
+.vim/plugged/*
 
 
 # Exclude some scripts that are not relevant for the system

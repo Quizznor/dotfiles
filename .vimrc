@@ -32,17 +32,17 @@ autocmd VimLeave *.tex :silent !xdotool key ctrl+0
 " autojump to next occurence of --
 map <Space><Space> : /--<CR>ggnxxi
 
+" VimPlug section
+call plug#begin('~/.vim/plugged')
+
+Plug 'SirVer/ultisnips'
+" Plug 'ycm-core/YouCompleteMe'
+
+call plug#end()
+
 " Ultisnips
+
 " YouCompleteMe
-
-
-
-
-
-
-
-
-
 
 
 " shows syntaxic group of the word under the cursor
