@@ -1,5 +1,5 @@
 
-# Exclude some dotfiles I didn't change anything in
+# Exclude some dotfiles that are not relevant for the setup
 
 dconf/
 Atom/

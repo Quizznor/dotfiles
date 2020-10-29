@@ -4,7 +4,7 @@
   set number relativenumber
 
   " match indention to previous line
-  set autoindent
+  " set autoindent
 
   " support utf-8 encoding
   set fileencoding=utf-8
@@ -36,14 +36,14 @@ map <Space><Space> : /--<CR>ggnxxi
 call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
-" Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
 " Ultisnips
-
-" YouCompleteMe
-
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " shows syntaxic group of the word under the cursor
 command! SynStack call SynStack()<CR>

@@ -32,8 +32,17 @@ hi texSpecialChar   ctermfg=22 cterm=bold   " Add custom appearance for special 
 hi texLigature      ctermfg=21 cterm=bold   " Make -- look like a comment
 
 " Special definitions for short(?) tex files
+hi texDocType               ctermfg=25 cterm=bold   " Set documentclass color
 hi initexComment            ctermfg=21              " Root file specifier
 hi plaintexMath             ctermfg=24              " foreground color for alternate math mode
 hi plaintexMathLetter       ctermfg=24              " more math mode definitions
 hi plaintexControlSequence  ctermfg=25 cterm=bold   " color of commands, i guess
 hi plaintexMathCommand      ctermfg=22 cterm=bold   " Special chars in alternate mode
+
+" Syntax highlighting for UltiSnips files
+hi snipSnippet                  ctermfg=30 cterm=bold
+hi snipSnippetTrigger           ctermfg=31
+hi snipSnippetDocContextString  ctermfg=32
+hi snipSnippetDocString         ctermfg=32
+hi snipMirror                   ctermfg=33 cterm=bold
+hi snipSnippetOptionFlag        ctermfg=33 cterm=bold

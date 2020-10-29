@@ -1,0 +1,71 @@
+snippet \fat "A snippet for \textbf" 
+\textbf{$1} $2
+endsnippet
+
+snippet \it "A snippet for \textit"
+\textit{$1} $2
+endsnippet
+
+snippet \i "A snippet for \item" b
+\item $0
+endsnippet
+
+snippet \chap "Snippet for chapters" b
+\chapter{${1:NAME}}
+\label{chap:${2:LABEL}}
+
+$3
+endsnippet
+
+snippet \sec "Snippet for sections" b
+\section{${1:NAME}}
+\label{sec:${2:LABEL}}
+
+$3
+endsnippet
+
+snippet \sub "Snippet for subsections" b
+\subsection{${1:NAME}}
+\label{ssec:${2:LABEL}}
+
+$3
+endsnippet
+
+snippet \subsub "Snippet for subsubsections" b
+\subsubsection{${1:NAME}}
+\label{sssec:${2:LABEL}}
+
+$3
+endsnippet
+
+snippet \beg "Snippet for environments" bA
+\begin{${1:ENVIRONMENT}}
+$2
+\end{$1}
+
+--
+endsnippet
+
+snippet eq "A snippet for equations" b
+\label{eq:${1:LABEL}}
+$2
+endsnippet
+
+snippet fig "A snippet for figures" b
+	\label{fig:${1:LABEL}}
+	\includegraphics[width=${2:1.0}\textwidth]{${3:PATH}}
+	\caption{${4:TITLE}}{${5:CAPTION}}
+endsnippet
+
+snippet twofig "A snippet for two figures" b
+	\begin{subfigure}[h]{0.45\linewidth}
+	\includegraphicd[height=5cm]{${1:PATH A}}
+	\caption{\label{fig:${2:LABEL A}}}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[h]{0.45\linewidth}
+	\includegraphicd[height=5cm]{${3:PATH B}}
+	\caption{\label{fig:${4:LABEL B}}}
+	\end{subfigure}
+	\caption{${5:CAPTION}}
+endsnippet
