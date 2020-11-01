@@ -89,6 +89,7 @@ font pango:DejaVu Sans Mono 8
   set $ws4 "4"
   bindsym $mod+4 exec bash /home/quizznor/.config/scripts/mv-writing.sh
   bindsym $mod+Shift+4 move container to workspace number $ws4
+  assign [Class=Zathura] $ws4
   workspace $ws4 gaps outer 2
   workspace $ws4 gaps inner 5
 

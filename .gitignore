@@ -9,6 +9,7 @@ volumeicon/
 discord/
 pulse/
 .vim/plugged/*
+ranger/plugins/*
 
 
 # Exclude some scripts that are not relevant for the system
