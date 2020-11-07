@@ -2,11 +2,11 @@ snippet \t "A snippet for \text" i
 \text{$1} $2
 endsnippet
 
-snippet \fat "A snippet for \textbf" i
+snippet \fat "A snippet for \textbf"
 \textbf{$1} $2
 endsnippet
 
-snippet \it "A snippet for \textit" i
+snippet \it "A snippet for \textit"
 \textit{$1} $2
 endsnippet
 
@@ -63,15 +63,15 @@ endsnippet
 
 snippet twofig "A snippet for two figures" b
 	\begin{subfigure}[h]{0.45\linewidth}
-	\includegraphics[height=5cm]{${1:PATH A}}
+	\includegraphicd[height=5cm]{${1:PATH A}}
 	\caption{\label{fig:${2:LABEL A}}}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[h]{0.45\linewidth}
-	\includegraphics[height=5cm]{${3:PATH B}}
+	\includegraphicd[height=5cm]{${3:PATH B}}
 	\caption{\label{fig:${4:LABEL B}}}
 	\end{subfigure}
-	\caption*{${5:CAPTION}}
+	\caption{${5:CAPTION}}
 endsnippet
 
 snippet \frac "A snippet for fractions" i

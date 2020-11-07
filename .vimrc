@@ -36,6 +36,7 @@ map <Space><Space> : /--<CR>ggnxxi
 call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips'
+Plug 'Townk/vim-autoclose'
 
 call plug#end()
 
