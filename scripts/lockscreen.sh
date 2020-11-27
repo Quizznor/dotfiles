@@ -75,7 +75,7 @@ color=$(convert "$image" -gravity center -crop 100x100+0+0 +repage -colorspace h
     -resize 1x1 txt:- | awk -F '[%$]' 'NR==2{gsub(",",""); printf "%.0f\n", $(NF-1)}');
 
 bw="white"
-icon="/home/quizznor/Documents/lock.png"
+icon="/home/quizznor/documents/lock.png"
 param=("--insidecolor=00000000" "--ringcolor=35707f" "--bshlcolor=d18031"\
     "--linecolor=ffffff00" "--keyhlcolor=d18031" "--ringvercolor=00000000" \
     "--separatorcolor=00000000" "--insidevercolor=00000000" \

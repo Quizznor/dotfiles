@@ -56,9 +56,10 @@ $2
 endsnippet
 
 snippet fig "A snippet for figures" b
-	\label{fig:${1:LABEL}}
-	\includegraphics[width=${2:1.0}\textwidth]{${3:PATH}}
-	\caption{${4:TITLE}}{${5:CAPTION}}
+	\centering
+	\includegraphics[width=${1:1.0}\textwidth]{${2:PATH}}
+	\caption{${3:CAPTION}}
+	\label{${4:LABEL}}
 endsnippet
 
 snippet twofig "A snippet for two figures" b
@@ -72,6 +73,21 @@ snippet twofig "A snippet for two figures" b
 	\caption{\label{fig:${4:LABEL B}}}
 	\end{subfigure}
 	\caption*{${5:CAPTION}}
+endsnippet
+
+snippet tab "A snippet for tables" b
+\begin{center}
+\caption{${1:CAPTION}}
+\begin{tabular*}{${2:\textwidth}}{@{\extracolsep{\fill}} ${3:FORMAT} }
+	\toprule
+	${4:HEAD}
+	\midrule
+	${5:BODY}
+	\bottomrule
+	\label{tab:${6:LABEL}}
+\end{tabular*}
+\end{center}
+
 endsnippet
 
 snippet \frac "A snippet for fractions" i

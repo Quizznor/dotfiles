@@ -24,7 +24,7 @@ if [[ ! -z "$2" ]]                         # If desired, build with biber, etc.
 then
   (cd $ROOT_DIR && biber $ROOT_TEX)        # Run biber to create bibliography
   (cd $ROOT_DIR && pdflatex $ROOT_TEX)     # Running pdflatex again to include bib
-  (cd $ROOT_DIR && pdflatex $ROOT_TEX)     # Idk, run it again to be sure
+  # (cd $ROOT_DIR && pdflatex $ROOT_TEX)     # Idk, run it again to be sure
 fi
 
 # cleanup all auxiliary files

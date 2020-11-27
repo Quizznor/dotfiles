@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "530x1+413-60"
+    geometry = "0x0-30+10"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = no
@@ -54,10 +54,10 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 40
+    padding = 10
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 20
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
@@ -86,7 +86,7 @@
 
     ### Text ###
 
-    font = Monospace 84
+    font = Monospace 20
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -130,7 +130,7 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = center
+    alignment = "left"
 
     # Vertical alignment of message text and icon.
     # Possible values are "top", "center" and "bottom".
@@ -295,6 +295,7 @@
     background = "#222222"
     foreground = "#dfdfdf"
     timeout = 1
+
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 

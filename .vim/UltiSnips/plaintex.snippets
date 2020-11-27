@@ -74,6 +74,20 @@ snippet twofig "A snippet for two figures" b
 	\caption{${5:CAPTION}}
 endsnippet
 
+snippet tab "A snippet for tables" b
+	\begin{center}
+	\caption{${1:CAPTION}}
+	\begin{tabular*}{\textwidth}{@{\extracolsep}{\fill}} ${2:COLUMNS}
+		\toprule
+		${3:HEAD}
+		\midrule
+		${4:BODY}
+		\bottomrule
+		\end{tabular*}
+		\label{tab:${5:LABEL}}
+	\end{center}
+endsnippet
+
 snippet \frac "A snippet for fractions" i
 \frac{$1}{$2}$3
 endsnippet
