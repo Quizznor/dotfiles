@@ -63,16 +63,17 @@ snippet fig "A snippet for figures" b
 endsnippet
 
 snippet twofig "A snippet for two figures" b
+	\centering
 	\begin{subfigure}[h]{0.45\linewidth}
-	\includegraphics[height=5cm]{${1:PATH A}}
-	\caption{\label{fig:${2:LABEL A}}}
+	\includegraphics[height=4.2cm]{${1:PATH A}}
+	\caption{\textbf{${2:TITLE A}}\label{fig:${3:LABEL A}}}
 	\end{subfigure}
 	\hfill
 	\begin{subfigure}[h]{0.45\linewidth}
-	\includegraphics[height=5cm]{${3:PATH B}}
-	\caption{\label{fig:${4:LABEL B}}}
+	\includegraphics[height=4.2cm]{${4:PATH B}}
+	\caption{\textbf{${5:TITLE B}}\label{fig:${6:LABEL B}}}
 	\end{subfigure}
-	\caption*{${5:CAPTION}}
+	\caption*{\textbf{a)} ${7:CAPTION A}. \textbf{b)} ${8:CAPTION B}\label{${9:LABEL}}}
 endsnippet
 
 snippet tab "A snippet for tables" b

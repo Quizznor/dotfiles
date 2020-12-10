@@ -10,7 +10,7 @@ discord/
 pulse/
 .vim/plugged/*
 ranger/plugins/*
-
+zoomus.conf
 
 # Exclude some scripts that are not relevant for the system
 
