@@ -59,6 +59,7 @@ font pango:DejaVu Sans Mono 8
   for_window [title="floatterm"] resize set 1000 500
 
   client.focused          #457a08 #457a08 #FFFFFF #FFFFFF #457a08
+  client.focused_inactive #a6abaa #00000000 #00000000 #00000000
   client.placeholder      #00000000 #00000000 #00000000 #00000000
   client.background       #00000000 #00000000 #00000000 #00000000
 

@@ -1,0 +1,9 @@
+# Open document in fit-width mode by default
+set adjust-open "best-fit"
+
+set font "inconsolata 10"
+set default-fg "#000000" #00
+set default-bg "#a6abaa" #01
+
+set statusbar-fg "#B0B0B0" #04
+set statusbar-bg "#202020" #01

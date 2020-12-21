@@ -19,15 +19,16 @@
 " more helpful settings here
 
 " see vim-latex for details (mm for full build, nn for quick build)
-map mm :! /home/quizznor/.config/scripts/vim-latex.sh %:p full<CR><CR>
-map nn :! /home/quizznor/.config/scripts/vim-latex.sh %:p<CR><CR>
-
-" close pdf as soon as we leave a .tex
-" autocmd VimLeave *.tex !killall zathura
+map mm :! /home/quizznor/.config/scripts/vim-latex.sh %:p build full<CR><CR>
+map nn :! /home/quizznor/.config/scripts/vim-latex.sh %:p build <CR><CR>
 
 " automatically change fontsize when writing stuff
 autocmd VimEnter *.tex :silent !xdotool key ctrl+9
 autocmd VimLeave *.tex :silent !xdotool key ctrl+0
+
+" close pdf as soon as we leave a .tex
+autocmd VimLeave *.tex !killall zathura
+autocmd VimEnter *.tex :silent ! /home/quizznor/.config/scripts/vim-latex.sh %:p open
 
 " autojump to next occurence of --
 map <Space><Space> : /--<CR>ggnxxi

@@ -19,19 +19,29 @@ else
 fi
 
 # build LaTeX root file...
-(cd $ROOT_DIR && pdflatex $ROOT_TEX )      # Always build the document at least once
-if [[ ! -z "$2" ]]                         # If desired, build with biber, etc.
+if [ "$2" == "build" ]
 then
-  (cd $ROOT_DIR && biber $ROOT_TEX)        # Run biber to create bibliography
-  (cd $ROOT_DIR && pdflatex $ROOT_TEX)     # Running pdflatex again to include bib
-  # (cd $ROOT_DIR && pdflatex $ROOT_TEX)     # Idk, run it again to be sure
+  (cd $ROOT_DIR && pdflatex --shell-escape $ROOT_TEX )    # Always build the document at least once
+  if [[ ! -z "$3" ]]                                      # If desired, build with biber, etc.
+  then
+    (cd $ROOT_DIR && biber $ROOT_TEX)                     #  Run biber to create bibliography
+    (cd $ROOT_DIR && pdflatex $ROOT_TEX)                  # Running pdflatex again to include bib
+    # (cd $ROOT_DIR && pdflatex $ROOT_TEX)                # Idk, run it again to be sure
+  fi
+
+  # cleanup all auxiliary files
+  (cd $ROOT_DIR && rm -rf *.aux *.log *.bbl *.blg *.bcf *.out *.toc *.xml *.ist *.glo)
+
+  # ...and view it
+  if [ ! $(pidof zathura) ]
+  then
+    zathura $ROOT_PDF &
+  fi
 fi
 
-# cleanup all auxiliary files
-(cd $ROOT_DIR && rm -rf *.aux *.log *.bbl *.blg *.bcf *.out *.toc *.xml)
-
-# ...and view it
-if [ ! $(pidof zathura) ]
+# show LaTex root pdf
+if [ "$2" == "open" ]
 then
-  zathura $ROOT_PDF &
+  nohup zathura $ROOT_PDF &
+  sleep 0.1 && i3-msg [title="ranger"] focus
 fi
