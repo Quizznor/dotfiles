@@ -43,5 +43,5 @@ fi
 if [ "$2" == "open" ]
 then
   nohup zathura $ROOT_PDF &
-  sleep 0.1 && i3-msg [title="ranger"] focus
+  sleep 0.3 && i3-msg [title="ranger"] focus
 fi

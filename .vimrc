@@ -26,8 +26,8 @@ map nn :! /home/quizznor/.config/scripts/vim-latex.sh %:p build <CR><CR>
 autocmd VimEnter *.tex :silent !xdotool key ctrl+9
 autocmd VimLeave *.tex :silent !xdotool key ctrl+0
 
-" close pdf as soon as we leave a .tex
-autocmd VimLeave *.tex !killall zathura
+" open/close working pdf file when entering/leaving a .tex file
+autocmd VimLeave *.tex !killall zathura && rm -rf ./nohup.out
 autocmd VimEnter *.tex :silent ! /home/quizznor/.config/scripts/vim-latex.sh %:p open
 
 " autojump to next occurence of --
