@@ -1,3 +1,67 @@
+global !p
+
+# Return all files in directory with subdirectory
+def get_files(dir):
+    files = os.listdir(dir)
+    all_files = list()
+
+    for entry in files:
+        full_path = os.path.join(dir, entry)
+        if os.path.isdir(full_path):
+            all_files = all_files + get_files(full_path)
+        else:
+            all_files.append(full_path)
+
+    return all_files
+
+# return dict of all
+def get_labels(filename):
+
+  regexp = re.compile("label{[a-z]{2,4}:.*(?=\})")
+
+  # get LaTeX root file
+  with open(filename) as f:
+    header = f.readline().strip()
+  if header.startswith("%"):
+    root_file = "./" + header[13:]
+  else:
+    root_file = filename
+
+  root_path = os.path.dirname(root_file)
+  candidates = [file for file in get_files(root_path) if file.endswith(".tex")]
+
+  labels = []
+  for candidate in candidates:
+    text = open(candidate,"r").read()
+    if "\label" in text:
+      labels.append(regexp.findall(text))
+
+  labels = [item for sublist in labels for item in sublist]
+  labels = [item[6:] for item in labels]
+
+#  labels = [item.split(":") for item in labels]
+#  sorted_labels = dict.fromkeys(set([item[0] for item in labels]))
+#
+#  for key in sorted_labels.keys():
+#    sorted_labels[key] = [item[1] for item in labels if item[0]==key]
+
+  return labels
+
+def complete(t,options):
+  if t:
+    options = [item[len(t):] for item in options if item.startswith(t)]
+
+  if len(options)==1:
+    return options[0]
+
+  return "(" + " | ".join(options) + ")"
+
+endglobal
+
+snippet \ref "A snippet for autoref" i
+\autoref{$1`!p snip.rv = complete(t[1],get_labels(snip.fn))`} 
+endsnippet
+
 snippet \t "A snippet for \text" i
 \text{$1} $2
 endsnippet
@@ -12,6 +76,10 @@ endsnippet
 
 snippet \i "A snippet for \item" b
 \item $0
+endsnippet
+
+snippet \frac "A snippet for fractions" i
+\frac{$1}{$2}$3
 endsnippet
 
 snippet \chap "Snippet for chapters" b
@@ -89,8 +157,4 @@ snippet tab "A snippet for tables" b
 \end{tabular*}
 \end{center}
 
-endsnippet
-
-snippet \frac "A snippet for fractions" i
-\frac{$1}{$2}$3
 endsnippet
