@@ -14,7 +14,7 @@ def get_files(dir):
 
     return all_files
 
-# return dict of all
+# return list of all labels in root tex document
 def get_labels(filename):
 
   regexp = re.compile("label{[a-z]{2,4}:.*(?=\})")
@@ -39,12 +39,6 @@ def get_labels(filename):
   labels = [item for sublist in labels for item in sublist]
   labels = [item[6:] for item in labels]
 
-#  labels = [item.split(":") for item in labels]
-#  sorted_labels = dict.fromkeys(set([item[0] for item in labels]))
-#
-#  for key in sorted_labels.keys():
-#    sorted_labels[key] = [item[1] for item in labels if item[0]==key]
-
   return labels
 
 def complete(t,options):
@@ -55,22 +49,25 @@ def complete(t,options):
     return options[0]
 
   return "(" + " | ".join(options) + ")"
-
 endglobal
 
 snippet \ref "A snippet for autoref" i
-\autoref{$1`!p snip.rv = complete(t[1],get_labels(snip.fn))`} 
+\autoref{$1`!p snip.rv = complete(t[1],get_labels(snip.fn))`}
+endsnippet
+
+snippet \pageref "A snippet for pageref" iA
+\pageref{$1`!p snip.rv = complete(t[1],get_labels(snip.fn))`}
 endsnippet
 
 snippet \t "A snippet for \text" i
 \text{$1} $2
 endsnippet
 
-snippet \fat "A snippet for \textbf" i
+snippet \fat "A snippet for \textbf" iA
 \textbf{$1} $2
 endsnippet
 
-snippet \it "A snippet for \textit" i
+snippet \it "A snippet for \textit" iA
 \textit{$1} $2
 endsnippet
 
@@ -78,7 +75,7 @@ snippet \i "A snippet for \item" b
 \item $0
 endsnippet
 
-snippet \frac "A snippet for fractions" i
+snippet \frac "A snippet for fractions" iA
 \frac{$1}{$2}$3
 endsnippet
 
@@ -145,16 +142,22 @@ snippet twofig "A snippet for two figures" b
 endsnippet
 
 snippet tab "A snippet for tables" b
-\begin{center}
-\caption{${1:CAPTION}}
-\begin{tabular*}{${2:\textwidth}}{@{\extracolsep{\fill}} ${3:FORMAT} }
-	\toprule
-	${4:HEAD}
-	\midrule
-	${5:BODY}
-	\bottomrule
-	\label{tab:${6:LABEL}}
-\end{tabular*}
-\end{center}
+\begingroup
+\renewcommand{\arraystretch}{${1:STRETCH}}
+\begin{table}
+	\begin{center}
+	\caption{${2:CAPTION}}
+	\begin{tabular*}{${3:0.9}\textwidth}{@{\extracolsep{\fill}} ${4:COLUMNS}}
+  \toprule
+	\hline
+  ${5:COLUMN LABELS} \\
+	\hline
+  ${6:VALUES}
+  \bottomrule
+	\end{tabular*}
+	\label{tab:${7:LABEL}}
+	\end{center}
+\end{table}
+\endgroup
 
 endsnippet
