@@ -1,55 +1,10 @@
-global !p
+snippet img "A snippet for includegraphics" i
+$1`!p snip.rv = complete(t[1],get_img_files(snip.fn))`}
+endsnippet
 
-# Return all files in directory with subdirectory
-def get_files(dir):
-    files = os.listdir(dir)
-    all_files = list()
-
-    for entry in files:
-        full_path = os.path.join(dir, entry)
-        if os.path.isdir(full_path):
-            all_files = all_files + get_files(full_path)
-        else:
-            all_files.append(full_path)
-
-    return all_files
-
-# return list of all labels in root tex document
-def get_labels(filename):
-
-  regexp = re.compile("label{[a-z]{2,4}:.*(?=\})")
-
-  # get LaTeX root file
-  with open(filename) as f:
-    header = f.readline().strip()
-  if header.startswith("%"):
-    root_file = "./" + header[13:]
-  else:
-    root_file = filename
-
-  root_path = os.path.dirname(root_file)
-  candidates = [file for file in get_files(root_path) if file.endswith(".tex")]
-
-  labels = []
-  for candidate in candidates:
-    text = open(candidate,"r").read()
-    if "\label" in text:
-      labels.append(regexp.findall(text))
-
-  labels = [item for sublist in labels for item in sublist]
-  labels = [item[6:] for item in labels]
-
-  return labels
-
-def complete(t,options):
-  if t:
-    options = [item[len(t):] for item in options if item.startswith(t)]
-
-  if len(options)==1:
-    return options[0]
-
-  return "(" + " | ".join(options) + ")"
-endglobal
+snippet \input "A snippet for input" i
+\input{$1`!p snip.rv = complete(t[1],get_tex_files(snip.fn))`}
+endsnippet
 
 snippet \ref "A snippet for autoref" i
 \autoref{$1`!p snip.rv = complete(t[1],get_labels(snip.fn))`}
@@ -161,3 +116,97 @@ snippet tab "A snippet for tables" b
 \endgroup
 
 endsnippet
+
+# PYTHON STUFF ------------------------------------
+
+global !p
+
+# Return all files in directory with subdirectory
+def get_files(dir):
+    files = os.listdir(dir)
+    all_files = list()
+
+    for entry in files:
+        full_path = os.path.join(dir, entry)
+        if os.path.isdir(full_path):
+            all_files = all_files + get_files(full_path)
+        else:
+            all_files.append(full_path)
+
+    return all_files
+
+
+# get LaTeX root file
+def get_LaTeX_root(filename):
+
+  with open(filename) as f:
+    header = f.readline().strip()
+  if header.startswith("%"):
+    root_file = "./" + header[13:]
+  else:
+    root_file = filename
+
+  root_path = os.path.dirname(root_file)
+
+  return root_path
+
+# return list of all labels in root tex document
+def get_labels(filename):
+
+  regexp = re.compile("label{[a-z]{2,4}:.*(?=\})")
+
+  root_path = get_LaTeX_root(filename)
+  candidates = [file for file in get_files(root_path) if file.endswith(".tex")]
+
+  labels = []
+  for candidate in candidates:
+    text = open(candidate,"r").read()
+    if "\label" in text:
+      labels.append(regexp.findall(text))
+
+  labels = [item for sublist in labels for item in sublist]
+  labels = [item[6:] for item in labels]
+
+  return labels
+
+
+# get tex files from latex root
+def get_tex_files(filename):
+
+  root_path = get_LaTeX_root(filename)
+  files = get_files(root_path)
+  tex_files = [file for file in files if file.endswith(".tex")]
+
+  with open(filename) as f:
+    header = f.readline().strip()
+  if header.startswith("%"):
+    tex_files = [file.replace("/"+os.path.dirname(header[13:]),"") for file in tex_files]
+
+  return tex_files
+
+
+# get image files from latex root
+def get_img_files(filename):
+
+  root_path = get_LaTeX_root(filename)
+  files = get_files(root_path)
+  img_files = [file for file in files if file.endswith(".jpg") or file.endswith(".png")]
+
+  with open(filename) as f:
+    header = f.readline().strip()
+  if header.startswith("%"):
+    img_files = [file.replace("/"+os.path.dirname(header[13:]),"") for file in img_files]
+
+  return img_files
+
+
+# Autocompletion given a string t and options
+def complete(t,options):
+  if t:
+    options = [item[len(t):] for item in options if item.startswith(t)]
+
+  if len(options)==1:
+    return options[0]
+
+  return "(" + " | ".join(options) + ")"
+endglobal
