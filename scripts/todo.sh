@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 case $1 in
-  "ae")
-  URGENCY="[RELAX ]"
+  "at")
+  URGENCY="[TOP]"
   ;;
   "am")
-  URGENCY="[MEDIUM]"
+  URGENCY="[MID]"
   ;;
-  "au")
-  URGENCY="[URGENT]"
+  "al")
+  URGENCY="[LOW]"
   ;;
   "r")
   TASK=$(sed -n $2p $HOME/documents/todo.txt)

@@ -24,7 +24,7 @@ then
   (cd $ROOT_DIR && pdflatex --shell-escape $ROOT_TEX )    # Always build the document at least once
   if [[ ! -z "$3" ]]                                      # If desired, build with biber, etc.
   then
-    # (cd $ROOT_DIR && biblatex $ROOT_TEX)                  #  Run biber to create bibliography
+    # (cd $ROOT_DIR && biber $ROOT_TEX)                     #  Run biber to create bibliography
     # (cd $ROOT_DIR && pdflatex $ROOT_TEX)                  # Running pdflatex again to include bib
     (cd $ROOT_DIR && pdflatex $ROOT_TEX)                  # Idk, run it again to be sure
   fi
