@@ -31,3 +31,9 @@ I am assuming you have already set up archlinux, github and yay
 `cd dotfiles/ && yay -S $(cat pkglist) && yay -Syu`
 
 3. Copy the relevant features into your own config files. If you're unsure how to do this feel free to open an issue.
+
+---
+
+## Images
+
+
