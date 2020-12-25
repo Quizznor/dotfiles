@@ -36,4 +36,16 @@ I am assuming you have already set up archlinux, github and yay
 
 ## Images
 
+Here's a couple of screenshots of what my setup looks like
 
+Workspace 1 - Main terminal and todo list
+![workspace-1](https://user-images.githubusercontent.com/27953725/103142326-b446a480-4701-11eb-9f6b-6c1126f92c20.png)
+
+Workspace 2 - Browser
+![workspace-2](https://user-images.githubusercontent.com/27953725/103142327-b7da2b80-4701-11eb-8987-a60fb2c99735.png)
+
+Workspace 3 - Coding with Atom
+![workspace-3](https://user-images.githubusercontent.com/27953725/103142328-b9a3ef00-4701-11eb-8ded-ca9142547f02.png)
+
+Workspace 4 - Vim LaTeX writing and previewing with Zathura
+![workspace-4](https://user-images.githubusercontent.com/27953725/103142329-ba3c8580-4701-11eb-8ed1-a65e33a9b871.png)
