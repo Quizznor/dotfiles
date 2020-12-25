@@ -138,6 +138,9 @@ font pango:DejaVu Sans Mono 8
   # start compton
   exec --no-startup-id compton --config ~/.config/picom/picom.ini
 
+  # start usb automounting
+  exec --no-startup-id udiskie
+  
   # (re)start polybar, dunst and compton
   exec_always /home/quizznor/.config/scripts/polybar-launch.sh
   exec always /home/quizznor/.config/scripts/picom-restart.sh
