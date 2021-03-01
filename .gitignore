@@ -2,12 +2,20 @@
 # Exclude some dotfiles that are not relevant for the setup
 
 dconf/
+vlc/
+teams-for-linux/
+teams/
+qalculate/
+Microsoft/
 Atom/
 gtk-3.0/
 procps/
 volumeicon/
 discord/
 pulse/
+autostart/
+mimeapps.list
+QtProject.conf
 .vim/plugged/*
 ranger/plugins/*
 zoomus.conf

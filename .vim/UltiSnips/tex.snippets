@@ -1,5 +1,5 @@
 snippet img "A snippet for includegraphics" i
-$1`!p snip.rv = complete(t[1],get_img_files(snip.fn))`}
+$1`!p snip.rv = complete(t[1],get_img_files(snip.fn))`
 endsnippet
 
 snippet \input "A snippet for input" i
@@ -79,7 +79,7 @@ snippet fig "A snippet for figures" b
 	\centering
 	\includegraphics[width=${1:1.0}\textwidth]{${2:PATH}}
 	\caption{${3:CAPTION}}
-	\label{${4:LABEL}}
+	\label{fig:${4:LABEL}}
 endsnippet
 
 snippet twofig "A snippet for two figures" b
