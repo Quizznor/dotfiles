@@ -24,10 +24,11 @@ alias todo='todo.sh'
 alias job='job.sh'
 
 # utilities
-alias scrpt='autoscript.sh'
+alias scr='autoscript.sh'
 alias wrt='write.sh'
 alias xev='keymode.sh'
 alias ltx='tllocalmgr'
+alias del='delete.sh'
 
 
 # Keyboard layout & xev functionality

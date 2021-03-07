@@ -3,7 +3,7 @@
 STATUS=$(i3-msg -t get_workspaces | awk '/"num":4/ {print}')
 
 if [ -z $1 ]; then
-  CMD="--directory=$HOME/writing/ ranger"
+  CMD="--directory=$HOME/ ranger"
 else
   CMD="vim $1"
 fi

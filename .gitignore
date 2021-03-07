@@ -19,6 +19,7 @@ QtProject.conf
 .vim/plugged/*
 ranger/plugins/*
 zoomus.conf
+pavucontrol.ini
 
 # Exclude some scripts that are not relevant for the system
 

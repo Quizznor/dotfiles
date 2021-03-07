@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# use pavucontrol to change the codec of the headset, if desired
+
 PROMPT=("  \n  \n  ")
 ADDR="98:52:3D:27:D1:02"
 SINKNAME="bluez_sink.98_52_3D_27_D1_02.a2dp_sink"
