@@ -20,6 +20,7 @@ QtProject.conf
 ranger/plugins/*
 zoomus.conf
 pavucontrol.ini
+Microsoft\ Teams\ -\ Preview/
 
 # Exclude some scripts that are not relevant for the system
 
