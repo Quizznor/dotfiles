@@ -4,7 +4,7 @@
 * {
     selected-normal-foreground:  rgba ( 245, 245, 245, 100 % );
     foreground:                  #dfdfdf;
-    font:                        "Font Awesome 5 Free Solid 40";
+    font:                        "Font Awesome 5 Free Solid 36";
     normal-foreground:           @foreground;
     alternate-normal-background: rgba ( 208, 208, 208, 100 % );
     red:                         rgba ( 220, 50, 47, 100 % );
@@ -43,7 +43,7 @@ window {
     location:         north;
     x-offset:         0px;
     y-offset:         280px;
-    width:            34.5%;
+    width:            43.2%;
     height:           21%;
 }
 
@@ -63,7 +63,7 @@ listview {
     border-color: @bordercolor;
     spacing:      20px ;
     scrollbar:    false;
-    padding:      2px 20px 0px 20px;
+    padding:      10px 20px 0px 20px;
 }
 
 element {

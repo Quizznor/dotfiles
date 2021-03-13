@@ -25,6 +25,6 @@ case $SELECTED in
   pacmd set-default-sink $SINKNAME
   ;;
   *""*)
-  kitty --config=$HOME/.config/kitty/kitty.ini --title="floatterm" --hold pacmd list-sinks
+  kitty --config=$HOME/.config/kitty/kitty.conf --title="floatterm" --hold pacmd list-sinks
   ;;
 esac

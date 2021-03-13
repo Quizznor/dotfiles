@@ -14,7 +14,7 @@
   floating_modifier $mod
 
 ### System Font ###
-font pango:DejaVu Sans Mono 8
+  font pango:DejaVu Sans Mono 8
 
 ### Important keybinds (mostly default i3 stuff) ###
 
@@ -140,7 +140,7 @@ font pango:DejaVu Sans Mono 8
 
   # start usb automounting
   exec --no-startup-id udiskie
-  
+
   # (re)start polybar, dunst and compton
   exec_always /home/quizznor/.config/scripts/polybar-launch.sh
   exec always /home/quizznor/.config/scripts/picom-restart.sh
@@ -158,10 +158,10 @@ font pango:DejaVu Sans Mono 8
   bindcode 233 exec bash /home/quizznor/.config/scripts/set-brightness.sh +
 
   # change pacmd audio sinks
-  bindsym F1 exec bash /home/quizznor/.config/scripts/rofi-audiosink.sh
+  bindsym $mod+F1 exec bash /home/quizznor/.config/scripts/rofi-audiosink.sh
 
-  # execute powermenu
-  bindsym $mod+F1 exec bash /home/quizznor/.config/scripts/rofi-powermenu.sh
+  # change screen projection mode
+  bindsym $mod+p exec bash /home/quizznor/.config/scripts/rofi-screencast.sh
 
 ### System modes ###
 
