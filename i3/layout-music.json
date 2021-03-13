@@ -1,0 +1,77 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 702,
+       "width": 1338,
+       "x": 0,
+       "y": 0
+    },
+    "marks": [],
+    "name": "quizznor@beep-boop:~",
+    "percent": 0.403684210526316,
+    "swallows": [
+       {
+       // "class": "^kitty$",
+       // "instance": "^kitty$",
+       "title": "RANGER"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "marks": [],
+    "percent": 0.596315789473684,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1030,
+               "width": 1896,
+               "x": 4294967031,
+               "y": 4294967165
+            },
+            "marks": [],
+            "name": "mpv",
+            "percent": 0.64,
+            "swallows": [
+               {
+               "class": "^mpv$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 694,
+               "width": 475,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "quizznor@beep-boop:~/.config/i3",
+            "percent": 0.36,
+            "swallows": [
+               {
+               // "class": "^kitty$",
+               // "instance": "^kitty$",
+               "title": "VIS"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
