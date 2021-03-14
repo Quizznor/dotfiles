@@ -50,7 +50,7 @@ visualizer.spectrum.bar.spacing=0
 
 ##This configures the falloff effect on the spectrum visualizer. Available falloff options are fill,top,none.
 ##Defaults to "fill"
-#visualizer.spectrum.falloff.mode=fill
+visualizer.spectrum.falloff.mode=none
 
 ##Configures how fast the falloff character falls. This is an exponential falloff so values usually look
 ##best 0.9+ and small changes in this value can have a large effect. Defaults to 0.95

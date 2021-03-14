@@ -24,6 +24,7 @@ alias todo='todo.sh'
 alias job='job.sh'
 
 # utilities
+alias stream='mpv-playback.sh'
 alias scr='autoscript.sh'
 alias wrt='write.sh'
 alias xev='keymode.sh'
