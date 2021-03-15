@@ -30,6 +30,7 @@ alias wrt='write.sh'
 alias xev='keymode.sh'
 alias ltx='tllocalmgr'
 alias del='delete.sh'
+alias dl='python /home/quizznor/music/dl.py'
 
 
 # Keyboard layout & xev functionality
