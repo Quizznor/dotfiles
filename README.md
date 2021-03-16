@@ -17,6 +17,7 @@ There's not much else, really. Below is a list of the most important features th
 * Polybar with interactive powermenu, update notificator, calendar and a system tray for battery and wifi status.
 * Automatic setup and formatting for specific workspaces, these include a browser-, coding-, and writing workspace. 
 * vim LaTeX functionalities, including building and previewing of the final pdf. Snippets for important commands.
+* A music/video workspace taylored around mpv, the script i use to download music is located [in this repo](https://github.com/Quizznor/music).
 
 ## How you get it
 
@@ -49,3 +50,6 @@ Workspace 3 - Coding with Atom
 
 Workspace 4 - Vim LaTeX writing and previewing with Zathura
 ![workspace-4](https://user-images.githubusercontent.com/27953725/103142329-ba3c8580-4701-11eb-8ed1-a65e33a9b871.png)
+
+Workspace 5 - mpv media player coupled with ranger and vis
+![workspace-5](https://user-images.githubusercontent.com/27953725/111333610-2381c400-8673-11eb-895b-3ab2ef1a11df.png)
