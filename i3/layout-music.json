@@ -11,7 +11,7 @@
     },
     "marks": [],
     "name": "quizznor@beep-boop:~",
-    "percent": 0.41,
+    "percent": 0.43,
     "swallows": [
        {
        // "class": "^kitty$",
@@ -28,7 +28,7 @@
     "floating": "auto_off",
     "layout": "splitv",
     "marks": [],
-    "percent": 0.59,
+    "percent": 0.57,
     "type": "con",
     "nodes": [
         {
