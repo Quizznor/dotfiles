@@ -20,17 +20,19 @@ alias config='/usr/bin/git --git-dir=/home/quizznor/.config/.git --work-tree=/ho
 # Workflow
 alias cc='cd $HOME/.config'
 alias ss='cd $HOME/.config/scripts'
+alias gg='cd $HOME/git-repositories'
 alias todo='todo.sh'
 alias job='job.sh'
 
 # utilities
+alias scan='scanimage --device "airscan:w0:Brother DCP-7055W" --output-file'
+alias dl='python /home/quizznor/git-repositories/music/dl.py'
 alias stream='mpv-playback.sh'
 alias scr='autoscript.sh'
 alias wrt='write.sh'
 alias xev='keymode.sh'
 alias ltx='tllocalmgr'
 alias del='delete.sh'
-alias dl='python /home/quizznor/music/dl.py'
 
 
 # Keyboard layout & xev functionality

@@ -82,6 +82,7 @@
   bindsym $mod+3 exec bash /home/quizznor/.config/scripts/mv-coding.sh
   bindsym $mod+Shift+3 move container to workspace number $ws3
   assign [Class=Atom] $ws3
+  assign [Class=Electron6] $ws3
   assign [title="Open File"] $ws3
   for_window [Class="Matplotlib"] floating enable
   for_window [title="Open File"] resize set 800 450
@@ -102,12 +103,14 @@
   workspace $ws5 gaps outer 5
   workspace $ws5 gaps inner 10
 
-  # TODO
+  #WS6: SOCIAL
+  set $ws6 "6"
+  
 
 
   # WS6-10: REST
 
-  set $ws6 "6"
+
   set $ws7 "7"
   set $ws8 "8"
   set $ws9 "9"
