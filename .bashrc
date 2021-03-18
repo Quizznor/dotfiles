@@ -18,6 +18,8 @@ PS1='[\u@\h \W]\$ '
 alias config='/usr/bin/git --git-dir=/home/quizznor/.config/.git --work-tree=/home/quizznor/.config'
 
 # Workflow
+alias ..='cd ..'
+alias ..='cd ../..'
 alias cc='cd $HOME/.config'
 alias ss='cd $HOME/.config/scripts'
 alias gg='cd $HOME/git-repositories'
