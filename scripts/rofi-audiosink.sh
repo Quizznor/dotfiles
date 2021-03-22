@@ -14,15 +14,18 @@ case $SELECTED in
   bluetoothctl power off
   ;;
   *""*)
-  echo -e "power on\nagent on\nconnect $ADDR" | bluetoothctl
-
-  # still for some reason this only works on the second try?
-  while [ -z "$(pacmd list-sinks | awk '/bluez/{print}')" ]
+  # Attempt to connect to the headset. Timeout after 10 seconds (~9-10 retries)
+  RUNTIME=$((SECONDS+10))
+  while [[ -z "$(pacmd list-sinks | awk '/bluez/{print}')" && $SECONDS -lt $RUNTIME ]]
   do
+    echo $SECONDS
+    echo -e "power on\nagent on" | bluetoothctl
+    echo -e "connect $ADDR" | bluetoothctl
     sleep 1
   done
 
   pacmd set-default-sink $SINKNAME
+
   ;;
   *""*)
   kitty --config=$HOME/.config/kitty/kitty.conf --title="floatterm" --hold pacmd list-sinks

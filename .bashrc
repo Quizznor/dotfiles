@@ -28,6 +28,7 @@ alias job='job.sh'
 
 # utilities
 alias scan='scanimage --device "airscan:w0:Brother DCP-7055W" --output-file'
+alias print='lpr -P Brother_DCP-7055W'
 alias dl='python /home/quizznor/git-repositories/music/dl.py'
 alias stream='mpv-playback.sh'
 alias scr='autoscript.sh'

@@ -22,12 +22,10 @@ case $1 in
     amixer --quiet sset Speaker on
     ;;
 "+")
-    pactl set-sink-volume $SPKERNAME +1%
-    pactl set-sink-volume $HDPHNNAME +1%
+    pactl set-sink-volume @DEFAULT_SINK@ +1%
     ;;
 "-")
-    pactl set-sink-volume $SPKERNAME -1%
-    pactl set-sink-volume $HDPHNNAME -1%
+    pactl set-sink-volume @DEFAULT_SINK@ -1%
     ;;
 esac
 
