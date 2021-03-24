@@ -2,7 +2,7 @@
 
 tasks_done = len(open("/home/quizznor/documents/todone.txt").readlines())
 tasks_open = open("/home/quizznor/documents/todo.txt").readlines()
-groups = ["[TOP]","[MID]","[LOW]"]
+groups = ["[TOP]","[MID]","[BOT]"]
 colors = ["red", "yellow", "green"]
 tasks_left = len(tasks_open)
 

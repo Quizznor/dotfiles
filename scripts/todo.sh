@@ -7,8 +7,8 @@ case $1 in
   "am")
   URGENCY="[MID]"
   ;;
-  "al")
-  URGENCY="[LOW]"
+  "ab")
+  URGENCY="[BOT]"
   ;;
   "r")
   TASK=$(sed -n $2p $HOME/documents/todo.txt)
