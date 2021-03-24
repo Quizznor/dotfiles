@@ -24,7 +24,9 @@ case $SELECTED in
     sleep 1
   done
 
-  pacmd set-default-sink $SINKNAME
+  if ! [ -z "$(pacmd list-sinks | awk '/bluez/{print}')" ]; then
+    pacmd set-default-sink $SINKNAME
+  fi
 
   ;;
   *""*)
