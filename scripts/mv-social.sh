@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-STATUS=$(i3-msg -t get_workspaces | awk '/"num":6/ {print}')
+STATUS=$(i3-msg -t get_workspaces | awk '/"num":6,/ {print}')
 PROMPT=("  \n  \n  ")
 
 i3-msg workspace 6 > /dev/null

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-STATUS=$(i3-msg -t get_workspaces | awk '/"num":4/ {print}')
+STATUS=$(i3-msg -t get_workspaces | awk '/"num":4,/ {print}')
 
 if [ -z $1 ]; then
   CMD="--directory=$HOME/ ranger"
 else
-  CMD="vim $1"
+  CMD="vim $1 && disown"
 fi
 
 i3-msg workspace 4 > /dev/null
