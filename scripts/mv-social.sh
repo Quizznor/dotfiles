@@ -7,7 +7,7 @@ i3-msg workspace 6 > /dev/null
 
 if [ "$STATUS" == "" ]
 then
-  SELECTED=$(echo -en "${PROMPT[@]}" | rofi -dmenu -theme audiosinks -p "What do you want to do?" -l 5)
+  SELECTED=$(echo -en "${PROMPT[@]}" | rofi -dmenu -theme controlprompt-3 -p "What do you want to do?" -l 5)
 
   case $SELECTED in
     *""*)

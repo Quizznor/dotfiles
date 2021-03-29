@@ -19,7 +19,11 @@ alias config='/usr/bin/git --git-dir=/home/quizznor/.config/.git --work-tree=/ho
 
 # Workflow
 alias ..='cd ..'
-alias ..='cd ../..'
+alias ...='cd ../..'
+alias add='git add'
+alias status='git status'
+alias commit='git commit'
+alias push='git push'
 alias cc='cd $HOME/.config'
 alias ss='cd $HOME/.config/scripts'
 alias gg='cd $HOME/git-repositories'
