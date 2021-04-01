@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-OPTIONS=("  Power off" "\n  Standby" "\n  Restart" "\n  Logout" "\n  Lock")
+OPTIONS=(" " "\n " "\n " "\n " "\n ")
 SELECTED=$(echo -en "${OPTIONS[@]}" | rofi -dmenu -theme powermenu -p " System Option" -l 5)
 
 case $SELECTED in
@@ -13,7 +13,7 @@ case $SELECTED in
   *""*)
   systemctl reboot
   ;;
-  *""*)
+  *""*)
   i3-msg exit
   ;;
   *""*)
