@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-OPTIONS=(" " "\n " "\n " "\n " "\n ")
+OPTIONS=("" "\n" "\n" "\n" "\n")
 SELECTED=$(echo -en "${OPTIONS[@]}" | rofi -dmenu -theme powermenu -p " System Option" -l 5)
 
 case $SELECTED in
