@@ -16,7 +16,7 @@
     selected-active-foreground:  rgba ( 245, 245, 245, 100 % );
     alternate-active-background: rgba ( 208, 208, 208, 100 % );
     background:                  rgba ( 245, 245, 245, 100 % );
-    bordercolor:                 #457a08;
+    bordercolor:                 rgba ( 69, 122, 8, 100% );
     alternate-normal-foreground: @foreground;
     normal-background:           rgba ( 95, 95, 32, 6 % );
     lightfg:                     rgba ( 88, 104, 117, 100 % );
@@ -34,6 +34,7 @@
 }
 
 window {
+    border-radius:    5px;
     background-color: @background;
     border:           3;
     padding:          3;

@@ -6,5 +6,5 @@ i3-msg workspace 10 > /dev/null
 
 if [ "$STATUS" == "" ]
 then
-  rofi -show drun -theme Arc-Dark
+  rofi -show drun -theme apps
 fi

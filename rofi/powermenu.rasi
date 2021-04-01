@@ -1,8 +1,8 @@
 configuration {
     disable-history:                false;
     fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+	  hide-scrollbar: 				        true;
+	  sidebar-mode: 					        false;
 }
 
 * {
@@ -12,7 +12,6 @@ configuration {
     accent:                         rgba( 69, 122, 8, 100% );
     foreground:                     rgba( 255, 255, 255, 100% );
     background-color:               @background-window;
-
 }
 
 window {

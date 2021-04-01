@@ -34,6 +34,7 @@
 }
 
 window {
+    border-radius:    5px;
     background-color: @background;
     border:           3;
     padding:          3;
