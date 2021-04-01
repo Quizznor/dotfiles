@@ -23,14 +23,13 @@ configuration {
 
 }
 
-/* ~87 px height per element */
 window {
     transparency:                   "real";
     border-radius:                  12px;
-    width:                          100px;
-    height:                         356px;
+    width:                          150px;
+    height:                         516px;
     location:                       east;
-    x-offset:                       -15px;
+    x-offset:                       -20px;
     y-offset:                       0px;
 }
 
@@ -56,11 +55,11 @@ element {
 }
 
 element-text {
-	  font:							              "feather 45";
+	  font:							              "feather 68";
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0;
-    margin:                         0px 0px 60px 0px;
+    margin:                         0px 0px 100px 0px;
 }
 
 element normal.urgent,
@@ -79,7 +78,7 @@ element alternate.active {
 element selected {
     background-color:               @background-window;
     text-color:                     @foreground;
-    border:                  		    2px;
+    border:                  		    3px;
     border-radius:                  10px;
     border-color:                  	@accent;
 }

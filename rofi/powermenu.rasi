@@ -6,9 +6,11 @@ configuration {
 }
 
 * {
-    background-window:              rgba( 95, 122, 113, 60%);
-    background-panel:               rgba( 122, 149, 133, 60%);
-    foreground:                     rgba( 69, 122, 8, 100% );
+    background-window:              rgba( 95, 122, 113, 30%);
+    background-selected:            rgba( 81, 99, 93, 90%);
+    background-panel:               rgba( 122, 149, 133, 70%);
+    accent:                         rgba( 69, 122, 8, 100% );
+    foreground:                     rgba( 255, 255, 255, 100% );
     background-color:               @background-window;
 
 }
@@ -66,11 +68,11 @@ element alternate.active {
 }
 
 element selected {
-    background-color:               @background-window;
+    background-color:               @background-selected;
     text-color:                     @foreground;
-    border:                  		    2px;
+    border:                  		    4px;
     border-radius:                  10px;
-    border-color:                  	@foreground;
+    border-color:                  	@accent;
 }
 
 element selected.urgent {

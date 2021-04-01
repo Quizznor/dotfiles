@@ -60,6 +60,7 @@
   for_window [title="Event Tester"] floating enable
   for_window [title="floatterm"] floating enable
   for_window [title="floatterm"] resize set 1000 500
+  for_window [floating] move position center
 
   client.focused          #457a08 #457a08 #FFFFFF #FFFFFF #457a08
   client.focused_inactive #a6abaa #00000000 #00000000 #00000000
