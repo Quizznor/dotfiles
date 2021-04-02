@@ -156,6 +156,9 @@
   # start usb automounting
   exec --no-startup-id udiskie
 
+  # start touchpad monitor
+  exec --no-startup-id python /home/quizznor/.config/scripts/touchpad-monitor.py
+
   # (re)start polybar, dunst and compton
   exec_always /home/quizznor/.config/scripts/polybar-launch.sh
   exec always /home/quizznor/.config/scripts/picom-restart.sh

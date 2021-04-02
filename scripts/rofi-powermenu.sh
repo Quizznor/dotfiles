@@ -13,7 +13,7 @@ case $SELECTED in
   *""*)
   systemctl reboot
   ;;
-  *""*)
+  *""*)
   i3-msg exit
   ;;
   *""*)
