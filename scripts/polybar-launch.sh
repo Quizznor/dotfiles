@@ -4,7 +4,13 @@
 
 killall -q polybar cbatticon nm-applet volumeicon
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-polybar --config=/home/quizznor/.config/polybar/config.ini main & disown
+
+# Make polybar appear on every monitor
+for m in $(polybar --list-monitors | cut -d":" -f1); do
+    MONITOR=$m polybar --config=/home/quizznor/.config/polybar/config.ini main & disown &
+done
+
+$m polybar --config=/home/quizznor/.config/polybar/config.ini main & disown &
 
 # also repopulate sys-tray with important status icons
 # Simply add the application of your choice in TRAYVARS.
