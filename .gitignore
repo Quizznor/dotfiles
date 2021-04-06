@@ -24,6 +24,7 @@ zoomus.conf
 pavucontrol.ini
 Microsoft\ Teams\ -\ Preview/
 cef_user_data/
+google-chrome/
 
 # Exclude some scripts that are not relevant for the system
 

@@ -163,10 +163,11 @@
   # start touchpad monitor
   exec --no-startup-id python /home/quizznor/.config/scripts/touchpad-monitor.py
 
-  # (re)start polybar, dunst and compton
+  # (re)start polybar, dunst, compton and pulseaudio
   exec_always /home/quizznor/.config/scripts/polybar-launch.sh
   exec always /home/quizznor/.config/scripts/picom-restart.sh
   exec_always /home/quizznor/.config/scripts/dunst-restart.sh
+  exec_always start-pulseaudio-x11
 
 ### Utility keys ###
 
