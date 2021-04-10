@@ -1,5 +1,6 @@
 # Open document in fit-width mode by default
 set adjust-open "best-fit"
+set guioptions none
 
 set font "inconsolata 10"
 set default-fg "#000000" #00

@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+# THIS SCRIPT CURRENTLY HAS SOME PROBLEMS REGARDING DEVICE IDENTIFICATION
+# IT MIGHT LOCK YOUR TOUCHPAD WHEN YOU CONNECT ANOTHER USB DEVICE TO YOUR PC
+
+
 import pyudev
 import subprocess
 
@@ -29,8 +33,11 @@ while True:
 
     for action, device in monitor:
 
-        # # Left this for debugging purposes
-        # print(f"{action} for {device} @ {device.driver}")
+        # # # Left this for debugging purposes
+        # print(f"{action} for {device}")
+        # print(f"device subsystem: {device.subsystem}")
+        # print(f"device driver: {device.driver}")
+        # print(f"device type: {device.device_type}")
 
         # Mouse is added
         if action == "add" and device.driver == "usbhid":
