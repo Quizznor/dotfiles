@@ -153,7 +153,7 @@
 
   # launch xautolock (screensaver)
   exec bash /home/quizznor/.config/scripts/lockscreen.sh
-  
+
   # start compton
   exec --no-startup-id compton --config ~/.config/picom/picom.ini
 
@@ -161,7 +161,7 @@
   exec --no-startup-id udiskie
 
   # start touchpad monitor
-  exec --no-startup-id python /home/quizznor/.config/scripts/touchpad-monitor.py
+  # exec --no-startup-id python /home/quizznor/.config/scripts/touchpad-monitor.py
 
   # (re)start polybar, dunst, compton and pulseaudio
   exec_always /home/quizznor/.config/scripts/polybar-launch.sh
