@@ -1,6 +1,7 @@
 
 # Exclude some dotfiles that are not relevant for the setup
 
+rncbc.org/
 dconf/
 vlc/
 teams-for-linux/
