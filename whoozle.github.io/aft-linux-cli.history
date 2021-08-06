@@ -1,0 +1,44 @@
+ls
+cd DCIM/ Pictures/
+ls
+help
+cd DCIM/
+ls
+cd 100ANDRO/ 
+ls
+mv DSC_0182.JPG ~/
+cp DSC_0182.JPG ~/
+help
+get DSC_0182.JPG ~/
+get DSC_0182.JPG
+ls
+clear
+help
+put DSC_0182.JPG ~/
+ls
+put DSC_0217.JPG ~/
+put DSC_0205.JPG ~/
+put DSC_0215.JPG ~/
+put DSC_0215.JPG ~/
+ls
+help
+ls
+cd
+cd ..
+ls
+put 100ANDRO/DSC_0217.JPG ~/
+cd 100ANDRO/ 
+ls
+cd ~
+ls
+help
+cd ..
+ls
+rm-id 748
+ls
+help
+cd 100/ANDRO
+ls
+help
+get DSC_0217.JPG
+exit

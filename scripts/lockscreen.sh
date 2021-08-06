@@ -66,12 +66,12 @@ else
 
     bw="white"
     icon="/home/quizznor/documents/lock.png"
-    param=("--insidecolor=00000000" "--ringcolor=35707f" "--bshlcolor=d18031"\
-        "--linecolor=ffffff00" "--keyhlcolor=d18031" "--ringvercolor=00000000" \
-        "--separatorcolor=00000000" "--insidevercolor=00000000" \
-        "--ringwrongcolor=35707f" "--insidewrongcolor=00000000" \
-        "--verifcolor=00000000" "--wrongcolor=00000000" "--timecolor=00000000" \
-        "--datecolor=00000000" "--layoutcolor=00000000" "--radius=83" "--ring-width=15")
+    param=("--inside-color=00000000" "--ring-color=35707f" "--bshl-color=d18031"\
+        "--line-color=ffffff00" "--keyhl-color=d18031" "--ringver-color=00000000" \
+        "--separator-color=00000000" "--insidever-color=00000000" \
+        "--ringwrong-color=35707f" "--insidewrong-color=00000000" \
+        "--verif-color=00000000" "--wrong-color=00000000" "--time-color=00000000" \
+        "--date-color=00000000" "--layout-color=00000000" "--radius=83" "--ring-width=15")
 
     convert "$image" "${hue[@]}" "${effect[@]}" -font "$font" -pointsize 26 -fill "$bw" -gravity center \
         -annotate +0+160 "$text" "$icon" -gravity center -composite "$image"

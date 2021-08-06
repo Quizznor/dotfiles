@@ -9,8 +9,12 @@ tasks_left = len(tasks_open)
 print("\n\tTODO LIST: %i OPEN, %i COMPLETED"%(tasks_left,tasks_done))
 print("-"*44+"\n")
 
-for i,group in enumerate(groups):
-    for j,line in enumerate(tasks_open):
-        if group in line:
-            print(" ${color %s}"%(colors[i])+str(j+1).zfill(2)+" "+line.rstrip(),"$color")
-    print()
+if tasks_left != 0:
+    for i,group in enumerate(groups):
+        for j,line in enumerate(tasks_open):
+
+            if group in line:
+                print(" ${color %s}"%(colors[i])+str(j+1).zfill(2)+" "+line.rstrip(),"$color")
+        print()
+else:
+    print(7*" "+"all done! c=")
