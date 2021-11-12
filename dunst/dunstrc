@@ -17,6 +17,7 @@
     # will be ignored.
     follow = mouse
 
+    #### DEPRECATED
     # The geometry of the window:
     #   [{width}]x{height}[+/-{x}+/-{y}]
     # The geometry of the message window.
@@ -29,7 +30,12 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "0x0-30+10"
+    # geometry = "200x200-30+10"
+
+    origin = top-right
+    offset = 30x30
+    width = (0,1000)
+    heigh = (0,400)
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = no
@@ -139,7 +145,7 @@
     # Show age of message if message is older than show_age_threshold
     # seconds.
     # Set to -1 to disable.
-    show_age_threshold = 60
+    show_age_threshold = -1
 
     # Split notifications into multiple lines if they don't fit into
     # geometry.

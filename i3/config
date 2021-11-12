@@ -182,7 +182,7 @@
   bindcode 233 exec bash /home/quizznor/.config/scripts/set-brightness.sh +
 
   # change pacmd audio sinks
-  bindsym $mod+F1 exec bash /home/quizznor/.config/scripts/rofi-audiosink.sh
+  bindsym $mod+F6 exec bash /home/quizznor/.config/scripts/rofi-audiosink.sh
 
   # change screen projection mode
   bindsym $mod+p exec bash /home/quizznor/.config/scripts/rofi-screencast.sh
