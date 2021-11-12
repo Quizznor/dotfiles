@@ -28,7 +28,7 @@ function notify_media(title, origin, thumbnail)
         -- nondeterministically fails to pick up the notification icon
         -- if either of these two parameters are present.
         --
-        -- urgency = "low",
+        -- urgency = "normal",
         -- ["app-name"] = "mpv",
 
         -- ...and this one makes notifications nondeterministically
@@ -81,17 +81,9 @@ function notify_current_media()
         end
 
         title = tag("title") or title
-        origin = tag("artist_credit") or tag("artist") or ""
-
-        local album = tag("album")
-        if album then
-            origin = string.format("%s — %s", origin, album)
-        end
-
-        local year = tag("original_year") or tag("year")
-        if year then
-            origin = string.format("%s (%s)", origin, year)
-        end
+        title = string.format("%s",title)
+        origin = tag("artist_credit") or tag("artist") or "unknown artist"
+        origin = string.format("by %s",origin)
     end
 
     return notify_media(title, origin, thumbnail)

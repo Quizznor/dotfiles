@@ -34,7 +34,7 @@
 
     origin = top-right
     offset = 30x30
-    width = (0,1000)
+    width = (0,500)
     heigh = (0,400)
 
     # Show how many messages are currently hidden (because of geometry).
@@ -178,7 +178,7 @@
     min_icon_size = 0
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 32
+    max_icon_size = 64
 
     # Paths to default icons.
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
@@ -306,6 +306,7 @@
     #icon = /path/to/icon
 
 [urgency_normal]
+    frame_color = "#457a08"
     background = "#222222"
     foreground = "#dfdfdf"
     timeout = 5
