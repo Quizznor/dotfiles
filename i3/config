@@ -139,6 +139,7 @@
   bindsym $mod+Shift+0 move container to workspace number $ws10
   assign [class="Minecraft"] $ws10
   assign [title="Minecraft Launcher"] $ws10
+  assign [class="Steam"] $ws10
 
 
 

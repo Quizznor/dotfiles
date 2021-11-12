@@ -18,6 +18,10 @@ if [[ ! -z "$(pidof vlc)" ]]; then
   let TRAY_ICONS=$TRAY_ICONS+5
 fi
 
+if [[ ! -z "$(pidof steam)" ]]; then
+  let TRAY_ICONS=$TRAY_ICONS+5
+fi
+
 if [[ ! -z "$(pidof Discord)" ]]; then
   let TRAY_ICONS=$TRAY_ICONS+6
 fi

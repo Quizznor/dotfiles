@@ -6,8 +6,8 @@ groups = ["[TOP]","[MID]","[BOT]"]
 colors = ["red", "yellow", "green"]
 tasks_left = len(tasks_open)
 
-print("\n\tTODO LIST: %i OPEN, %i COMPLETED"%(tasks_left,tasks_done))
-print("-"*44+"\n")
+print("\n TODO LIST: %i OPEN, %i COMPLETED"%(tasks_left,tasks_done))
+print("-"*40+"\n")
 
 if tasks_left != 0:
     for i,group in enumerate(groups):

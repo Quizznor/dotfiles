@@ -1,6 +1,8 @@
 
 # Exclude some dotfiles that are not relevant for the setup
 
+Skype/
+VirtualBox/
 rncbc.org/
 dconf/
 vlc/
