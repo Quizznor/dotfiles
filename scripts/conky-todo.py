@@ -7,7 +7,7 @@ colors = ["red", "yellow", "green"]
 tasks_left = len(tasks_open)
 
 print("\n TODO LIST: %i OPEN, %i COMPLETED"%(tasks_left,tasks_done))
-print("-"*40+"\n")
+print("-"*44+"\n")
 
 if tasks_left != 0:
     for i,group in enumerate(groups):

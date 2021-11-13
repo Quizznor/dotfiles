@@ -170,6 +170,9 @@
   exec_always /home/quizznor/.config/scripts/dunst-restart.sh
   exec_always start-pulseaudio-x11
 
+  # init dbus address so cron can use libnotify
+  exec /home/quizznor/.config/scripts/init-dbus-address.sh
+
 ### Utility keys ###
 
   # change volume settings (using alsa & pacmd)
