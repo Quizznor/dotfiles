@@ -4,7 +4,7 @@ OPTIONS=("" "\n" "\n" "\n" "\n")
 SELECTED=$(echo -en "${OPTIONS[@]}" | rofi -dmenu -theme powermenu -p " System Option" -l 5)
 
 function check_abort_action {
-  if [ -f "/var/lib/pacman/db.lck" ] then
+  if [ -f "/var/lib/pacman/db.lck" ]; then
     dunstify --urgency=critical --replace 40195 "Update in progress!"
     exit 1
   fi
