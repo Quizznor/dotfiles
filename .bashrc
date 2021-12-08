@@ -3,6 +3,7 @@
 #
 
 export TERM=kitty
+export EDITOR=nano
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
