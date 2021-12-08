@@ -2,7 +2,7 @@
 
 # use pavucontrol to change the codec of the headset, if desired
 
-PROMPT=("  \n  \n  \n  \n  ")
+PROMPT=("  \n  \n  \n  \n  ")
 HEADPHONE_ADDRESS="98:52:3D:27:D1:02"
 SPEAKER_SINK="alsa_output.pci-0000_00_1f.3.analog-stereo"
 HEADPHONE_SINK="alsa_output.usb-GeneralPlus_USB_Audio_Device-00.iec958-stereo"
@@ -22,7 +22,7 @@ case $SELECTED in
   bluetoothctl power off
   pacmd set-default-sink $HEADPHONE_SINK
   ;;
-  
+
   *""*) # Bluetooth headset
   RUNTIME=$((SECONDS+10)) # Attempt to connect to the headset. Timeout after 10 seconds (~9-10 retries)
   while [[ -z "$(pacmd list-sinks | awk '/bluez/{print}')" && $SECONDS -lt $RUNTIME ]]
