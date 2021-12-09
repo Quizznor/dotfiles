@@ -19,7 +19,7 @@
 ### Important keybinds (mostly default i3 stuff) ###
 
   # Call powermenu
-  bindsym $mod+Shift+e exec bash /home/quizznor/.config/scripts/rofi-powermenu.sh
+  bindsym $mod+Shift+e exec bash $HOME/.config/scripts/rofi-powermenu.sh
 
   # Utility
   bindsym $mod+Return exec kitty
@@ -69,7 +69,7 @@
 
   # WS1: HOME
   set $ws1 "1"
-  bindsym $mod+1 exec bash /home/quizznor/.config/scripts/mv-home.sh
+  bindsym $mod+1 exec bash $HOME/.config/scripts/mv-home.sh
   bindsym $mod+Shift+1 move container to workspace number $ws1
   workspace $ws1 gaps top 10
   workspace $ws1 gaps inner 10
@@ -77,13 +77,13 @@
 
   # WS2: FIREFOX
   set $ws2 "2"
-  bindsym $mod+2 exec bash /home/quizznor/.config/scripts/mv-firefox.sh
+  bindsym $mod+2 exec bash $HOME/.config/scripts/mv-firefox.sh
   bindsym $mod+Shift+2 move container to workspace number $ws2
   assign [Class=firefox] $ws2
 
   # WS3: CODING
   set $ws3 "3"
-  bindsym $mod+3 exec bash /home/quizznor/.config/scripts/mv-coding.sh
+  bindsym $mod+3 exec bash $HOME/.config/scripts/mv-coding.sh
   bindsym $mod+Shift+3 move container to workspace number $ws3
   assign [Class=Atom] $ws3
   assign [Class=Electron6] $ws3
@@ -93,7 +93,7 @@
 
   # WS4: WRITING
   set $ws4 "4"
-  bindsym $mod+4 exec bash /home/quizznor/.config/scripts/mv-writing.sh
+  bindsym $mod+4 exec bash $HOME/.config/scripts/mv-writing.sh
   bindsym $mod+Shift+4 move container to workspace number $ws4
   assign [Class=Zathura] $ws4
   workspace $ws4 gaps outer 2
@@ -102,7 +102,7 @@
   # WS5: MUSIC
   set $ws5 "5"
 
-  bindsym $mod+5 exec bash /home/quizznor/.config/scripts/mv-music.sh
+  bindsym $mod+5 exec bash $HOME/.config/scripts/mv-music.sh
   bindsym $mod+Shift+5 move container to workspace number $ws5
 
   workspace $ws5 gaps outer 5
@@ -110,7 +110,7 @@
 
   # WS6: SOCIAL
   set $ws6 "6"
-  bindsym $mod+6 exec bash /home/quizznor/.config/scripts/mv-social.sh
+  bindsym $mod+6 exec bash $HOME/.config/scripts/mv-social.sh
   assign [Class=discord] $ws6
   assign [Class="Microsoft Teams - Preview"] $ws6
   assign [Class=zoom] $ws6
@@ -135,7 +135,7 @@
 
   # WS10: APPLICATION
   set $ws10 "10"
-  bindsym $mod+0 exec bash /home/quizznor/.config/scripts/mv-apps.sh
+  bindsym $mod+0 exec bash $HOME/.config/scripts/mv-apps.sh
   bindsym $mod+Shift+0 move container to workspace number $ws10
   assign [class="Minecraft"] $ws10
   assign [title="Minecraft Launcher"] $ws10
@@ -147,13 +147,13 @@
 ### System (re)start ###
 
   # initialize home screen
-  exec bash /home/quizznor/.config/scripts/mv-home.sh
+  exec bash $HOME/.config/scripts/mv-home.sh
 
   # set background image
-  exec --no-startup-id feh --bg-fill /home/quizznor/documents/background.png
+  exec --no-startup-id feh --bg-fill $HOME/documents/background.png
 
   # launch xautolock (screensaver)
-  exec bash /home/quizznor/.config/scripts/lockscreen.sh
+  exec bash $HOME/.config/scripts/lockscreen.sh
 
   # start compton
   exec --no-startup-id compton --config ~/.config/picom/picom.ini
@@ -162,38 +162,38 @@
   exec --no-startup-id udiskie
 
   # start touchpad monitor
-  # exec --no-startup-id python /home/quizznor/.config/scripts/touchpad-monitor.py
+  # exec --no-startup-id python $HOME/.config/scripts/touchpad-monitor.py
 
   # (re)start polybar, dunst, compton and pulseaudio
-  exec_always /home/quizznor/.config/scripts/polybar-launch.sh
-  exec always /home/quizznor/.config/scripts/picom-restart.sh
-  exec_always /home/quizznor/.config/scripts/dunst-restart.sh
+  exec_always $HOME/.config/scripts/polybar-launch.sh
+  exec always $HOME/.config/scripts/picom-restart.sh
+  exec_always $HOME/.config/scripts/dunst-restart.sh
   exec_always start-pulseaudio-x11
 
   # init dbus address so cron can use libnotify
-  exec /home/quizznor/.config/scripts/init-dbus-address.sh
+  exec $HOME/.config/scripts/init-dbus-address.sh
 
 ### Utility keys ###
 
   # change volume settings (using alsa & pacmd)
-  bindsym XF86AudioRaiseVolume exec bash /home/quizznor/.config/scripts/set-volume.sh +
-  bindsym XF86AudioLowerVolume exec bash /home/quizznor/.config/scripts/set-volume.sh -
-  bindsym XF86AudioMute exec bash /home/quizznor/.config/scripts/set-volume.sh toggle
+  bindsym XF86AudioRaiseVolume exec bash $HOME/.config/scripts/set-volume.sh +
+  bindsym XF86AudioLowerVolume exec bash $HOME/.config/scripts/set-volume.sh -
+  bindsym XF86AudioMute exec bash $HOME/.config/scripts/set-volume.sh toggle
 
   # change screen brightness (using brightnessctl)
-  bindcode 232 exec bash /home/quizznor/.config/scripts/set-brightness.sh -
-  bindcode 233 exec bash /home/quizznor/.config/scripts/set-brightness.sh +
+  bindcode 232 exec bash $HOME/.config/scripts/set-brightness.sh -
+  bindcode 233 exec bash $HOME/.config/scripts/set-brightness.sh +
 
   # change pacmd audio sinks
-  bindsym $mod+F6 exec bash /home/quizznor/.config/scripts/rofi-audiosink.sh
+  bindsym $mod+F6 exec bash $HOME/.config/scripts/rofi-audiosink.sh
 
   # change screen projection mode
-  bindsym $mod+p exec bash /home/quizznor/.config/scripts/rofi-screencast.sh
+  bindsym $mod+p exec bash $HOME/.config/scripts/rofi-screencast.sh
 
   # toggle playback and control playlist of mpv
-  bindsym XF86AudioPlay exec bash /home/quizznor/.config/scripts/mpv-remote.sh toggle
-  bindsym XF86AudioNext exec bash /home/quizznor/.config/scripts/mpv-remote.sh next
-  bindsym XF86AudioPrev exec bash /home/quizznor/.config/scripts/mpv-remote.sh prev
+  bindsym XF86AudioPlay exec bash $HOME/.config/scripts/mpv-remote.sh toggle
+  bindsym XF86AudioNext exec bash $HOME/.config/scripts/mpv-remote.sh next
+  bindsym XF86AudioPrev exec bash $HOME/.config/scripts/mpv-remote.sh prev
 
 ### System modes ###
 
