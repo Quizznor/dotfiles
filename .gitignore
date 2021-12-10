@@ -1,6 +1,7 @@
-
 # Exclude some dotfiles that are not relevant for the setup
 
+code-oss/
+Code - OSS/
 Skype/
 VirtualBox/
 rncbc.org/

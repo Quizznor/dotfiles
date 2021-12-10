@@ -85,9 +85,8 @@
   set $ws3 "3"
   bindsym $mod+3 exec bash $HOME/.config/scripts/mv-coding.sh
   bindsym $mod+Shift+3 move container to workspace number $ws3
-  assign [Class=Atom] $ws3
-  assign [Class=Electron6] $ws3
-  assign [title="Open File"] $ws3
+  assign [Class=code-oss] $ws3
+  assign [Class=Electron] $ws3
   for_window [Class="Matplotlib"] floating enable
   for_window [title="Open File"] resize set 800 450
 
@@ -101,7 +100,6 @@
 
   # WS5: MUSIC
   set $ws5 "5"
-
   bindsym $mod+5 exec bash $HOME/.config/scripts/mv-music.sh
   bindsym $mod+Shift+5 move container to workspace number $ws5
 

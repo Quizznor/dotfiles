@@ -4,7 +4,7 @@ STATUS=$(i3-msg -t get_workspaces | awk '/"num":3,/ {print}')
 
 if [ "$STATUS" == "" ]
 then
-    atom &
+    code &
 
 fi
 
