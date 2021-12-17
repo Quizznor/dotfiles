@@ -3,7 +3,7 @@
 #
 
 export TERM=kitty
-export EDITOR=nano
+export EDITOR=vim
 
 # Reset polybar module upon updating system
 alias up='yay -Syu && $HOME/.config/scripts/update-monitor.sh'
