@@ -15,7 +15,7 @@ case $SELECTED in
 
   *""*) # Notebook speakers
   bluetoothctl power off
-  pacmd set-default-sink $SPEAKER_SINK    # Whichever of these is currently connected
+  pacmd set-default-sink $SPEAKER_SINK
   ;;
 
   *""*) # Headphone with cable
@@ -23,11 +23,10 @@ case $SELECTED in
   pacmd set-default-sink $HEADPHONE_SINK
   ;;
 
-  *""*) # Bluetooth headset
+  *""*) # Bluetooth headset
   RUNTIME=$((SECONDS+10)) # Attempt to connect to the headset. Timeout after 10 seconds (~9-10 retries)
   while [[ -z "$(pacmd list-sinks | awk '/bluez/{print}')" && $SECONDS -lt $RUNTIME ]]
   do
-    echo $SECONDS
     echo -e "power on\nagent on" | bluetoothctl
     echo -e "connect $HEADPHONE_ADDRESS" | bluetoothctl
     sleep 1

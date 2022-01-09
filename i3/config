@@ -85,8 +85,8 @@
   set $ws3 "3"
   bindsym $mod+3 exec bash $HOME/.config/scripts/mv-coding.sh
   bindsym $mod+Shift+3 move container to workspace number $ws3
-  assign [Class=code-oss] $ws3
-  assign [Class=Electron] $ws3
+  assign [Class=code] $ws3
+  assign [Class=Code] $ws3
   for_window [Class="Matplotlib"] floating enable
   for_window [title="Open File"] resize set 800 450
 
