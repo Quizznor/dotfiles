@@ -59,6 +59,9 @@
   for_window [class="^.*"] border pixel 3
   for_window [title="Event Tester"] floating enable
   for_window [title="floatterm"] floating enable
+  for_window [title="Job Manager"] floating enable
+  for_window [title="Edit Job"] floating enable
+  for_window [class="Toplevel"] floating enable
   for_window [title="floatterm"] resize set 1000 500
   for_window [floating] move position center
 
