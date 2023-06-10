@@ -65,5 +65,5 @@ element selected.active {
     background-color:               @transparent;
     border-color:                  	@accent;
     border-radius:                  0px;
-    border:                  		5px;
+    border:                  		2px;
 }
