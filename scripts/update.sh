@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [ -z "$1"]; then
+if [ -z "$1" ]; then
 
     MODULES=$(cat $HOME/system/.updates)
 
@@ -13,8 +13,9 @@ if [ -z "$1"]; then
         icon=update-none ;;
     esac
 
-    echo "| iconName=$icon onclick=bash bash=$HOME/.config/scripts/update.sh update"
+    echo "| iconName=$icon onclick=bash bash='$HOME/.config/scripts/update.sh update'"
 else 
     konsole -e yay -Syu
     wmctrl -a yay
+    echo "" > $HOME/system/.updates
 fi
