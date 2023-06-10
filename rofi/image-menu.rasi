@@ -1,0 +1,69 @@
+configuration {
+    disable-history:                false;
+    fullscreen:                     false;
+	hide-scrollbar: 				true;
+	sidebar-mode: 					true;
+}
+
+* {
+    transparent:                    #00000000;
+    dim-black:                      #00000077;
+    black:                          #000000FF;
+    white:                          #FFFFFFFF;
+    accent:                         #4D5E8BFF;
+    background-color:               @transparent;
+}
+
+window {
+    location:                       west;
+    y-offset:                       0px;
+    x-offset:                       0px;
+    border-radius:                  0px;
+    width:                          424px;
+    height:                         732px;
+    transparency:                   "real";
+}
+
+listview {
+    lines:							3;
+    margin:                         27px 15px 0px 25px;
+    spacing:                        10px;
+    cycle:                          false;
+    dynamic:                        false;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @transparent;
+    children:                       [ listview ];
+    margin:                         0px 0px 0px 0px;
+}
+
+element-text {
+	font:                           "feather 1";
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0;
+    margin:                         10px 160px 203px -160px;
+    text-color:                     @white;
+}
+
+element,
+element normal.urgent,
+element alternate.urgent,
+element normal.active,
+element alternate.active {
+    background-color:               @dim-black;
+    text-color:                     @white;
+    orientation:                    vertical;
+    border-radius:                  0px;
+}
+
+element selected,
+element selected.urgent,
+element selected.active {
+    background-color:               @transparent;
+    border-color:                  	@accent;
+    border-radius:                  0px;
+    border:                  		5px;
+}
