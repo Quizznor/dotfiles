@@ -18,8 +18,12 @@ if [ -z "$1"]; then
     echo "| image=$ICON imageWidth=40 imageHeight=20 bash='$HOME/.config/scripts/powermenu.sh exit' onclick=bash"
 else
     if [ -f "/var/lib/pacman/db.lck" ]; then
-        ACTION=$(notify-send -a "Update" --action="default, goto" "Update in progress!")
-        
+
+        BODY="Click to switch window focus"
+        SUMMARY="Update in progress!"
+
+        ACTION=$(notify-send -a "Update" --action="default, goto" $SUMMARY $BODY)
+
         if [ $ACTION = "0" ]; then
             wmctrl -a yay
         fi
