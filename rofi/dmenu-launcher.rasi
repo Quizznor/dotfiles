@@ -1,0 +1,100 @@
+configuration {
+	font:                             "FantasqueSansMono Nerd Font 12";
+  show-icons:                       true;
+	icon-theme: 					            "Breeze";
+  disable-history:                  false;
+  fullscreen:                       true;
+	hide-scrollbar: 				          true;
+  display-drun: 					          "";
+  drun-display-format:              "{name}";
+  normalize-match:                  true;
+  matching-method:                  "normal";
+}
+
+* {
+    transparent:                    #00000000;
+    dim-black:                      #00000077;
+    black:                          #000000FF;
+    white:                          #FFFFFFFF;
+    accent:                         #4D5E8BFF;
+    input-background:               #1B1E20FF;
+    window-background:              #3B4045FF;
+    accent-border:                  #5E699DFF;
+}
+
+window {
+  transparency:                     "real";
+  background-color:                 @transparent;
+  text-color:                       @transparent;
+  border:							              0px;
+  border-radius:                    0px;
+  height:                           100%;
+  width:                            100%;
+  location:                         center;
+  x-offset:                         0;
+  y-offset:                         0;
+}
+
+mainbox {
+  background-color:               @dim-black;
+  children:                       [ inputbar, listview ];
+  spacing:                       	5px;
+  padding:                        10px 400px 0px 400px;
+}
+
+inputbar {
+  background-color:               @accent;
+  children:                       [ prompt, entry];
+  border:                         10px 10px 10px 10px;
+  border-radius:                  2px;
+  spacing:                        0px;
+  border-color:                   @window-background;
+}
+
+prompt {
+  background-color:               @input-background;
+  text-color:                     @white;
+  padding:                        7px 0px -1px 10px;
+  border:                         2px 0px 2px 2px;
+  border-color:                   @accent;
+}
+
+entry {
+  background-color:               @input-background;
+  text-color:                     @white;
+  padding:                        3px 0px 3px 10px;
+  border:                         2px 2px 2px 0px;
+  placeholder:                    "Search Applications";
+  placeholder-color:              @window-background;
+  blink:                          true;
+}
+
+listview {
+    background-color:               @transparent;
+    columns:                        2;
+    spacing:                        0px;
+    cycle:                          true;
+}
+
+element {
+    background-color:               @window-background;
+    text-color:                     @window-background;
+    children:                       [ element-icon, element-text ];
+    orientation:                    horizontal;
+    spacing:                        5px;
+    border:                         2px;
+    border-radius:                  2px;
+}
+
+element-text,
+element-icon {
+  background-color:                 inherit;
+  text-color:                       white;
+  size:                             23px;
+}
+
+element selected {
+  background-color:                 @accent;
+  border-color:                     @accent-border;
+  border:                           2px;
+}

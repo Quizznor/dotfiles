@@ -5,7 +5,7 @@ if [ -z "$1" ]; then
     MODULES=$(cat $HOME/system/.updates)
 
     case $MODULES in
-        *"arch"*)
+        *"linux-headers"*)
         icon=update-high ;;
         "")
         icon="" ;;
