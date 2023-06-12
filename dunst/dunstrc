@@ -221,6 +221,8 @@
 
     ### History ###
 
+    history = ctrl+grave
+
     # Should a notification popped up from history be sticky or timeout
     # as if it would normally do.
     sticky_history = yes
@@ -345,6 +347,7 @@
     icon_position = top
     hide_text = true
     timeout = 1
+    history_ignore = true
 
 [SYS]
     appname="Update"

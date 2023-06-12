@@ -1,0 +1,67 @@
+configuration {
+	font:                           "FantasqueSansMono Nerd Font 10";
+  show-icons:                       false;
+	icon-theme: 					"Breeze";
+  disable-history:                  false;
+  fullscreen:                       true;
+	hide-scrollbar: 				true;
+}
+
+* {
+    transparent:                    #00000000;
+    dim-black:                      #00000077;
+    black:                          #000000FF;
+    white:                          #FFFFFFFF;
+    accent:                         #4D5E8BFF;
+    input-background:               #1B1E20FF;
+    window-background:              #3B4045FF;
+    accent-border:                  #5E699DFF;
+}
+
+window {
+  transparency:                     "real";
+  background-color:                 @window-background;
+  text-color:                       @transparent;
+  border:                           0px;
+  border-radius:                    0px;
+  height:                           46px;
+  width:                            150px;
+  location:                         east;
+  x-offset:                         -40px;
+  y-offset:                         314px;
+}
+
+mainbox {
+  background-color:               @dim-black;
+  children:                       [ listview ];
+  spacing:                        5px;
+  padding:                        0px 0px 0px 0px;
+}
+
+listview {
+    background-color:               @transparent;
+    columns:                        1;
+    spacing:                        0px;
+    cycle:                          true;
+}
+
+element {
+    background-color:               @window-background;
+    text-color:                     @window-background;
+    orientation:                    horizontal;
+    spacing:                        5px;
+    border:                         2px;
+    border-radius:                  2px;
+}
+
+element-text {
+  background-color:                 inherit;
+  text-color:                       white;
+  size:                             23px;
+}
+
+element selected {
+  background-color:                 @accent;
+  border-color:                     @accent-border;
+  border:                           2px;
+}
