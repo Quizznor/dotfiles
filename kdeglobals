@@ -172,6 +172,7 @@ Size=32
 Print=Ctrl+Shift+P
 PrintPreview=Ctrl+P
 Quit=
+SubstringCompletion=
 
 [WM]
 activeBackground=49,54,59
