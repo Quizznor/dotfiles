@@ -24,6 +24,11 @@ nnoremap <S-Tab> <<
 autocmd VimLeave *.tex :silent ! ~/.config/scripts/latex_build.sh %:p clean
 autocmd VimEnter *.tex :silent ! ~/.config/scripts/latex_build.sh %:p open
 
+" see vim-latex for details (mm for full build, nn for quick build)
+map mm :! /home/quizznor/.config/scripts/latex_build.sh %:p build full<CR><CR>
+map nn :! /home/quizznor/.config/scripts/latex_build.sh %:p build <CR><CR>
+
+
 
 
 

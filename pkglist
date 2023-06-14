@@ -42,6 +42,13 @@ rtw88-dkms-git r270.85fbbee-1
 scrot 1.10-1
 sddm 0.19.0-9
 sudo 1.9.13.p3-1
+texlive-bibtexextra 2023.66594-7
+texlive-core 2023.66594-7
+texlive-fontsextra 2023.66594-7
+texlive-formatsextra 2023.66594-7
+texlive-latexextra 2023.66594-7
+texlive-pictures 2023.66594-7
+texlive-science 2023.66594-7
 ttf-font-awesome 6.4.0-1
 vim 9.0.1628-1
 vpnc 1:0.5.3.r526.r213-1

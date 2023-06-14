@@ -28,11 +28,11 @@ if [ "$2" == "build" ]; then
     (cd $ROOT_DIR && pdflatex $ROOT_TEX)                  # Idk, run it again to be sure
   fi
 
-  # ...and view it
-  if [ ! $(pidof zathura) ]
-  then
-    zathura $ROOT_PDF &
-  fi
+  ## ...and view it
+  #if [ ! $(pidof zathura) ]
+  #then
+  #  zathura $ROOT_PDF &
+  #fi
 
 # show LaTex root pdf
 elif [ "$2" == "open" ]; then
