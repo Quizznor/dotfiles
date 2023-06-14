@@ -165,6 +165,9 @@ Sort reversed=false
 Speedbar Width=138
 View Style=DetailTree
 
+[KShortcutsDialog Settings]
+Dialog Size=600,480
+
 [MainToolbarIcons]
 Size=32
 

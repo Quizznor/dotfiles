@@ -24,11 +24,11 @@ window {
   text-color:                       @transparent;
   border:                           0px;
   border-radius:                    0px;
-  height:                           46px;
-  width:                            150px;
+  height:                           23px;
+  width:                            295px;
   location:                         east;
-  x-offset:                         -40px;
-  y-offset:                         314px;
+  x-offset:                         -30px;
+  y-offset:                         325px;
 }
 
 mainbox {
@@ -51,7 +51,6 @@ element {
     orientation:                    horizontal;
     spacing:                        5px;
     border:                         2px;
-    border-radius:                  2px;
 }
 
 element-text {
@@ -62,6 +61,6 @@ element-text {
 
 element selected {
   background-color:                 @accent;
-  border-color:                     @accent-border;
+  border-color:                     @accent;
   border:                           2px;
 }
