@@ -2,4 +2,4 @@
 
 wmctrl -s 3
 
-alacritty -e "ranger" "$HOME/latex/master-thesis/thesis"
+alacritty --config-file $HOME/.config/alacritty/ranger.yml -e "ranger" "$HOME/latex/master-thesis/thesis"
