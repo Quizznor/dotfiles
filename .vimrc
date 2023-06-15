@@ -15,6 +15,9 @@
   set termguicolors
   syntax on
 
+  " idk, this fixes a random visual glitch
+  set lines=50 columns=100
+
 """""""""""""""""""""""""""""
 " more helpful settings here
 
@@ -33,11 +36,6 @@ map nn :! /home/quizznor/.config/scripts/latex_build.sh %:p build <CR><CR>
 " custom highlighting for special LaTeX groups
 " Special syntax groups in .config/after/syntax/tex.vim
 " :so $VIMRUNTIME/syntax/hitest.vim  -->  list all syntax groups
-
-highlight texDocType guifg=#ffd866
-highlight texSection guifg=#ffd866 cterm=bold
-highlight texRefZone guifg=#4d5e8b cterm=bold
-
 
 " VimPlug section
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'

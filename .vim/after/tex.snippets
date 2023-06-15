@@ -1,0 +1,21 @@
+
+snippet \ref "A snippet for autoref" i
+$1`!p snip.rv = complete(t[1], ["test", "lol", "works"])`
+endsnippet
+
+
+# -- python interpolation ---------------------
+
+global !p
+
+# Autocompletion given a string t and options
+def complete(t,options):
+    if t:
+        options = [item[len(t):] for item in options if item.startswith(t)]
+
+    if len(options)==1:
+        return f"\\autoref{{{t}}}"
+
+    return "<<" + " | ".join(options) + ">>"
+
+endglobal
