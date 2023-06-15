@@ -24,5 +24,6 @@ Trolltech.conf
 user-dirs.dirs
 user-dirs.locale
 Electron/
+.vim/plugged/
 
 *rc
