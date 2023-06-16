@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+get_updates () {
+    checkupdates+aur | awk '{print $1}'
+}
+
 if [ -z "$1" ]; then
 
     MODULES=$(cat $HOME/system/.updates)
@@ -16,6 +20,7 @@ if [ -z "$1" ]; then
     echo "| iconName=$icon onclick=bash bash='$HOME/.config/scripts/update.sh update'"
 else 
     konsole -e yay -Syu
-    wmctrl -a yay
-    echo "" > $HOME/system/.updates
+    
+    echo $(get_updates) > $HOME/system/.updates
+
 fi
