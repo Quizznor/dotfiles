@@ -35,7 +35,6 @@ map nn :! /home/quizznor/.config/scripts/latex_build.sh %:p build <CR><CR>
 " :so $VIMRUNTIME/syntax/hitest.vim  -->  list all syntax groups
 let g:tex_flavor = "latex"
 
-autocmd FileType plaintex,tex,context setlocal indentexpr=
 
 " VimPlug section
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
