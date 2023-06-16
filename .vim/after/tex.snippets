@@ -1,21 +1,118 @@
+# -- Workflow snippets ------------------------
 
-snippet \ref "A snippet for autoref" i
-$1`!p snip.rv = complete(t[1], ["test", "lol", "works"])`
+snippet \beg "Snippet for environments" bA
+\begin{${1:ENVIRONMENT}}
+    $2
+\end{$1}
 endsnippet
 
+# << Completion Menus >> ----------------------
 
-# -- python interpolation ---------------------
+snippet \ref "A snippet for autoref" i
+\autoref{$1`!p snip.rv = complete(t[1], get_labels(snip.fn))`} 
+endsnippet
+
+snippet \pageref "A snippet for pageref" i
+\pageref{$1`!p snip.rv = complete(t[1], get_labels(snip.fn))`} 
+endsnippet
+
+snippet \input "A snippet for input" i
+\input{$1`!p snip.rv = complete(t[1],get_tex_files(snip.fn))`}
+endsnippet
+
+snippet img "A snippet for includegraphics" i
+$1`!p snip.rv = complete(t[1],get_imgs(snip.fn))`
+endsnippet
+
+# -- Python Interpolation ---------------------
 
 global !p
 
+import os
+import re
+import functools
+
+# Get all labels used in root tex
+@functools.cache
+def get_labels(filename):
+    regexp = re.compile("label{[a-z]{2,4}:.*(?=\})")
+    root_path, root_tex = get_root(filename)
+    tex_files = filter(get_files(root_path), "tex")
+
+    labels = []
+    for candidate in tex_files:
+        text = open(candidate,"r").read()
+        labels.append(regexp.findall(text))
+
+    labels = [item for sublist in labels for item in sublist]
+    labels = [item[6:] for item in labels]
+
+    return labels
+
+# Get all images used in root tex
+def get_imgs(filename):
+    root_path, root_tex = get_root(filename)
+    img_files = filter(get_files(root_path), "jpg", "svg", "png")
+    img_files = [os.path.relpath(file, root_path) for file in img_files]
+
+    return img_files
+
+# Get all LaTeX files used in root tex
+def get_tex_files(filename):
+    root_path, root_tex = get_root(filename)
+    tex_files = filter(get_files(root_path), "tex")
+    tex_files = [os.path.relpath(file, root_path) for file in tex_files]
+
+    return tex_files
+
+# Get root_directory, root tex
+def get_root(filename):
+    
+    with open(filename, "r") as source:
+        firstline = source.readline()
+        firstline = firstline.replace(" ", "")
+
+    if not firstline.startswith("%!"):
+        root_tex = os.path.join(os.getcwd(), filename)
+    else:
+        root_tex = os.path.join(os.getcwd(), firstline.split("=")[-1])
+    
+    root_path = os.path.dirname(root_tex)
+    return root_path, root_tex
+    
+# Recursively get files in root_path
+def get_files(root_path):
+    files = os.listdir(root_path)
+    all_files = list()
+
+    for entry in files:
+        full_path = os.path.join(root_path, entry)
+        if os.path.isdir(full_path):
+            all_files = all_files + get_files(full_path)
+        else:
+            all_files.append(full_path)
+
+    return all_files
+
+# Filter a list of files based on extensions
+def filter(files, *extensions):
+    matching_files = []
+    for extension in extensions:
+        matching_files += [file for file in files if file.endswith(extension)]
+
+    return matching_files
+
 # Autocompletion given a string t and options
-def complete(t,options):
+def complete(t, options, end = ""):
+    max_show = 5
+
     if t:
         options = [item[len(t):] for item in options if item.startswith(t)]
 
     if len(options)==1:
-        return f"\\autoref{{{t}}}"
+        return options[0] + end
 
-    return "<<" + " | ".join(options) + ">>"
+    end_indicator = "" if len(options) <= max_show else f" | ... and {len(options) - max_show} more"
+    return "<< " + " | ".join(options[:max_show]) + end_indicator + " >>"
 
 endglobal

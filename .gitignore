@@ -25,5 +25,9 @@ user-dirs.dirs
 user-dirs.locale
 Electron/
 .vim/plugged/
+Unknown*Organization/
+cef_user_data/
+zoomus.conf
+zoom.conf
 
 *rc

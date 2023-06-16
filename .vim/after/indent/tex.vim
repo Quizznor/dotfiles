@@ -1,0 +1,2 @@
+" suppress autoindent
+setlocal indentexpr=

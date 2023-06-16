@@ -3,9 +3,6 @@
   " set the line numbering
   set number relativenumber
 
-  " match indention to previous line
-  set autoindent
-
   " support utf-8 encoding
   set fileencoding=utf-8
   set encoding=utf-8
@@ -26,7 +23,7 @@ inoremap <S-Tab> <C-d>
 nnoremap <S-Tab> <<
 
 " open/close working pdf file when entering/leaving a .tex file
-autocmd VimLeave *.tex :silent ! ~/.config/scripts/latex_build.sh %:p clean && rm -rf nohup.out
+autocmd VimLeave *.tex :silent ! ~/.config/scripts/latex_build.sh %:p clean
 autocmd VimEnter *.tex :silent ! ~/.config/scripts/latex_build.sh %:p open
 
 " see latex_build for details (mm for full build, nn for quick build)
@@ -36,6 +33,9 @@ map nn :! /home/quizznor/.config/scripts/latex_build.sh %:p build <CR><CR>
 " custom highlighting for special LaTeX groups
 " Special syntax groups in .config/after/syntax/tex.vim
 " :so $VIMRUNTIME/syntax/hitest.vim  -->  list all syntax groups
+let g:tex_flavor = "latex"
+
+autocmd FileType plaintex,tex,context setlocal indentexpr=
 
 " VimPlug section
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -52,6 +52,9 @@ Plug 'phanviet/vim-monokai-pro'             " Monokai Pro Colorscheme
 
 call plug#end()
 
+" UltiSnips
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 let g:UltiSnipsSnippetsDir = "~/.config/.vim/UltiSnips"
 let g:UltiSnipsSnippetDirectories = "~/.config/.vim/UltiSnips"
 

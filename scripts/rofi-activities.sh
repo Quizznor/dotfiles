@@ -6,7 +6,7 @@ SECOND=$(kactivities-cli --list-activities | grep RUNNING | awk 'NR==2 {print $3
 
 if [ -z $1 ]; then
 
-    scrot -o $HOME/system/icons/activities/$ACTIVE.png
+    scrot -z -o $HOME/system/icons/activities/$ACTIVE.png
     PROMPT=("$ACTIVE\n$SECOND\n$FIRST")
 
     conky -c $HOME/.config/conky/conky.conf &

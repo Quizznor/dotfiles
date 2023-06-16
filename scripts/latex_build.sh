@@ -35,5 +35,6 @@ elif [ "$2" == "open" ]; then
 
 elif [ "$2" == "clean" ]; then
   (cd $ROOT_DIR && rm -rf *.aux *.log *.bcf *.out *.toc *.xml *.ist *.glo *.bbl *.blg)
+  rm -rf nohup.out
   killall zathura
 fi
