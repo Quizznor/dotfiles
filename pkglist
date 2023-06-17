@@ -19,7 +19,6 @@ git 2.41.0-1
 grub 2:2.06.r499.ge67a551a4-2
 htop 3.2.2-1
 intel-ucode 20230613-1
-konsole 23.04.2-1
 libnotify 0.8.2-1
 libreoffice-fresh 7.5.4-2
 linux 6.3.8.arch1-1

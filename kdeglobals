@@ -143,6 +143,7 @@ accentColorFromWallpaper=true
 [KDE]
 AnimationDurationFactor=0.25
 LookAndFeelPackage=org.kde.breezedark.desktop
+ShowDeleteCommand=false
 SingleClick=false
 
 [KFileDialog Settings]
@@ -170,6 +171,9 @@ Dialog Size=600,480
 
 [MainToolbarIcons]
 Size=32
+
+[PreviewSettings]
+MaximumRemoteSize=0
 
 [Shortcuts]
 Print=Ctrl+Shift+P
