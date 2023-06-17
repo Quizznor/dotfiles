@@ -1,53 +1,3 @@
-# -- Section snippets -------------------------
-
-snippet "\\chapt?e?r?" "LaTeX chapter" rb
-\chapter{$1}
-\label{chap:${2/\s/-/g}}
-
-$0
-
-%/ chap ${2:${1/(\w+)/\L$0\E/g}} /
-endsnippet
-
-
-snippet \sec "LaTeX section" b
-\section{$1}
-\label{sec:${2/\s/-/g}}
-
-$0
-
-%/ sec ${2:${1/(\w+)/\L$0\E/g}} /
-endsnippet
-
-
-snippet \ssec "LaTeX subsection" b
-\subsection{$1}
-\label{ssec:${2/\s/-/g}}
-
-$0
-
-%/ ssec ${2:${1/(\w+)/\L$0\E/g}} /
-endsnippet
-
-
-snippet \sssec "LaTeX subsubsection" b
-\subsection*{$1}
-
-$0
-
-%/ sssec ${2:${1/(\w+)/\L$0\E/g}} /
-endsnippet
-
-# -- Workflow snippets ------------------------
-
-snippet \beg "Snippet for environments" bA
-\begin{${1:ENVIRONMENT}}
-    $2
-\end{$1}
-endsnippet
-
-# << Completion Menus >> ----------------------
-
 snippet \ref "A snippet for autoref" i
 \autoref{$1`!p snip.rv = complete(t[1], get_labels(snip.fn))`} 
 endsnippet
@@ -63,6 +13,8 @@ endsnippet
 snippet img "A snippet for includegraphics" i
 $1`!p snip.rv = complete(t[1],get_imgs(snip.fn))`
 endsnippet
+
+
 
 # -- Python Interpolation ---------------------
 

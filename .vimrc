@@ -15,7 +15,7 @@
   " idk, this fixes a random visual glitch
   set lines=50 columns=100
 
-"""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
 " more helpful settings here
 
 " unindent with Shift+Tab
@@ -57,11 +57,31 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 let g:UltiSnipsSnippetsDir = "~/.config/.vim/UltiSnips"
 let g:UltiSnipsSnippetDirectories = "~/.config/.vim/UltiSnips"
 
-" shows syntaxic group of the word under the cursor
-command! Syntax call SynStack()
-function! SynStack()
-  if !exists("*synstack")
-    return
+" Vimscript helper functions for UltiSnips
+" Cannot be loaded from global definition?
+function! Syntax()
+    return 
+endfunction
+
+function! GetSectionHeader()
+
+  " change .vim/plugged/ultisnips/pythonx/UltiSnips/text_objects for this to work
+  let SyntaxGroups = map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+  let IsSubsubsection = index(SyntaxGroups, "texSubsubsection") + 1
+  let IsSubsection = index(SyntaxGroups, "texSubsection") + 1
+  let IsSection = index(SyntaxGroups, "texSection") + 1
+
+  if IsSubsubsection
+    let choice = ["\\bro...","stop"]
+  elseif IsSubsection
+    let choice = ["\\subsubsection*","sssec"]
+  elseif IsSection
+    let choice = ["\\subsection","ssec"]
+  else
+    let choice = ["\\section","sec"]
   endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+
+  echo choice
+  return choice
+
+endfunction

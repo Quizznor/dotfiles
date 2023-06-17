@@ -1,0 +1,45 @@
+# -- Section snippets -------------------------
+
+snippet "\\chapt?e?r?" "LaTeX chapter" rb
+\chapter{$1}
+\label{chap:${2/\s/-/g}}
+
+$0
+%/ chap ${2:${1/(\w+)/\L$0\E/g}} /
+endsnippet
+
+snippet "\\sect?i?o?n?" "LaTeX section" rb
+\section{$1}
+\label{sec:${2/\s/-/g}}
+
+$0
+%/ - sec ${2:${1/(\w+)/\L$0\E/g}} /
+endsnippet
+
+snippet "\\ssect?i?o?n?" "LaTeX subsection" r
+\subsection{$1}
+\label{ssec:${2/\s/-/g}}
+
+$0
+%/ -- ssec ${2:${1/(\w+)/\L$0\E/g}} /
+endsnippet
+
+snippet "\\sssect?i?o?n?" "LaTeX subsubsection" r
+\subsubsection*{$1}
+
+$0
+
+%/ --- sssec ${2:${1/(\w+)/\L$0\E/g}} /
+endsnippet
+
+#----------------------------------------------
+## This would be cool if I could get it to work 
+# snippet \sec "LaTeX sections" b
+# `!v GetSectionHeader()[0]`{$1}
+# \label{${2/\s/-/g}}
+# 
+# $0
+# 
+# %/ - `!v GetSectionHeader()[0]` ${2:${1/(\w+)/\L$0\E/g}} /
+# endsnippet
+#----------------------------------------------
