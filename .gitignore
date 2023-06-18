@@ -30,5 +30,7 @@ cef_user_data/
 zoomus.conf
 zoom.conf
 mimeapps.list
-
+.directory
+firefox/hkxnaqod.default
+firefox/hs02loqo.work
 *rc

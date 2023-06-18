@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Modified to auto-detect activity and load appropriate profile
+# /usr/bin/firefox, /usr/share/applications/firefox.desktop link here 
+
+if [[ "$@" == *"-P"* || "$@" == *"--profile"* || "$@" == *"Profile"* || "" == *"--help"* ]]; then
+    exec /usr/lib/firefox/firefox "$@"
+else
+    ACTIVITY=$(kactivities-cli --current-activity | awk '{print $3}')
+
+    case "$ACTIVITY" in
+        "Work")
+            firefox --profile $HOME/.config/firefox/hs02loqo.work ;;
+        *)
+            firefox --profile $HOME/.config/firefox/hkxnaqod.default ;;
+    esac
+fi
+
