@@ -15,4 +15,3 @@ else
             firefox --profile $HOME/.config/firefox/hkxnaqod.default ;;
     esac
 fi
-
