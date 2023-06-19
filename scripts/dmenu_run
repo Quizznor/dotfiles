@@ -2,7 +2,8 @@
 
 # Modified to only run for non-trivial decisions ($# > 1)
 
-if [ $# -ne 1]; then
+if [ $# -ne 1 ]; then
     dmenu_path | dmenu "$@" | ${SHELL:-"/bin/sh"} &
 else 
     echo $1
+fi
