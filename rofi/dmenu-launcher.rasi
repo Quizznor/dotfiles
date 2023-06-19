@@ -1,7 +1,7 @@
 configuration {
 	font:                             "FantasqueSansMono Nerd Font 12";
   show-icons:                       true;
-	icon-theme: 					            "Breeze";
+	icon-theme: 					            "breeze";
   disable-history:                  false;
   fullscreen:                       true;
 	hide-scrollbar: 				          true;

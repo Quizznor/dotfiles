@@ -35,11 +35,13 @@ openvpn 2.6.5-1
 pamixer 1.6-2
 plasma-desktop 5.27.5-1
 plasma-nm 5.27.5-1
+plasma-sdk 5.27.5-1
 pulseaudio 16.1-6
 pulseaudio-bluetooth 16.1-6
 ranger 1.9.3-9
 rofi 1.7.5-1
 rtw88-dkms-git r270.85fbbee-1
+rustup 1.26.0-3
 scrot 1.10-1
 sddm 0.19.0-9
 sudo 1.9.13.p3-1

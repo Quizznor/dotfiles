@@ -34,3 +34,6 @@ mimeapps.list
 firefox/hkxnaqod.default
 firefox/hs02loqo.work
 *rc
+!.bashrc
+!.vimrc
+!dunst/dunstrc

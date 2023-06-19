@@ -11,6 +11,10 @@ EDITOR=/usr/bin/nano
 alias cc="cd $HOME/.config"
 alias ss="cd $HOME/system"
 alias ww="cd $HOME/latex"
+alias pp="cd $HOME/projects"
+alias cs="cd $HOME/.config/scripts"
+alias !!="sudo !!"
+
 
 ################################################################
 

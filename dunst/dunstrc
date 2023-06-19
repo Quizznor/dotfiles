@@ -343,11 +343,22 @@
     background = "#3B4045"
     foreground = "#ffffff"
     frame_color = "#4D5E8B"
-    min_icon_size = 128
-    icon_position = top
-    hide_text = true
-    timeout = 1
+    min_icon_size = 100
     history_ignore = true
+    alignment = center
+    format = "<span font="50"><b><tt>%s%%</tt></b></span>"
+    timeout = 1
+
+[OSD_mute]
+    appname="OSD-mute"
+    background = "#3B4045"
+    foreground = "#888888"
+    frame_color = "#4D5E8B"
+    min_icon_size = 100
+    history_ignore = true
+    alignment = center
+    format = "<span font="50"><b><tt>%s%%</tt></b></span>"
+    timeout = 1
 
 [SYS]
     appname="Update"
