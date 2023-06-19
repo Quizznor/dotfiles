@@ -363,6 +363,7 @@
 [SYS]
     appname="Update"
     min_icon_size = 64
+    frame_color = "#ff0000"
     new_icon = /usr/share/icons/breeze-dark/actions/22/svn-update.svg
 
 [BAT]

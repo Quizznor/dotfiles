@@ -17,7 +17,7 @@ if [ -z "$1" ]; then
         icon=update-none ;;
     esac
 
-    echo "| iconName=$icon onclick=bash bash='$HOME/.config/scripts/update.sh update'"
+    echo "| iconName=$icon onclick=bash bash='$HOME/.config/scripts/cron-checkupdates.sh update'"
 else
     if [ "$1" = "update" ]; then
         alacritty --config-file "$HOME/.config/alacritty/update.yml" -e yay -Syu

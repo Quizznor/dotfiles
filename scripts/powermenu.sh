@@ -22,10 +22,10 @@ else
         BODY="Click to switch window focus"
         SUMMARY="Update in progress!"
 
-        ACTION=$(notify-send -a "Update" --action="default, goto" $SUMMARY $BODY)
+        ACTION=$(notify-send -a "Update" --action="default, goto" "$SUMMARY" "$BODY")
 
         if [ $ACTION = "0" ]; then
-            wmctrl -a yay
+            wmctrl -a "Update your System"
         fi
 
     else
