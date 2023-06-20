@@ -33,7 +33,10 @@ mimeapps.list
 .directory
 firefox/hkxnaqod.default
 firefox/hs02loqo.work
+discord
 *rc
+
+
 !.bashrc
 !.vimrc
 !dunst/dunstrc
