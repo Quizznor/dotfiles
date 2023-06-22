@@ -20,7 +20,7 @@ if [ -z "$1" ]; then
     echo "| iconName=$icon onclick=bash bash='$HOME/.config/scripts/cron-checkupdates.sh update'"
 else
     if [ "$1" = "update" ]; then
-        alacritty --config-file "$HOME/.config/alacritty/update.yml" -e yay -Syu
+        alacritty --config-file "$HOME/.config/alacritty/update.yml" -e $HOME/.config/scripts/update.sh
     fi
 
     get_updates
