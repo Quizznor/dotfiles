@@ -42,8 +42,6 @@ plasma-sdk 5.27.6-1
 pulseaudio 16.1-6
 pulseaudio-bluetooth 16.1-6
 python-gobject 3.44.1-4
-python-matplotlib 3.7.1-4
-python-pip 23.1.2-1
 ranger 1.9.3-9
 rofi 1.7.5-1
 rtw88-dkms-git r270.85fbbee-1

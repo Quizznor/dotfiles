@@ -14,7 +14,6 @@ alias ww="cd $HOME/latex"
 alias pp="cd $HOME/projects"
 alias cs="cd $HOME/.config/scripts"
 
-
 ################################################################
 
 # If not running interactively, don't do anything
