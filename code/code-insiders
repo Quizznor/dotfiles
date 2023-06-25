@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Modified to auto-detect activity and load appropriate profile
+# /usr/bin/code-insiders, /usr/share/applications/visual-studio-code-insiders.desktop link here 
+
+wmctrl -s 0
+
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-~/.config}
+
+# Allow users to override command-line options
+if [[ -f $XDG_CONFIG_HOME/code-flags.conf ]]; then
+   CODE_USER_FLAGS="$(sed 's/#.*//' $XDG_CONFIG_HOME/code-flags.conf)"
+fi
+
+# Launch
+if [[ "$@" == *"--profile"* ]]; then
+   exec /opt/visual-studio-code-insiders/bin/code-insiders $CODE_USER_FLAGS "$@"
+else
+    ACTIVITY=$(kactivities-cli --current-activity | awk '{print $3}')
+
+    case "$ACTIVITY" in
+        "Work") TARGET="$HOME/.config/code/work.code-workspace" ;; 
+        *) TARGET="$HOME/.config/code/home.code-workspace" ;;
+    esac
+    
+    exec /opt/visual-studio-code-insiders/bin/code-insiders $CODE_USER_FLAGS $TARGET
+fi

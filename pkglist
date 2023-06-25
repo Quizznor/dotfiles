@@ -4,8 +4,6 @@ base 3-1
 base-devel 1-1
 brightnessctl 0.5.1-2
 checkupdates+aur 1-3
-code 1.79.2-1
-code-features 1.79.0-1
 conky 1.18.1-1
 cronie 1.6.1-1
 discord 0.0.27-2
@@ -58,6 +56,7 @@ texlive-mathscience 2023.66594-14
 texlive-pictures 2023.66594-14
 ttf-font-awesome 6.4.0-1
 vim 9.0.1628-1
+visual-studio-code-insiders-bin 1687529673-1
 vpnc 1:0.5.3.r526.r213-1
 wget 1.21.4-1
 wmctrl 1.07-6

@@ -1,0 +1,9 @@
+{
+	"folders": [
+		{
+			"uri": "vscode-remote://ssh-remote+auger/cr/users/filip/people"
+		}
+	],
+	"remoteAuthority": "ssh-remote+auger",
+	"settings": {}
+}
