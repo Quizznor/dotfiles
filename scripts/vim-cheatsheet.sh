@@ -27,7 +27,7 @@ xinput test-xi2 --root 3 | gawk "$gawk_opts" | while read -r key; do
         "114")
             old=$counter 
             counter=$(( counter + 1 ))
-            counter=$(( counter > 4 ? 4 : counter ))
+            counter=$(( counter > 3 ? 3 : counter ))
             reload_conky $old $counter;;
         *) 
             exit_script ;;
