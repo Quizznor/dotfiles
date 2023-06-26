@@ -11,8 +11,8 @@ else
 
     case "$ACTIVITY" in
         "Work")
-            firefox --profile $HOME/.config/firefox/hs02loqo.work $@ ;;
+            exec /usr/lib/firefox/firefox --profile $HOME/.config/firefox/hs02loqo.work $@ ;;
         *)
-            firefox --profile $HOME/.config/firefox/hkxnaqod.default $@ ;;
+            exec /usr/lib/firefox/firefox --profile $HOME/.config/firefox/hkxnaqod.default $@ ;;
     esac
 fi
