@@ -60,10 +60,12 @@ visual-studio-code-insiders-bin 1687529673-1
 vpnc 1:0.5.3.r526.r213-1
 wget 1.21.4-1
 wmctrl 1.07-6
+xclip 0.13-4
 xdotool 3.20211022.1-1
 xf86-video-intel 1:2.99.917+923+gb74b67f0-1
 xorg-server 21.1.8-1
 xorg-xinit 1.4.2-1
+xorg-xinput 1.6.4-1
 xorg-xrandr 1.5.2-1
 yay-git 12.1.0.r9.g0dcf911-1
 yt-dlp 2023.06.22-1
