@@ -2,14 +2,12 @@
 
 exit_script () {
     killall conky
-    notify-send "goodbye"
     exit
 }
 
 reload_conky () {
     if [[ ! $1 -eq $2 ]]; then 
         killall conky
-        notify-send "loading vim-$2.conf"
         conky -c $HOME/.config/conky/vim-$2.conf &
     fi
 }
