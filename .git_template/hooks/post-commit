@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo -n "Fetching git token..."
+
+cat $HOME/git_token | xclip -selection clipboard && echo "done!"
