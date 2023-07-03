@@ -35,7 +35,6 @@ map nn :! /home/quizznor/.config/scripts/latex_build.sh %:p build <CR><CR>
 " :so $VIMRUNTIME/syntax/hitest.vim  -->  list all syntax groups
 let g:tex_flavor = "latex"
 
-
 " VimPlug section
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -49,6 +48,9 @@ Plug 'SirVer/ultisnips'                     " LaTex Snippets
 Plug 'Townk/vim-autoclose'                  " Bracket Autocompletion
 Plug 'phanviet/vim-monokai-pro'             " Monokai Pro Colorscheme 
 Plug 'easymotion/vim-easymotion'            " EasyMotion navigation
+Plug 'powerline/powerline'                  " More powerful status line
+Plug 'vim-airline/vim-airline'              " Fancy statusline + color
+Plug 'vim-airline/vim-airline-themes'       " Themes for vim-airline
 
 call plug#end()
 
@@ -57,6 +59,16 @@ let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 let g:UltiSnipsSnippetsDir = "~/.config/.vim/UltiSnips"
 let g:UltiSnipsSnippetDirectories = "~/.config/.vim/UltiSnips"
+
+" Airline
+let g:airline_theme='raven'
+let g:airline_left_sep='>'
+let g:airline_right_sep=''
+let g:airline_alt_sep=''
+let g:airline_powerline_fonts = 1
+let g:airline_section_z = ''
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline_section_c = '%F'
 
 " Vimscript helper functions for UltiSnips
 " Cannot be loaded from global definition?
