@@ -1,4 +1,4 @@
-alacritty 0.12.1-1
+alacritty 0.12.2-1
 alsa-utils 1.2.9-1
 base 3-1
 base-devel 1-1
@@ -12,7 +12,7 @@ dmenu 5.2-1
 dolphin 23.04.2-1
 dunst 1.9.2-1
 efibootmgr 18-2
-electron22 22.3.14-1
+electron22 22.3.15-1
 firefox 114.0.2-1
 gimp 2.10.34-2
 git 2.41.0-1
@@ -22,10 +22,10 @@ gstreamer-vaapi 1.22.4-1
 htop 3.2.2-1
 intel-ucode 20230613-1
 libnotify 0.8.2-1
-libreoffice-fresh 7.5.4-2
-linux 6.3.9.arch1-1
-linux-firmware 20230404.2e92a49f-1
-linux-headers 6.3.9.arch1-1
+libreoffice-fresh 7.5.4-3
+linux 6.4.1.arch1-1
+linux-firmware 20230625.ee91452d-3
+linux-headers 6.4.1.arch1-1
 man-db 2.11.2-1
 nano 7.2-1
 network-manager-applet 1.32.0-3
@@ -47,13 +47,13 @@ rustup 1.26.0-3
 scrot 1.10-1
 sddm 0.20.0-1
 sudo 1.9.13.p3-1
-texlive-basic 2023.66594-14
-texlive-bibtexextra 2023.66594-14
-texlive-fontsextra 2023.66594-14
-texlive-formatsextra 2023.66594-14
-texlive-latexextra 2023.66594-14
-texlive-mathscience 2023.66594-14
-texlive-pictures 2023.66594-14
+texlive-basic 2023.66594-15
+texlive-bibtexextra 2023.66594-15
+texlive-fontsextra 2023.66594-15
+texlive-formatsextra 2023.66594-15
+texlive-latexextra 2023.66594-15
+texlive-mathscience 2023.66594-15
+texlive-pictures 2023.66594-15
 ttf-font-awesome 6.4.0-1
 vim 9.0.1628-1
 visual-studio-code-insiders-bin 1687529673-1
@@ -71,4 +71,4 @@ yay-git 12.1.0.r9.g0dcf911-1
 yt-dlp 2023.06.22-1
 zathura 0.5.2-2
 zathura-pdf-poppler 0.3.1-2
-zoom 5.15.0-1
+zoom 5.15.2-1

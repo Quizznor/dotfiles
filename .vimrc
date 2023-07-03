@@ -48,6 +48,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'SirVer/ultisnips'                     " LaTex Snippets
 Plug 'Townk/vim-autoclose'                  " Bracket Autocompletion
 Plug 'phanviet/vim-monokai-pro'             " Monokai Pro Colorscheme 
+Plug 'easymotion/vim-easymotion'            " EasyMotion navigation
 
 call plug#end()
 
