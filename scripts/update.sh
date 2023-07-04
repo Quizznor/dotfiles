@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-echo "Getting package list pre update..."
-packages=$(echo $(checkupdates+aur | awk '{print $1}'))
+packages=$(cat $HOME/system/.updates)
 
 yay -Syu
 
