@@ -13,7 +13,7 @@ dolphin 23.04.2-1
 dunst 1.9.2-1
 efibootmgr 18-2
 electron22 22.3.15-1
-firefox 114.0.2-1
+firefox 115.0-1
 gimp 2.10.34-2
 git 2.41.0-1
 grub 2:2.06.r566.g857af0e17-1
@@ -23,9 +23,9 @@ htop 3.2.2-1
 intel-ucode 20230613-1
 libnotify 0.8.2-1
 libreoffice-fresh 7.5.4-3
-linux 6.4.1.arch1-1
+linux 6.4.1.arch2-1
 linux-firmware 20230625.ee91452d-3
-linux-headers 6.4.1.arch1-1
+linux-headers 6.4.1.arch2-1
 man-db 2.11.2-1
 nano 7.2-1
 network-manager-applet 1.32.0-3
