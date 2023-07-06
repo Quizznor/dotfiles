@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
 packages=$(cat $HOME/system/.updates)
-echo $packages
-#yay -Syu
+yay -Syu
 
 echo "Performing post process transactions..."
 if [[ "$packages" == *"firefox"* ]]; then
