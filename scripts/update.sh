@@ -14,3 +14,9 @@ if [[ "$packages" == *"code"* ]]; then
     echo "Visual Studio Code was updated... linking vscode.desktop file"
     sudo cp $HOME/.config/code/visual-studio-code-insiders.desktop /usr/share/applications
 fi
+
+if [[ "$packages" == *"electron"* ]]; then
+    sudo mv /usr/share/applications/electron22.desktop /usr/share/applications/.electron22.desktop
+fi
+
+# monitor desktop files after updates
