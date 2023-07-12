@@ -7,6 +7,7 @@ echo "Performing post process transactions..."
 if [[ "$packages" == *"firefox"* ]]; then
     echo "Firefox was updated... overwriting firefox.desktop file"
     sudo cp $HOME/.config/firefox/firefox.desktop /usr/share/applications/
+    sudo cp $HOME/.config/firefox/firefox /usr/bin/firefox
 fi
 
 if [[ "$packages" == *"code"* ]]; then

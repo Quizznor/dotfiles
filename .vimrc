@@ -68,7 +68,7 @@ let g:airline_alt_sep=''
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = ''
 let g:airline#extensions#whitespace#enabled = 0
-let g:airline_section_c = '%F'
+let g:airline_section_c = '%f'
 
 " Vimscript helper functions for UltiSnips
 " Cannot be loaded from global definition?

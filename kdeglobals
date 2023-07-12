@@ -137,7 +137,10 @@ ForegroundVisited=155,89,182
 
 [General]
 AccentColor=106,119,184
+BrowserApplication=firefox-2.desktop
 ColorSchemeHash=01662607e36cd33eacc7d7d7189f69c26b9a2cc8
+TerminalApplication=alacritty
+TerminalService=Alacritty.desktop
 accentColorFromWallpaper=true
 
 [KDE]
