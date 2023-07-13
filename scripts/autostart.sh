@@ -5,4 +5,6 @@ killall plasmashell
 dunst &
 rm -rf $HOME/system/icons/activities/*
 
+betterbird &
+
 plasmashell

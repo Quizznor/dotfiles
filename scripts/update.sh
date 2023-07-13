@@ -16,6 +16,7 @@ if [[ "$packages" == *"code"* ]]; then
 fi
 
 if [[ "$packages" == *"electron"* ]]; then
+    echo "Electron was updated... hiding electron desktop file"
     sudo mv /usr/share/applications/electron22.desktop /usr/share/applications/.electron22.desktop
 fi
 

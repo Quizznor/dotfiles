@@ -2,6 +2,7 @@ alacritty 0.12.2-1
 alsa-utils 1.2.9-1
 base 3-1
 base-devel 1-1
+betterbird-bin 102.13.0-1
 brightnessctl 0.5.1-2
 checkupdates+aur 1-3
 conky 1.18.1-1
@@ -12,10 +13,11 @@ dmenu 5.2-1
 dolphin 23.04.3-1
 dunst 1.9.2-1
 efibootmgr 18-2
-electron22 22.3.16-1
+electron22 22.3.17-1
 firefox 115.0.2-1
 gimp 2.10.34-2
 git 2.41.0-1
+gnome-keyring 1:42.1-3
 grub 2:2.12rc1-1
 gst-libav 1.22.4-2
 gstreamer-vaapi 1.22.4-2
@@ -37,6 +39,7 @@ pamixer 1.6-2
 plasma-desktop 5.27.6-1
 plasma-nm 5.27.6-1
 plasma-sdk 5.27.6-1
+protonmail-bridge-nogui 3.3.0-1
 pulseaudio 16.1-6
 pulseaudio-bluetooth 16.1-6
 python-gobject 3.44.1-4

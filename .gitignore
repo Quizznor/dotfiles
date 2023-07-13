@@ -37,7 +37,11 @@ firefox/hs02loqo.work
 discord
 spotify/
 vlc/
+systemd/
+protonmail/
+plasma_calendar_holiday_regions
 *rc
+
 
 
 !.bashrc
