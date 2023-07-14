@@ -43,6 +43,7 @@ protonmail-bridge-nogui 3.3.0-1
 pulseaudio 16.1-6
 pulseaudio-bluetooth 16.1-6
 python-gobject 3.44.1-4
+qbittorrent 4.5.4-1
 qt5-xmlpatterns 5.15.10-1
 ranger 1.9.3-9
 rofi 1.7.5-1

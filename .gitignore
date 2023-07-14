@@ -40,6 +40,7 @@ vlc/
 systemd/
 protonmail/
 plasma_calendar_holiday_regions
+qBittorrent/
 *rc
 
 
