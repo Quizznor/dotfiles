@@ -1,0 +1,78 @@
+configuration {
+    disable-history:                false;
+    fullscreen:                     false;
+	hide-scrollbar:                 true;
+	sidebar-mode:                   true;
+}
+
+* {
+    background-window:              #3B4045FF;
+    background-panel:               #1B1E20FF;
+    foreground:                     #FFFFFFFF;
+    accent:                         #4D5E8BFF;
+    background-color:               #3B4045FF;
+    text-accent:                    #373535FF;
+}
+
+window {
+    transparency:                   "real";
+    border-radius:                  10px;
+    width:                          270px;
+    height:                         583px;
+    location:                       east;
+    x-offset:                       -10px;
+    y-offset:                       0px;
+}
+
+listview {
+    margin:                         8px;
+    spacing:                        9px;
+    cycle:                          true;
+    dynamic:                        true;
+    layout:                         vertical;
+}
+
+mainbox {
+    background-color:               @background-window;
+    children:                       [ listview ];
+}
+
+element {
+    background-color:               @background-panel;
+    text-color:                     @foreground;
+    orientation:                    vertical;
+    border-radius:                  2px;
+}
+
+element-text {
+	font:							"feather 100";
+    expand:                         true;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
+    margin:                         0px 0px 0px 0px;
+    
+}
+
+element normal.urgent,
+element alternate.urgent,
+element normal.active,
+element alternate.active {
+    background-color:               @background-window;
+    text-color:                     @foreground;
+    border-radius:                  2px;
+}
+
+element selected,
+element selected.urgent,
+element selected.active {
+    background-color:               @background-panel;
+    text-color:                     @foreground;
+    border:               		    4px;
+    border-radius:                  2px;
+    border-color:                  	@accent;
+}
+
+element-text {
+    background-color:               @text-accent;
+    text-color:                     white;
+}

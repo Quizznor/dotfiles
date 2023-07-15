@@ -3,6 +3,7 @@ alsa-utils 1.2.9-1
 base 3-1
 base-devel 1-1
 betterbird-bin 102.13.0-1
+bluez-utils 5.68-1
 brightnessctl 0.5.1-2
 checkupdates+aur 1-3
 conky 1.18.1-1
@@ -36,12 +37,12 @@ networkmanager-openvpn 1.10.2-3
 openconnect 1:9.12-1
 openvpn 2.6.5-1
 pamixer 1.6-2
+pavucontrol 1:5.0+r64+geba9ca6-1
+pipewire-pulse 1:0.3.73-2
 plasma-desktop 5.27.6-1
 plasma-nm 5.27.6-1
 plasma-sdk 5.27.6-1
 protonmail-bridge-nogui 3.3.0-1
-pulseaudio 16.1-6
-pulseaudio-bluetooth 16.1-6
 python-gobject 3.44.1-4
 qbittorrent 4.5.4-1
 qt5-xmlpatterns 5.15.10-1

@@ -41,6 +41,7 @@ systemd/
 protonmail/
 plasma_calendar_holiday_regions
 qBittorrent/
+pavucontrol.ini
 *rc
 
 
