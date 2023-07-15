@@ -62,7 +62,7 @@
                     // https://bugreports.qt.io/browse/QTBUG-67007
                     renderType: Screen.devicePixelRatio % 1 !== 0 ? Text.QtRendering : Text.NativeRendering
                     anchors.verticalCenter: parent.verticalCenter
-                    text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Sample", "Plasma made by KDE")
+                    text: i18ndc("plasma_lookandfeel_org.kde.lookandfeel", "Sample", "KDE powered by Arch")
                 }
                 Image {
                     source: "images/kde.svgz"

@@ -15,16 +15,16 @@ connect_bluetooth () {
     HEADPHONE_ADDRESS="98:52:3D:27:D1:02"
     RUNTIME=$(( $SECONDS + 5 ))
 
-    while [[ -z "$(pacmd list-sinks | awk '/bluez/{print}')" && $SECONDS -lt $RUNTIME ]]; do
+    while [[ -z "$(pactl list sinks | awk '/bluez/{print}')" && $SECONDS -lt $RUNTIME ]]; do
         echo -e "power on\nagent on" | bluetoothctl
         echo -e "connect $HEADPHONE_ADDRESS" | bluetoothctl
         sleep 1
     done
 
     if [ -z "$(pactl list sinks | grep Name | awk '/bluez_output/{print}')" ]; then
-        notify-send "Connection refused" "Failed to pair with bluetooth device"
+        notify-send "Connection refused =(" "Failed to pair with bluetooth device"
     else 
-        notify-send "Connection established" "Your device is paired. Enjoy!"
+        notify-send "Connection established =)" "Your device is paired. Enjoy!"
     fi    
 }
 

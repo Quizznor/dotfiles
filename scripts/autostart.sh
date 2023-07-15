@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 
-killall plasmashell
-
-dunst &
+# clean up activities 
 rm -rf $HOME/system/icons/activities/*
 
-betterbird &
-
+# force KDE to use dunst
+killall plasmashell
+dunst &
 plasmashell
+
+# turn off bluetooth
+bluetoothctl power off
+
+# open mail application
+betterbird &
