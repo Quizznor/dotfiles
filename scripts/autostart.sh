@@ -9,7 +9,7 @@ dunst &
 plasmashell
 
 # turn off bluetooth
-bluetoothctl power off
+echo -e "power off" | bluetoothctl
 
 # open mail application
 betterbird &

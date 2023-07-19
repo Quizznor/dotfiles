@@ -21,8 +21,8 @@ connect_bluetooth () {
         sleep 1
     done
 
-    if [ -z "$(pactl list sinks | grep Name | awk '/bluez_output/{print}')" ]; then
-        notify-send "Connection refused =(" "Failed to pair with bluetooth device"
+    if [ -z "$(pactl list sinks | awk '/bluez_output/{print}')" ]; then
+        notify-send "Connection refused =(" "Failed to pair with device"
     else 
         notify-send "Connection established =)" "Your device is paired. Enjoy!"
     fi    
