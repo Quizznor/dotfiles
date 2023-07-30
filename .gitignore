@@ -43,7 +43,8 @@ plasma_calendar_holiday_regions
 qBittorrent/
 pavucontrol.ini
 *rc
-
+ksslcertificatemanager
+teams-for-linux/
 
 
 !.bashrc
