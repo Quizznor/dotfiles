@@ -18,7 +18,5 @@ fi
 
 if [[ "$packages" == *"electron"* ]]; then
     echo "Electron was updated... hiding electron desktop file"
-    sudo mv /usr/share/applications/electron22.desktop /usr/share/applications/.electron22.desktop
+    sudo mv /usr/share/applications/electron*.desktop /usr/share/applications/.electron.desktop
 fi
-
-# monitor desktop files after updates

@@ -15,7 +15,7 @@ dolphin 23.04.3-1
 dunst 1.9.2-1
 efibootmgr 18-2
 electron22 22.3.18-1
-firefox 115.0.2-1
+firefox 115.0.3-1
 gimp 2.10.34-2
 git 2.41.0-2
 gnome-keyring 1:42.1-3
@@ -26,11 +26,10 @@ htop 3.2.2-1
 intel-ucode 20230613-1
 libnotify 0.8.2-1
 libreoffice-fresh 7.5.5-1
-linux 6.4.6.arch1-1
+linux 6.4.7.arch1-1
 linux-firmware 20230625.ee91452d-5
-linux-headers 6.4.6.arch1-1
+linux-headers 6.4.7.arch1-1
 man-db 2.11.2-1
-ms-teams-for-linux-bin 1.2.7-1
 nano 7.2-1
 network-manager-applet 1.32.0-3
 networkmanager 1.42.6-1
@@ -39,7 +38,7 @@ openconnect 1:9.12-1
 openvpn 2.6.5-1
 pamixer 1.6-2
 pavucontrol 1:5.0+r64+geba9ca6-1
-pipewire-pulse 1:0.3.75-2
+pipewire-pulse 1:0.3.76-2
 plasma-desktop 5.27.6-1
 plasma-nm 5.27.6-1
 plasma-sdk 5.27.6-1
@@ -65,8 +64,9 @@ texlive-latexextra 2023.66594-19
 texlive-mathscience 2023.66594-19
 texlive-pictures 2023.66594-19
 ttf-font-awesome 6.4.0-1
+unzip 6.0-19
 vim 9.0.1676-1
-visual-studio-code-insiders-bin 1687529673-1
+visual-studio-code-insiders-bin 1690546089-1
 vlc 3.0.18-13
 vpnc 1:0.5.3.r526.r213-1
 wget 1.21.4-1
@@ -78,7 +78,7 @@ xorg-server 21.1.8-2
 xorg-xinit 1.4.2-1
 xorg-xinput 1.6.4-1
 xorg-xrandr 1.5.2-1
-yay-git 12.1.0.r9.g0dcf911-1
+yay-git 12.1.2.r0.g9aefb84-1
 yt-dlp 2023.07.06-1
 zathura 0.5.2-2
 zathura-pdf-poppler 0.3.1-2
