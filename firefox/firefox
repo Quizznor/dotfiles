@@ -2,7 +2,6 @@
 
 # Modified to auto-detect activity and load appropriate profile
 # /usr/bin/firefox, /usr/share/applications/firefox.desktop link here 
-wmctrl -s 2
 
 if [[ "$@" == *"-P"* || "$@" == *"--profile"* || "$@" == *"Profile"* || "" == *"--help"* ]]; then
     exec /usr/lib/firefox/firefox "$@"
@@ -13,6 +12,8 @@ else
         "Work")
             exec /usr/lib/firefox/firefox --profile $HOME/.config/firefox/hs02loqo.work $@ ;;
         *)
+            wmctrl -s 2
             exec /usr/lib/firefox/firefox --profile $HOME/.config/firefox/hkxnaqod.default $@ ;;
     esac
 fi
+
