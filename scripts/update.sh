@@ -20,3 +20,10 @@ if [[ "$packages" == *"electron"* ]]; then
     echo "Electron was updated... hiding electron desktop file"
     sudo mv /usr/share/applications/electron*.desktop /usr/share/applications/.electron.desktop
 fi
+
+if [[ "$packages" == *"plasma"* ]]; then
+    echo "KDE/Plasma was updated... hiding bloatware"
+    sudo rm -rf /usr/share/applications/org.kde.plasma.emojier.desktop
+    sudo rm -rf /usr/share/applications/org.kde.plasma.themeexplorer.desktop
+    sudo rm -rf /usr/share/applications/org.kde.plasma.lookandfeelexplorer.desktop
+    sudo rm -rf /usr/share/applications/org.kde.kmenuedit.desktop
