@@ -2,7 +2,7 @@ alacritty 0.12.2-1
 alsa-utils 1.2.9-1
 base 3-1
 base-devel 1-1
-betterbird-bin 102.13.0-1
+betterbird-bin 102.14.0-1
 bluez-utils 5.68-1
 brightnessctl 0.5.1-2
 checkupdates+aur 1-3
@@ -15,7 +15,7 @@ dolphin 23.04.3-1
 dunst 1.9.2-1
 efibootmgr 18-2
 electron22 22.3.18-1
-firefox 116.0.1-1
+firefox 116.0.2-1
 gimp 2.10.34-2
 git 2.41.0-2
 gnome-keyring 1:42.1-3
@@ -67,7 +67,7 @@ texlive-mathscience 2023.66594-19
 texlive-pictures 2023.66594-19
 ttf-font-awesome 6.4.0-1
 unzip 6.0-19
-vim 9.0.1676-1
+vim 9.0.1678-1
 visual-studio-code-insiders-bin 1690546089-1
 vlc 3.0.18-13
 vpnc 1:0.5.3.r526.r213-1
