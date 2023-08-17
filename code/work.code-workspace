@@ -1,7 +1,10 @@
 {
 	"folders": [
 		{
-			"uri": "vscode-remote://ssh-remote+auger/cr/users/filip/people"
+			"uri": "vscode-remote://ssh-remote+auger/cr/users/filip"
+		},
+		{
+			"uri": "vscode-remote://ssh-remote+auger/cr/tempdata01/filip"
 		}
 	],
 	"remoteAuthority": "ssh-remote+auger",
