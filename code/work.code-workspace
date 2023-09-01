@@ -4,9 +4,17 @@
 			"uri": "vscode-remote://ssh-remote+auger/cr/users/filip"
 		},
 		{
-			"uri": "vscode-remote://ssh-remote+auger/cr/tempdata01/filip"
+			"uri": "vscode-remote://ssh-remote+auger/cr/users/filip/Masters/Binaries"
+		},
+		{
+			"uri": "vscode-remote://ssh-remote+auger/cr/tempdata01/filip/SSDCalib"
 		}
 	],
 	"remoteAuthority": "ssh-remote+auger",
-	"settings": {}
+	"settings": {
+		"vim.easymotion": true,
+		"files.associations": {
+			"*.tcc": "cpp"
+		}
+	}
 }
