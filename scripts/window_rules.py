@@ -20,19 +20,31 @@ def read_rc(rc_location : str) -> list[dict] :
 
 def change_rules(rules : list[dict], mode : str) -> list[dict] :
 
+    if mode == "work":
+        size = "1920, 767"
+        position = "1920, 0"
+        pos_quarter = '0, 0'
+        size_quarter = '1366,767'
+    elif mode == "home":
+        size = "1366, 767"
+        position = "0, 0"
+        pos_quarter = '183,60'
+        size_quarter = '1000,601'
+
     for rule in rules:
 
-        if mode == "work":
-            size = "1920, 767"
-            position = "1920, 0"
-        elif mode == "home":
-            size = "1366, 767"
-            position = "0, 0"
+        if rule['name'] == '[1]':                                       # Betterbird editor
+            rule['position'] = pos_quarter
+            rule['size'] = size_quarter
 
-        # Add all the rules you want here
-        if rule["name"] == "[3]":               # Put VSCode on the big screen
+        if rule["name"] == "[3]":                                       # VSCode
             rule['position'] = position
             rule['size'] = size
+
+        if rule['name'] == '[4]':                                       # Betterbird browser
+            rule['position'] = position
+            rule['size'] = size
+
 
         else:
             continue
