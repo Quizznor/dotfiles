@@ -20,34 +20,50 @@ def read_rc(rc_location : str) -> list[dict] :
 
 def change_rules(rules : list[dict], mode : str) -> list[dict] :
 
-    if mode == "work":
-        size = "1920, 767"
-        position = "1920, 0"
-        pos_quarter = '0, 0'
-        size_quarter = '1366,767'
-    elif mode == "home":
-        size = "1366, 767"
-        position = "0, 0"
-        pos_quarter = '183,60'
-        size_quarter = '1000,601'
+    fullscreen = '1920,1200' if mode == 'work' else '1366,731'
+
+    # if mode == "work":
+    #     size = "1920, 767"
+    #     position = "1366, 0"
+    #     pos_quarter = '0, 0'
+    #     size_quarter = '1366,767'
+    #     fullscreen = '1920,1200'
+    # elif mode == "home":
+    #     size = "1366, 732"
+    #     position = "0, 0"
+    #     pos_quarter = '183,60'
+    #     size_quarter = '1000,601'
 
     for rule in rules:
 
-        if rule['name'] == '[1]':                                       # Betterbird editor
-            rule['position'] = pos_quarter
-            rule['size'] = size_quarter
+        if rule["name"] == "[General]": continue
 
-        if rule["name"] == "[3]":                                       # VSCode
-            rule['position'] = position
-            rule['size'] = size
+        print(rule)
 
-        if rule['name'] == '[4]':                                       # Betterbird browser
-            rule['position'] = position
-            rule['size'] = size
+        if rule["Description"] == "IDE-window-settings":                # VS Code insiders (IDE)
+            rule['size'] = '1920,767' if mode == 'work' else fullscreen     # adjust size
+
+        if rule["Description"] == 'betterbird-inbox':                   # Betterbird (mail browser)
+            rule['desktoprule'] = "4" if mode == '3'                        # move to appropriate screen
+            rule['size'] = fullscreen                                       # adjust size
+
+        # if rule["Description"]
+
+        # if rule['name'] == '[1]':                                       # Betterbird editor
+        #     rule['position'] = pos_quarter
+        #     rule['size'] = size_quarter
+
+        # if rule["name"] == "[ab3cf7f8-c176-4d0d-b392-9cf305ffc76e]":    # VSCode
+        #     rule['position'] = position
+        #     rule['size'] = size
+
+        # if rule['name'] == '[4]':                                       # Betterbird browser
+        #     rule['position'] = position
+        #     rule['size'] = fullscreen
 
 
-        else:
-            continue
+        # else:
+        #     continue
 
     return rules
 

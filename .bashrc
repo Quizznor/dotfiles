@@ -14,6 +14,9 @@ alias ww="cd $HOME/latex"
 alias pp="cd $HOME/projects"
 alias cs="cd $HOME/.config/scripts"
 
+# PhD stuff
+export OFFLINE="/home/quizznor/projects/offline/68b50527/install/bin/this-auger-offline.sh"
+
 ################################################################
 
 # If not running interactively, don't do anything
