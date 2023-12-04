@@ -16,6 +16,7 @@ alias cs="cd $HOME/.config/scripts"
 
 # PhD stuff
 export OFFLINE="/home/quizznor/projects/offline/68b50527/install/bin/this-auger-offline.sh"
+export CDASDAQ_INSTALL="/Raid/opt"
 
 ################################################################
 
