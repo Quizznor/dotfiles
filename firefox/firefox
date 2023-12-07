@@ -10,6 +10,7 @@ else
 
     case "$ACTIVITY" in
         "Work")
+            wmctrl -s 0
             exec /usr/lib/firefox/firefox --profile $HOME/.config/firefox/hs02loqo.work $@ ;;
         *)
             wmctrl -s 2
