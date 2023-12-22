@@ -1,0 +1,185 @@
+{
+  "position": "top",
+  "layer": "top",
+  "output": "DP-1",
+  "height": 30,
+  "width": 1923,
+  "margin-top": 0,
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "modules-left": ["custom/power", "hyprland/workspaces"],
+  "modules-center": ["custom/pacman", "clock", "cpu", "memory"],
+  "modules-right": ["tray"],
+  
+  // Modules configuration
+
+  // left
+  "custom/power": {
+      "format":"⏻",
+        "on-click": "nwgbar",
+      "tooltip": false
+  },
+
+	"hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": true,
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace -1",
+    "on-scroll-down": "hyprctl dispatch workspace +1",
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"urgent": "",
+			"active": "",
+			"default": "󰧞",
+    "sort-by-number": true}
+  },
+    
+
+  // center
+  "custom/pacman": {
+    "format": "{}",
+    "interval": 10,
+    "exec": "cat $HOME/.updates",
+    "exec-if": "exit 0",
+    "on-click": "$HOME/.config/waybar/scripts/check_updates.sh -v", // update system
+    "signal": 8,
+    "tooltip": false
+    },
+
+	"clock": {
+		"format": " {:%H:%M}",
+		"tooltip": "true",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": " {:%d/%m}"
+	},
+
+  "memory": {
+    "format": "󰍛 {}%",
+    "interval": 5,
+    "on-click": "alacritty -e btop"
+  },
+    
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "interval": 5,
+    "on-click": "alacritty -e btop"
+  },
+
+
+  // right
+  "network": {
+    "interval": 1,
+    "format-ethernet": "   {bandwidthDownBits}  {bandwidthUpBits}",
+    "format-disconnected": "󰤭",
+    "on-click": "nm-connection-editor"
+  },
+
+  // "pipewire-pulse": {
+  // 	"format": "{volume}% {icon}",
+  // 	"format-bluetooth": "{volume}% {icon}",
+  // 	"format-muted": "",
+  // 	"format-icons": {
+  // 		"headphones": "",
+  // 		"handsfree": "",
+  // 		"headset": "",
+  // 		"phone": "",
+  // 		"portable": "",
+  // 		"car": "",
+  // 		"default": ["", ""]
+  // 	},
+  // 	"scroll-step": 1,
+  // 	"on-click": "pavucontrol"
+  // },
+
+  "tray": {
+		"icon-size": 16,
+		"spacing": 10
+	},
+
+
+
+
+
+
+
+
+
+
+
+
+    "custom/playerctl": {
+      "format": "{icon}",
+      "return-type": "json",
+      "max-length": 64,
+      "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "on-click-middle": "playerctl play-pause",
+      "on-click": "playerctl previous",
+      "on-click-right": "playerctl next",
+      "format-icons": {
+        "Playing": "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>",
+        "Paused": "<span foreground='#928374'>󰒮 󰏥 󰒭</span>"
+      },
+    },
+
+    "custom/playerlabel": {
+      "format": "<span>{}</span>",
+      "return-type": "json",
+      "max-length": 48,
+      "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+      "on-click-middle": "playerctl play-pause",
+      "on-click": "playerctl previous",
+      "on-click-right": "playerctl next",
+      "format-icons": {
+        "Playing": "<span foreground='#E5B9C6'>󰒮 󰐌 󰒭</span>",
+        "Paused": "<span foreground='#928374'>󰒮 󰏥 󰒭</span>"
+      },
+    },
+
+
+	
+
+
+
+
+	"backlight": {
+        // "device": "acpi_video1",
+	"format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+//	"on-scroll-up":,
+//	"on-scroll-down":,
+	},
+
+	
+  "custom/randwall": {
+    "format": "󰏘",
+    "on-click": "bash $HOME/.config/hypr/randwall.sh",
+    "on-click-right": "bash $HOME/.config/hypr/wall.sh"
+  },
+  "custom/launcher": {
+    "format": "󰈸",
+    "on-click": "bash $HOME/.config/rofi/launcher.sh",
+//    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css",
+    "on-click-right": "bash $HOME/.config/rofi/run.sh"  
+//    "on-click-right": "wofi --show run -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/gruvbox.css"  
+  },
+
+  "custom/wf-recorder": {
+		"format": "{}",
+		"interval": "once",
+		"exec": "echo ''",
+		"tooltip": "false",
+		"exec-if": "pgrep 'wf-recorder'",
+		"on-click": "exec ./scripts/wlrecord.sh",
+		"signal": 8
+	},
+
+  "custom/hyprpicker": {
+    "format": "󰈋",
+    "on-click": "hyprpicker -a -f hex",
+    "on-click-right": "hyprpicker -a -f rgb"
+  },
+  }
+}
+

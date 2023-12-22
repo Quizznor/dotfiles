@@ -1,0 +1,35 @@
+#!/bin/bash
+
+## Open Applications
+FILE="$HOME/.cache/eww_launch.dashboard"
+CFG="$HOME/.config/eww/dashboard"
+EWW=`which eww`
+
+if [[ "$1" == "--ff" ]]; then
+	firefox &
+
+elif [[ "$1" == "--tg" ]]; then
+	close_dash && telegram-desktop &
+
+elif [[ "$1" == "--dc" ]]; then
+	discord &
+
+elif [[ "$1" == "--tr" ]]; then
+	alacritty --working-directory ~ &
+
+elif [[ "$1" == "--fm" ]]; then
+	thunar ~ &
+
+elif [[ "$1" == "--ge" ]]; then
+	geany &
+
+elif [[ "$1" == "--cd" ]]; then
+	code-insiders &
+
+elif [[ "$1" == "--gp" ]]; then
+	gimp &
+
+elif [[ "$1" == "--vb" ]]; then
+	virtualbox &
+
+fi
