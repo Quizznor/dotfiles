@@ -26,7 +26,7 @@ if [[ ! -z "$( xrandr | grep 'HDMI1 connected')" ]]; then
     # firefox & 
 
     wmctrl -s 0
-    alacritty -T server-prompt -e ssh -t auger 'clear; echo "$(ps -ef | grep filip | wc -l) zombie processes active"; bash -l;' &
+    alacritty -T server-prompt -e ssh -CYt auger 'clear; echo "$(ps -ef | grep filip | wc -l) zombie processes active"; bash -l;' &
     alacritty -T server-htop -e ssh -t auger 'htop' &
     code-insiders &
     firefox &

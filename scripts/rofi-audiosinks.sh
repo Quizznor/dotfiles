@@ -12,7 +12,7 @@
 connect_bluetooth () {
 
     # Attempt to connect to the headset. Timeout after 7 seconds (~6-7 retries)
-    HEADPHONE_ADDRESS="98:52:3D:27:D1:02"
+    HEADPHONE_ADDRESS="F0:AE:66:75:7C:97"
     RUNTIME=$(( $SECONDS + 5 ))
 
     while [[ -z "$(pactl list sinks | awk '/bluez/{print}')" && $SECONDS -lt $RUNTIME ]]; do
