@@ -7,6 +7,9 @@
 GPG_TTY="\`tty\`"
 EDITOR=/usr/bin/nano
 
+# Testing
+alias shit="/home/quizznor/projects/shit/shit"
+
 # Workflow
 alias cc="cd $HOME/.config"
 alias ss="cd $HOME/system"

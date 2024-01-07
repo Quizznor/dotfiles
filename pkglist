@@ -3,6 +3,7 @@ alsa-utils 1.2.10-1
 base 3-2
 base-devel 1-1
 betterbird-bin 115.6.0-1
+biber 1:2.19-2
 bluez-utils 5.71-3
 boost 1.83.0-4
 brightnessctl 0.5.1-2
@@ -35,7 +36,7 @@ gst-libav 1.22.8-1
 gstreamer-vaapi 1.22.8-1
 htop 3.2.2-1
 intel-ucode 20231114-1
-jabref 5.11-3
+jabref 5.12-1
 kwallet-pam 5.27.10-1
 libnotify 0.8.3-1
 libreoffice-fresh 7.6.4-2
@@ -64,7 +65,7 @@ protonmail-bridge-nogui 3.6.1-1
 python-colorlog 6.7.0-2
 python-gobject 3.46.0-1
 python-iminuit 2.21.3-1
-python-ipykernel 6.27.1-1
+python-ipykernel 6.28.0-1
 python-matplotlib 3.8.1-1
 python-mysqlclient 2.1.1-2
 python-numpy 1.26.2-1
