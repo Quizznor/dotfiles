@@ -1,0 +1,40 @@
+[colors]
+indexed_colors = []
+
+[colors.bright]
+black = "0x72696a"
+blue = "0x4d5e8b"
+cyan = "0x85dacc"
+green = "0xadda78"
+magenta = "0xa8a9eb"
+red = "0xfd6883"
+white = "0xfff1f3"
+yellow = "0xf9cc6c"
+
+[colors.normal]
+black = "0x2c2525"
+blue = "0x4d5e8b"
+cyan = "0x85dacc"
+green = "0xadda78"
+magenta = "0xa8a9eb"
+red = "0xfd6883"
+white = "0xfff1f3"
+yellow = "0xf9cc6c"
+
+[colors.primary]
+background = "0x2d2a2e"
+foreground = "0xfff1f3"
+
+[font]
+size = 10.5
+
+[font.offset]
+x = -1
+
+[window]
+dynamic_title = false
+title = "Alacritty"
+
+[window.padding]
+x = 7
+y = 7

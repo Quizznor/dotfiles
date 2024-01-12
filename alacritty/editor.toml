@@ -1,0 +1,10 @@
+[font]
+size = 8.5
+
+[window]
+opacity = 1.0
+title = "LaTeX-Editor"
+
+[window.padding]
+x = 2
+y = 10

@@ -1,0 +1,11 @@
+[colors.primary]
+background = "#1d1f21"
+foreground = "#ffd866"
+
+[window]
+opacity = 0.8
+title = "Update your System"
+
+[window.padding]
+x = 4
+y = 4
