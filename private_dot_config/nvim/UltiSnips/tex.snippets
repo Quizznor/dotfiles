@@ -1,0 +1,219 @@
+snippet fig "A snippet for single figures"
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=${1:0.8}\textwidth]{$2}
+  \caption{$4}
+  \label{fig:$3}
+\end{figure}
+
+
+endsnippet
+
+snippet figfig "A snippet for two figures side by side"
+\begin{figure}[t]
+  \centering
+  \subfloat[]{\includegraphics[width=${2:0.48}\textwidth]{$3}
+  \label{fig:${4:LABEL}}
+  }\hspace{0.2cm}
+  \subfloat[]{\includegraphics[width=$2\textwidth]{$5}
+  \label{fig:${6:LABEL}}
+  }
+  \caption[]{\subref{fig:$4} $8 \subref{fig:$6} $9}
+  \label{fig:$7}
+\end{figure}
+
+
+endsnippet
+
+snippet img "A snippet for includegraphics" i
+$1`!p snip.rv = complete(t[1],get_image_files(snip.fn))`
+endsnippet
+
+snippet si "A snippet for SI units" i
+\SI{$1}{$2} 
+endsnippet
+
+snippet \ref "A snippet for cleverref" i
+\cref{$1`!p snip.rv = complete(t[1],get_labels(snip.fn))`} 
+endsnippet
+
+snippet \t "A snippet for \text" i
+\text{$1} 
+endsnippet
+
+snippet \fat "A snippet for \textbf" iA
+\textbf{$1} 
+endsnippet
+
+snippet \it "A snippet for \textit" iA
+\textit{$1} 
+endsnippet
+
+snippet \i "A snippet for \item" b
+\item 
+endsnippet
+
+snippet \frac "A snippet for fractions" iA
+\frac{$1}{$2} 
+endsnippet
+
+snippet \sec "Snippet for sections" b
+\section{${1:NAME}}
+\label{sec:${2:LABEL}}
+
+
+endsnippet
+
+snippet \sub "Snippet for subsections" b
+\subsection{${1:NAME}}
+\label{ssec:${2:LABEL}}
+
+
+endsnippet
+
+snippet \ssub "Snippet for subsubsections" b
+\subsubsection{${1:NAME}}
+\label{sssec:${2:LABEL}}
+
+
+endsnippet
+
+snippet \beg "Snippet for environments" bA
+\begin{${1:ENVIRONMENT}}
+$2
+\end{$1}
+
+
+endsnippet
+
+snippet \eq "A snippet for equations" b
+\begin{equation}
+\label{eq:${1:LABEL}}
+$2
+
+endsnippet
+
+snippet tab "A snippet for tables" b
+\begingroup
+\renewcommand{\arraystretch}{${1:STRETCH}}
+\begin{table}
+	\begin{center}
+	\caption{${2:CAPTION}}
+	\begin{tabular*}{${3:0.9}\textwidth}{@{\extracolsep{\fill}} ${4:COLUMNS}}
+  \toprule
+	\hline
+  ${5:COLUMN LABELS} \\
+	\hline
+  ${6:VALUES}
+  \bottomrule
+	\end{tabular*}
+	\label{tab:${7:LABEL}}
+	\end{center}
+\end{table}
+\endgroup
+
+endsnippet
+
+# PYTHON STUFF ------------------------------------
+
+global !p
+
+# Return all files in (sub)directory matching *.<pattern>
+def get_all_files(dir, patterns):
+
+    files = os.listdir(dir)
+    all_files = list()
+
+    for entry in files:
+        # print(entry)
+        full_path = os.path.join(dir, entry)
+        if os.path.isdir(full_path):
+            all_files = all_files + get_all_files(full_path, patterns)
+        else:
+            for pattern in patterns:
+                if entry.endswith("." + pattern):
+                    all_files.append(full_path)
+                    break
+
+    return all_files
+
+
+# Return the directory of the LaTeX root file
+def get_LaTeX_root_path(filename):
+
+    with open(filename, "r") as tex_file:
+        header = tex_file.readline()
+
+    if header.startswith("%"):
+        header = header[header.rfind("=") + 1:]
+        header = header.replace(" ", "")
+    else:
+        header = filename
+
+    root_file = os.path.abspath(header)
+
+    return root_file[:root_file.rfind("/") + 1]
+
+
+# Return all images files within root directory
+def get_image_files(filename):
+
+    img_extensions = ["png", "jpg", "jpeg", "JPG", "svg", "pdf"]
+
+    root_path = get_LaTeX_root_path(filename) + "figures/"
+    images = get_all_files(root_path, img_extensions)
+    rel_paths = [os.path.relpath(img, root_path) for img in images]
+
+    return rel_paths
+
+
+# Return all tex files within root directory
+def get_tex_files(filename):
+
+    def is_relevant(file):
+
+        main = not "thesis.tex" in file
+        cover = not "cover" in file
+        include = not "include" in file
+        self = not filename in file
+
+        return main and cover and include and self
+
+    root_path = get_LaTeX_root_path(filename)
+    files = get_all_files(root_path,["tex"])
+
+    files = [file for file in files if is_relevant(file)]
+    rel_paths = [os.path.relpath(file, root_path) for file in files]
+
+    return rel_paths
+
+
+# Return a list of all labels in root a tex document
+def get_labels(filename):
+
+    regexp = re.compile("label{[a-z]{2,4}:.*(?=\})")
+
+    root_path = get_LaTeX_root_path(filename)
+    candidates = get_all_files(root_path, ["tex"])
+    labels = []
+    for candidate in candidates:
+        text = open(candidate,"r").read()
+        if "\label" in text:
+            labels.append(regexp.findall(text))
+
+    labels = [item for sublist in labels for item in sublist]
+    labels = [item[6:] for item in labels]
+
+    return labels
+
+
+# Autocompletion given a string t and options
+def complete(t,options):
+  if t:
+    options = [item[len(t):] for item in options if item.startswith(t)]
+
+  if len(options)==1:
+    return options[0]
+
+  return "<<" + " | ".join(options) + ">>"
+endglobal
