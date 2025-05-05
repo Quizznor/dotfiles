@@ -79,7 +79,7 @@ source $ZSH/oh-my-zsh.sh
 alias chezmoi="chezmoi -v"
 
 export OFFLINEINSTALLDIR="/home/filip/Public/offline/install"
-
+export CUPS_USER="jr2686"
 export PATH="/home/filip/System/petalinux-v2015.4-final/tools/linux-i386/arm-xilinx-linux-gnueabi/bin:$PATH"
 export PATH="/home/filip/Public/phd-thesis/bin:$PATH"
 export PATH="/home/filip/.local/bin:$PATH"
