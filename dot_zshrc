@@ -73,8 +73,9 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 plugins=(git autoenv bgnotify git-prompt zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
-eval "$(pyenv virtualenv-init -)"
-
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 # User configuration
 
 alias chezmoi="chezmoi -v"
