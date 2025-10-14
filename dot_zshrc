@@ -73,6 +73,7 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 plugins=(git autoenv bgnotify git-prompt zsh-autosuggestions zsh-syntax-highlighting zsh-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
+eval "$(pyenv virtualenv-init -)"
 
 # User configuration
 
