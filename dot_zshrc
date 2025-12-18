@@ -81,6 +81,8 @@ eval "$(pyenv init - zsh)"
 alias chezmoi="chezmoi -v"
 alias cnaf="-J pfilip@bastion.cnaf.infn.it pfilip@ui-pauger"
 
+export CNAFDATA="/storage/gpfs_data/pauger/users/pfilip/data"
+export KITDATA="/cr/data01/filip/Data/"
 export OFFLINEINSTALLDIR="/home/filip/Public/offline/install"
 export CUPS_USER="jr2686"
 export PATH="/home/filip/System/petalinux-v2015.4-final/tools/linux-i386/arm-xilinx-linux-gnueabi/bin:$PATH"
